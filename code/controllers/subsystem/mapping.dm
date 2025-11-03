@@ -104,7 +104,7 @@ SUBSYSTEM_DEF(mapping)
 		var/datum/map_config/old_config = current_map
 		current_map = config.defaultmap
 		if(!current_map || current_map.defaulted)
-			to_chat(world, span_boldannounce("Unable to load next or default map config, defaulting to [old_config.map_name]."))
+			to_chat(world, span_boldannounce("Не удалось загрузить следующую или стандартную конфигурацию карты, используется [old_config.map_name] по умолчанию."))
 			current_map = old_config
 	plane_offset_to_true = list()
 	true_to_offset_planes = list()

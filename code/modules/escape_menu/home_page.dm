@@ -5,7 +5,7 @@
 			null,
 			/* hud_owner = */ null,
 			/* escape_menu = */ src,
-			/* button_text = */ "Resume",
+			/* button_text = */ "Продолжить",
 			/* offset = */ list(-136, 30),
 			/* font_size = */ 24,
 			/* on_click_callback = */ CALLBACK(src, PROC_REF(home_resume)),
@@ -17,7 +17,7 @@
 			null,
 			/* hud_owner = */ null,
 			/* escape_menu = */ src,
-			/* button_text = */ "Character",
+			/* button_text = */ "Персонаж",
 			/* offset = */ list(-171, 28),
 			/* font_size = */ 24,
 			/* on_click_callback = */ CALLBACK(src, PROC_REF(home_open_character_settings)),
@@ -29,7 +29,7 @@
 			null,
 			/* hud_owner = */ null,
 			/* escape_menu = */ src,
-			/* button_text = */ "Settings",
+			/* button_text = */ "Настройки",
 			/* offset = */ list(-206, 30),
 			/* font_size = */ 24,
 			/* on_click_callback = */ CALLBACK(src, PROC_REF(home_open_game_settings)),
@@ -41,7 +41,7 @@
 			null,
 			/* hud_owner = */ null,
 			/* escape_menu = */ src,
-			/* button_text = */ "Admin Help",
+			/* button_text = */ "Помощь Администратора",
 			/* offset = */ list(-241, 30),
 		)
 	)
@@ -51,7 +51,7 @@
 			null,
 			/* hud_owner = */ null,
 			/* escape_menu = */ src,
-			/* button_text = */ "Leave Body",
+			/* button_text = */ "Покинуть Тело",
 			/* offset = */ list(-276, 30),
 			/* font_size = */ 24,
 			/* on_click_callback = */ CALLBACK(src, PROC_REF(open_leave_body)),
@@ -62,8 +62,8 @@
 	page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small(
 		null,
 		/* hud_owner = */ null,
-		"Resources",
-		"Open/Close list of resources",
+		"Источник",
+		"Открыть/Закрыть список источников",
 		/* button_screen_loc */ "BOTTOM:30,RIGHT:-20",
 		CALLBACK(src, PROC_REF(toggle_resources)),
 		/* button_overlay = */ "resources",
@@ -95,8 +95,8 @@
 		resource_panels += page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small/collapsible(
 			null,
 			/* hud_owner = */ null,
-			"Report Bug",
-			"Report a bug/issue",
+			"Баг",
+			"Сообщите о баге",
 			/* button_screen_loc */ "BOTTOM:30,RIGHT:-20",
 			CALLBACK(client, TYPE_VERB_REF(/client, reportissue)),
 			/* button_overlay = */ "bug",
@@ -106,8 +106,8 @@
 		resource_panels += page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small/collapsible(
 			null,
 			/* hud_owner = */ null,
-			"Github",
-			"Open the repository for the game",
+			"ГитХаб",
+			"Открыть репозиторий сервера",
 			/* button_screen_loc */ "BOTTOM:30,RIGHT:-20",
 			CALLBACK(client, TYPE_VERB_REF(/client, github)),
 			/* button_overlay = */ "github",
@@ -120,8 +120,8 @@
 		resource_panels += page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small/collapsible(
 			null,
 			/* hud_owner = */ null,
-			"Forums",
-			"Visit the server's forums",
+			"Форум",
+			"Открыть форум сервера",
 			/* button_screen_loc */ "BOTTOM:30,RIGHT:-20",
 			CALLBACK(client, TYPE_VERB_REF(/client, forum)),
 			/* button_overlay = */ "forums",
@@ -134,8 +134,8 @@
 		resource_panels += page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small/collapsible(
 			null,
 			/* hud_owner = */ null,
-			"Rules",
-			"View the server rules",
+			"Закон",
+			"Открыть правила сервера",
 			/* button_screen_loc */ "BOTTOM:30,RIGHT:-20",
 			CALLBACK(client, TYPE_VERB_REF(/client, rules)),
 			/* button_overlay = */ "rules",
@@ -148,8 +148,8 @@
 		resource_panels += page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small/collapsible(
 			null,
 			/* hud_owner = */ null,
-			"Wiki",
-			"See the wiki for the game",
+			"Вики",
+			"Открыть вики сервера",
 			/* button_screen_loc */ "BOTTOM:30,RIGHT:-20",
 			CALLBACK(client, TYPE_VERB_REF(/client, wiki)),
 			/* button_overlay = */ "wiki",
@@ -160,8 +160,8 @@
 	resource_panels += page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small/collapsible(
 		null,
 		/* hud_owner = */ null,
-		"Change Log",
-		"See all changes to the server",
+		"Изменения",
+		"Открыть список изменений сервера",
 		/* button_screen_loc */ "BOTTOM:30,RIGHT:-20",
 		CALLBACK(client, TYPE_VERB_REF(/client, changelog)),
 		/* button_overlay = */ "changelog",
@@ -182,4 +182,3 @@
 	client?.prefs.update_static_data(client?.mob)
 	client?.prefs.ui_interact(client?.mob)
 	qdel(src)
-

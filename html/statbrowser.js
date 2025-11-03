@@ -17,11 +17,11 @@ if (!String.prototype.trim) {
 // Status panel implementation ------------------------------------------------
 //status_tab_parts expects a list to be returned, to which we'll send a list within a list
 //with just "loading" to not appear broken.
-var status_tab_parts = [["Loading..."]];
+var status_tab_parts = [["Загрузка..."]];
 var current_tab = null;
 //mc_tab_parts expects a list to be returned, to which we'll send a list within a list
 //with just "loading" to not appear broken.
-var mc_tab_parts = [["Loading..."]];
+var mc_tab_parts = [["Загрузка..."]];
 var href_token = null;
 var spells = [];
 var spell_tabs = [];
@@ -255,7 +255,7 @@ function tab_change(tab) {
   } else if (tab == turfname) {
     draw_listedturf();
   } else {
-    statcontentdiv.textContext = "Loading...";
+    statcontentdiv.textContext = "Загрузка...";
   }
   Byond.winset(Byond.windowId, {
     "is-visible": true,

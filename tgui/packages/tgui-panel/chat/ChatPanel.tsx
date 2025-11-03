@@ -78,7 +78,7 @@ export class ChatPanel extends Component<Props, State> {
             icon="arrow-down"
             onClick={() => chatRenderer.scrollToBottom()}
           >
-            Scroll to bottom
+            Пролистать вниз
           </Button>
         )}
       </>
