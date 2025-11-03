@@ -1,73 +1,73 @@
 {
 	"probe_names": [
-		"Cassini",
-		"Galileo",
-		"Juno",
-		"Luna",
-		"Mariner",
-		"Pioneer",
-		"Rosetta",
-		"Sojourner",
-		"Stardust",
-		"Vega",
-		"Venera",
-		"Voyager"
+		"Кассини",
+		"Галилео",
+		"Юнона",
+		"Луна",
+		"Маринер",
+		"Пионер",
+		"Розетта",
+		"Соджорнер",
+		"Стардаст",
+		"Вега",
+		"Венера",
+		"Вояджер"
 	],
 	"trading_station_names": [
-		"Big Bill Hells's used mechs",
-		"Cornerstore at the End of the Universe",
-		"Crazy Redd's Crazy Deals",
-		"Jims Space Emporium",
-		"Rocketing Deals",
-		"The Galactic Market",
-		"Turners Ship & Trade"
+		"Подержанные мехи Большого Билла Хеллса",
+		"Угловая лавка на краю Вселенной",
+		"Безумные Сделки Безумного Рэдда",
+		"Космический Эмпориум Джима",
+		"Ракетные Сделки",
+		"Галактический Рынок",
+		"Корабли и Торговля Тёрнера"
 	],
 	"planet_types": [
 		{
-			"name": "barren planet",
-			"description": "A barren planet with very thin atmosphere. Nothing but rocks.",
+			"name": "бесплодная планета",
+			"description": "Бесплодная планета с очень разреженной атмосферой. Ничего, кроме камней.",
 			"habitable": false,
 			"civilized": false,
 			"tech": false
 		},
 		{
-			"name": "jungle world",
-			"description": "A planet covered in thick jungle. You detect numerous fauna and flora readings.",
+			"name": "планета-джунгли",
+			"description": "Планета, покрытая густыми джунглями. Вы обнаруживаете многочисленные показатели фауны и флоры.",
 			"habitable": true,
 			"civilized": false,
 			"tech": false
 		},
 		{
-			"name": "robot moon",
-			"description": "A tiny rock covered with factories and automatons who seem to ignore your presence for the most part.",
+			"name": "роботизированная луна",
+			"description": "Крошечная скала, покрытая фабриками и автоматонами, которые в основном игнорируют ваше присутствие.",
 			"habitable": true,
 			"civilized": true,
 			"tech": true
 		}
 	],
 	"alien_fauna": [
-		"basilisk",
-		"unknown beast",
-		"very angry cow",
-		"xenomorph hunter"
+		"василиск",
+		"неизвестный зверь",
+		"очень злая корова",
+		"ксеноморф-охотник"
 	],
 	"fluff_generic": [
-		"This place is emptier than assisstant's credit account.",
-		"You find a huge pile of boredom.",
-		"You find nothing interesting."
+		"Это место пустее, чем кредитный счёт ассистента.",
+		"Вы находите огромную кучу скуки.",
+		"Вы не находите ничего интересного."
 	],
 	"fluff_space": [
-		"You detect stardrive activation readings nearby. By time time you arrive at the spot there's nothing there but space dust.",
-		"You pass by a small field of space debris. Nothing but useless junk."
+		"Вы обнаруживаете показатели активации звёздного привода поблизости. К тому времени, как вы прибываете на место, там ничего нет, кроме космической пыли.",
+		"Вы пролетаете мимо небольшого поля космического мусора. Ничего, кроме бесполезного хлама."
 	],
 	"fluff_trading": [
-		"You encounter a maintenance drone busy at work. It ignores you completely.",
-		"You pass by a drunked local. Good thing smell is not conducted through the drone feed.",
-		"You pass by security patrol. They give you suspicious stares."
+		"Вы встречаете дрона техобслуживания, занятого работой. Он полностью вас игнорирует.",
+		"Вы пролетаете мимо пьяного местного. Хорошо, что запах не передаётся через канал дрона.",
+		"Вы пролетаете мимо патруля безопасности. Они бросают на вас подозрительные взгляды."
 	],
 	"fluff_ruins": [
-		"You encounter a broken statue. You can't tell what its original shape was.",
-		"You have to backtrack from a collapsed passage.",
-		"You pass through a corridor full of cracked tiles."
+		"Вы натыкаетесь на сломанную статую. Нельзя разобрать, какой была её первоначальная форма.",
+		"Вам приходится возвращаться из обрушившегося прохода.",
+		"Вы пролетаете через коридор, полный потрескавшейся плитки."
 	]
 }

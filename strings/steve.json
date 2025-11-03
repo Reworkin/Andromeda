@@ -1,21 +1,21 @@
 {
 	"ballmer_good_msg": [
-		"Hear me out here. What if, and this is just a theory, we made R&D controllable from our PDAs?",
-		"Hey guys, what if we rolled out a bluespace wiring system so mice can't destroy the powergrid anymore?",
-		"I dunno about you guys, but IDs and PDAs being separate is clunky as fuck. Maybe we should merge them into a chip in our arms? That way they can't be stolen easily.",
-		"I'm thinking we should roll out a git repository for our research under the AGPLv3 license so that we can share it among the other stations freely.",
-		"Why the fuck aren't we just making every pair of shoes into galoshes? We have the technology."
+		"А слушайте, а что если, чисто теория, сделать управление РнД с наших КПК?",
+		"Ребят, а давайте внедрим блюспейс-проводку, чтобы мыши не могли больше гробить энергосеть?",
+		"Не знаю как вы, но раздельные ID-карты и КПК — это пиздец как неудобно. Может, вшить их в виде чипа в руку? Так и украсть не смогут.",
+		"Я думаю, нам нужно завести git-репозиторий для наших исследований под лицензией AGPLv3, чтобы делиться ими с другими станциями.",
+		"Какого хуя мы не делаем все ботинки непромокаемыми? Технологии ведь есть."
 	],
 
 	"ballmer_windows_me_msg": [
-		"Who keeps commiting to master?",
-		"Best idea ever: Disposal pipes instead of hallways.",
-		"Do you know who ate all the donuts?",
-		"Dude, radical idea: H.O.N.K mechs but with no bananium required.",
-		"So like, you know how we separate our codebase from the master copy that runs on our consumer boxes? What if we merged the two and undid the separation between codebase and server?",
-		"We should store bank records in a webscale datastore, like /dev/null.",
-		"What if we use a language that was written on a napkin and created over 1 weekend for all of our servers?",
-		"Yo man, what if, we like, uh, put a webserver that's automatically turned on with default admin passwords into every PDA?",
-		"You ever wonder if /dev/null supports sharding?"
+		"Кто опять коммитит в мастер?",
+		"Идея года: заменить коридоры мусоропроводами.",
+		"Ты не знаешь, кто съел все пончики?",
+		"Чувак, радикальная идея: Х.О.Н.К. мехи, но без бананиума.",
+		"Короче, типа, знаешь как у нас кодовая база отделена от мастер-копии на серверах? А что если смержить их и убрать грань между кодом и сервером?",
+		"Нам нужно хранить банковские записи в веб-скейл хранилище, типа /dev/null.",
+		"А что если использовать для всех наших серверов язык, который написали на салфетке за одни выходные?",
+		"Чувак, а что если, типа, вшить в каждый КПК веб-сервер с дефолтными паролями админа?",
+		"А вы не думали, поддерживает ли /dev/null шардирование?"
 	]
 }

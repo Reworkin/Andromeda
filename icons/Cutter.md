@@ -1,76 +1,75 @@
-## Guide to the icon cutter
+# Руководство по работе с icon cutter
 
-### What are cut icons?
+### Что такое "срезанные" иконки?
 
-There are some icons in ss13 that are essentially stitched together from a smaller set of icon states.
+В SS13 некоторые иконки по сути "сшиваются" из меньшего набора состояний (icon states).
 
-Smoothing is a prime example of this, though anything that takes a base image and operates on it fits the system nicely.
+Сглаживание (smoothing) — главный пример, хотя любая система, которая берёт базовое изображение и работает с ним, хорошо вписывается в эту концепцию.
 
-### How does the cutter work?
+### Как работает cutter?
 
-The cutter has a bunch of different modes, different ways to operate on images. They all take some sort of input, alongside a (.toml) config file that tells us what to DO with the input.
+Cutter имеет несколько различных режимов — разных способов обработки изображений. Все они принимают какие-то входные данные вместе с конфигурационным файлом (.toml), который говорит им, что ДЕЛАТЬ с этими данными.
 
-The .toml file will know the cutter mode to use, alongside any config settings. Smoothing configs can use templates instead of copying out a bunch of information, templates are stored in the cutter_templates folder.
+Файл .toml указывает, какой режим cutter'а использовать, вместе с любыми настройками. Конфиги сглаживания могут использовать шаблоны вместо копирования кучи информации; шаблоны хранятся в папке `cutter_templates`.
 
-The toml file will be named like this. `{name}.{input_extension}.toml`. So if I have a config mode that uses pngs as input (almost all of them) it'll look like `{name}.png.toml`
+Файл toml должен называться так: `{имя}.{расширение_входного_файла}.toml`. Например, если у меня есть конфиг, который использует PNG на вход (как почти все режимы), он будет выглядеть как `{имя}.png.toml`.
 
-It'll then use the `{name}.png` file to make `{name}.dmi` (or whatever the cutter mode outputs)
+Затем он использует файл `{имя}.png`, чтобы создать `{имя}.dmi` (или что там этот режим cutter'а выдаёт на выходе).
 
-You should NEVER modify the cutter's output, it'll be erased. You only want to modify the inputs (configs, pngs, etc).
+Вам НИКОГДА не следует изменять выходные файлы cutter'а — они будут перезаписаны. Изменять нужно только входные данные (конфиги, PNG и т.д.).
 
-As I mentioned our cutter has several different modes that do different things with different inputs.
+Как я уже сказал, наш cutter имеет несколько различных режимов, которые делают разные вещи с разными входными данными.
 
-Most cutter stuff in our repo uses the BitmaskSlice mode, you can find info about it [here](https://github.com/actioninja/hypnagogic/blob/master/examples/bitmask-slice.toml)
+Большинство cutter'ов в нашем репозитории используют режим `BitmaskSlice`. Информацию о нём можно найти [здесь](https://github.com/actioninja/hypnagogic/blob/master/examples/bitmask-slice.toml).
 
-## Bitmask Smoothing (BitmaskSlice)
+## Сглаживание по битовой маске (BitmaskSlice)
 
-We use bitmask smoothing to make things in the world merge with each other, "smoothing" them together.
+Мы используем сглаживание по битовой маске, чтобы объекты в мире объединялись друг с другом, "сглаживаясь".
 
-This is done by checking around these objects for things that we want to smooth into, and then encoding that as a set of directions.
-Now, we need icon states for every possible combination of smoothing directions, but it would be impossible to make those manually.
+Это делается путём проверки окружения этих объектов на наличие things, с которыми нужно сгладиться, и кодирования этого в виде набора направлений.
+Теперь нам нужны состояния иконки для каждой возможной комбинации направлений сглаживания, но сделать их вручную невозможно.
 
-So instead we take a base set of directions, typically no connections, north/south, east/west, north/south/east/west, and all connections, and then slice them up and stitch them together.
+Поэтому вместо этого мы берём базовый набор направлений (обычно: нет соединений, север/юг, восток/запад, север/юг/восток/запад и все соединения), нарезаем их и сшиваем вместе.
 
-Looks something like this
+Выглядит это примерно так:
 
-> Example: [Bamboo](turf/floors/bamboo_mat.png.toml)
+> Пример: [Бамбук](turf/floors/bamboo_mat.png.toml)
 >
-> png of 32x32 blocks, representing connections.
+> PNG из блоков 32x32, представляющих соединения.
 >
-> [None, North + South, East + West, North + South + East + West, All]
+> [Нет, Север + Юг, Восток + Запад, Север + Юг + Восток + Запад, Все]
 >
-> [<img alt="Bamboo Template" src="turf/floors/bamboo_mat.png" width="320px">](turf/floors/bamboo_mat.png)
+> [<img alt="Бамбуковый шаблон" src="turf/floors/bamboo_mat.png" width="320px">](turf/floors/bamboo_mat.png)
 >
-> And its output dmi
+> И его выходной DMI:
 >
-> [<img alt="Bamboo Output" src="turf/floors/bamboo_mat.dmi" width="320px">](turf/floors/bamboo_mat.dmi)
+> [<img alt="Результат для бамбука" src="turf/floors/bamboo_mat.dmi" width="320px">](turf/floors/bamboo_mat.dmi)
 
-### How do I modify a smoothed icon?
+### Как изменить сглаженную иконку?
 
-Modify the png, then recompile the game/run build.bat, it will automatically generate the dmi output.
+Измените PNG-файл, затем пересоберите игру/запустите `build.bat` — выходной DMI сгенерируется автоматически.
 
-### How do I make a smoothed icon?
+### Как создать сглаженную иконку?
 
-Make a png file called `{dmi_name}.png`. It should be 5 times as wide as the dmi's width, and as tall as the dmi's height
+1.  Создайте PNG-файл с именем `{имя_dmi}.png`. Его ширина должна быть в 5 раз больше ширины DMI, а высота — равна высоте DMI.
+2.  Создайте конфигурационный файл `{имя_dmi}.png.toml`, установите его [шаблон](../cutter_templates/bitmask) на нужный вам стиль. Не забудьте установить переменную `output_name` на базовое состояние иконки, которое вы используете.
 
-Create a config file called `{dmi_name}.png.toml`, set its [template](../cutter_templates/bitmask) to the style you want. Don't forget to set the output_name var to the base icon state you're using.
+Когда закончите, просто запустите `build.bat` или пересоберите проект — и cut-файлы DMI сгенерируются автоматически.
 
-Once you're done, just run build.bat or recompile, and it'll generate your cut dmi files for you.
+Если вы хотите создать что-то с нестандартными границами, вам нужно будет установить соответствующие переменные. Вы можете прочитать примеры [здесь](https://github.com/actioninja/hypnagogic/tree/master/examples), чтобы понять конфиги разных режимов.
 
-If you want to make something with nonstandard bounds you'll need to set the relevant variables, you can read the examples found [here](https://github.com/actioninja/hypnagogic/tree/master/examples) to understand different mode's configs.
-
-> Example: [Grass (50x50)](turf/floors/grass.png.toml)
+> Пример: [Трава (50x50)](turf/floors/grass.png.toml)
 >
-> [<img alt="Grass Template (50x50)" src="turf/floors/grass.png" width="320px"/>](turf/floors/grass.png)
+> [<img alt="Шаблон травы (50x50)" src="turf/floors/grass.png" width="320px"/>](turf/floors/grass.png)
 
-If you want to give a particular smoothing junction a unique icon state use the prefabs var, add a new "state" to the png, and modify the config so it knows how to use it.
+Если вы хотите задать уникальное состояние иконки для конкретного соединения сглаживания, используйте переменную `prefabs`, добавьте новое "state" в PNG и измените конфиг, чтобы он знал, как его использовать.
 
-> Example: [Donk Carpets (Big Pocket)](turf/floors/carpet_donk.png.toml)
+> Пример: [Ковры Donk (Большой карман)](turf/floors/carpet_donk.png.toml)
 >
-> [<img alt="Grass Template (50x50)" src="turf/floors/carpet_donk.png" width="384x"/>](turf/floors/carpet_donk.png)
+> [<img alt="Шаблон ковра Donk" src="turf/floors/carpet_donk.png" width="384x"/>](turf/floors/carpet_donk.png)
 
-If you want to make the smoothed icon animated, add another row of states below your first one. Each new row is a new frame, you define delays inside the config file as deciseconds.
+Если вы хотите сделать анимированную сглаженную иконку, добавьте ещё один ряд состояний под первым. Каждый новый ряд — это новый кадр. Задержки определяются внутри конфигурационного файла в децисекундах.
 
-> Example: [Lava (Animated, 4 Frames)](turf/floors/lava.png.toml)
+> Пример: [Лава (Анимированная, 4 кадра)](turf/floors/lava.png.toml)
 >
-> [<img alt="Lava (Animated)" src="turf/floors/lava.png" width="320px"/>](turf/floors/lava.png)
+> [<img alt="Лава (Анимированная)" src="turf/floors/lava.png" width="320px"/>](turf/floors/lava.png)

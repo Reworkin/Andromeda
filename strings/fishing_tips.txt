@@ -1,63 +1,62 @@
-Did you know? The Freshness jar of natural baits actually contains kronkaine.
-Legends say The Dude once lost his wallet inside a toilet.
-Legends say a famous pirate once lost his precious coffer by the Beach.
-You could buy fish dirt cheap from the black market, but you probably won't get anything actually fresh.
-Rescue hooks can be used to snag in other people. Good for getting husks out of plasma rivers.
-Pufferfish are known for the slow yet lethal poison they store inside their liver.
-Magnet hooks are great to fish anything that's NOT a fish.
-You can perform scanning experiments with an experi-scanner and some fish. They'll give sci some extra techweb points and get you more modules for the fishing portal generator. 
-Fish scanning experiments can be automatically performed with an advanced fishing rod. However to print one you need to have at least completed the first one.
-Advanced fishing rods come pre-equipped with a unexhaustible bait that ignores bait preferences of each fish, letting you catch'em all.
-Don't expect to be able to catch a lot of fish without a bait.
-Some fish (mostly predators) are strictly carnivorous and will ignore baits not made of meat or seafood, a few are picky eaters and will only go after the best of baits, while another smaller few are more or less strictly herbivore.
-You can fish at the holodeck beach, if you don't mind the fish being quite fake.
-You may find worms by digging through sand, ash and snow.
-You can revive fish by using a Lazarus Injector on them. However, using Strange Reagent would be a smarter option here.
-You can feed fish outside of an aquarium by tapping them with a can of fish feed.
-More fishing rods and fish cases can be printed at the autolathe.
-You can link the fish portal generator to other fishing spots with a multitool. The maximum amount of fishing spots that can be linked and whether or not the link works on different z-levels depends on the quality of the machinery components.
-The actual name of the fishing portal generator is 'fish-porter 3000'. They're totally the same thing however.
-Seeking alternative ways to catch fish without bothering to do it yourself? Explosives can be thrown at fishing spots to get several (dead) fishes in a pinch.
-You can raise lobstrosities from chasm chrabs. However, lobstrosities can only be tamed with spare limbs or lavaloop fish while still young.
-Lavaloop fish make for dangerous yet somewhat effective throwing weapons against big fauna.
-The fishing portal generator has different modules, all of which can be unlocked by completing fish scanning experiments... except for the Syndicate one...
-A fish's traits influence how you can catch them. Carnivore fish will ignore dough balls, and herbivore fish ignore anything that's not from botany.
-Telescopic fishing rods can be bought from cargo.
-Once grown from chrabs and tamed, lobstrosities can be heeded to fish on fishing spots for you.
-Aquariums can be upgraded to bioelectricity generators with a specific kit. From there, you can add electric-generating fish like the anxious zip zap to generate power for the station.
-Getting better at fishing will net you some small additional advantages, such as receiving more information when examining a fish or a fishing spot.
-The size and weight of a fish can influence the amount of reagents and fillets you can harvest from them, their force as a weapon and how easy it is to store them in containers.
-While most fish make for shoddy weapons, a few, like the swordfish and the chainsawfish, can be quite powerful. In general, the bigger they are, the more forceful they get.
-Fish can be sold to cargo. While most don't sell for very much, the biggest ones can be sold for a considerable bounty.
-The meat of fish like swordfish, salmon and pufferfish (weren't they poisonous) makes for an excellent ingredient that boosts the quality of the end product.
-Stingrays are known for their stinger, which they use to deliver venom to hostiles.
-Some species of fish can be bred into new species under the right conditions.
-Most fish don't survive outside water, so get them somewhere safe like an aquarium or a fish case, or even a toilet or a moisture trap!
-No matter how you look at it, most people won't care about fishing. Don't let that stop you. They're just jealous.
-To fish on ice you have to puncture the ice layer with a pick or shovel first.
-Fishing rods are particularly effective melee weapons against spacemen deeply infused with fish DNA from genetics.
-Depending on the kinds of fish inside it and whether they're alive or dead, an aquarium can improve the beauty of the room or worsen it.
-Almost all fish can be ground in an All-in-one-Grinder. Don't think too hard about how you're fitting a giant fish into a blender. Nanotrasen technology is weird like that.
-The sludgefish from the toilets can be used as a steady supply of cheap fish and fillets due to its self-reproducing behaviour. However it's quite fragile.
-In a jiffy, you can scoop tadpoles from ponds with your bare hands, place them inside aquariums and quickly raise them into frogs.
-The legendary fishing hat isn't just cosmetic. Space carps (as well as young lobstrosities and frogs) do truly fear those who wear it.
-Have you ever heard a lobster or crab talk? Well, neither have I, but they say they're quite the fishy punsters.
-You can get an experiscanner from science to perform fish scanning experiments, which can unlock more modules for the fishing portal, as well as fishing technology nodes (better equipment) to research.
-Fish is, of course, edible. Is it safe to eat raw? Well, if you've strong stomach, otherwise your best option is to cook it for a at least half a spessman minute if you don't want to catch nasty diseases.
-After researching the Advanced Fishing Technology Node, you can print special fishing gloves that let you fish without having to carry around a fishing rod. There's one pair that even trains athletics on top of fishing.
-You can get an experiscanner from science to perform fish scanning experiments, which can unlock more modules for the fishing portal, as well as fishing technology nodes (better equipment) for research.
-If you have enough credits, you can buy a set of fishing lures from cargo (or the library vending machine). Each lure allows you to catch different species of fish and won't get consumed, however they need to be spun at intervals to work.
-Various clothing and handheld items, as well as chairs you sit on, can make fishing easier (or sometimes harder). A trained fisherman can tell what can help and what won't, so keep an eye out.
-This may sound silly, but (live) squids and their ink sacs can be used as weapons to temporarily blind foes.
-Got a bioelectricity generator aquarium but no electrogenic fish? Worry not, you can always feed your fish some teslium or liquid electricity to temporarily grant them (slightly less powerful) eletrogenesis. It'll also gradually hurt them however.
-Fish can grow in size and weight if you fed them somewhat frequently. Giving them growth serum (from fly amanita) will also boost the rate at which they grow.
-Feeding a fish mutagen can triple the probability of generating evolved offsprings, provided it has an evolution.
-You can print fishing rods of different materials from an autolathe, which can inrease or decrease fishing difficulty, casting range, experience gained and can have other, special effects.
-Albeit scarcely, it's possible to catch fish made of the same materials of a custom material fishing rod. Equipping a shiny fishing hook and the quality of the bait can improve your odds.
-You can use a fishing rod to snatch random organs during the "manipulate organs" step of the "organ manipulation" surgery.
-You can try to save cash on vending machines by using a fishing rod with a coin, holochip or bill attached to it. The value of the currency used as bait will reduce difficulty and risks and raise the odds of getting more expensive items.
-By opening the aquarium panel and turning "Safe Mode" on, you can easily set up a purely decorative aquarium without having to worry about food, temperature and type of water.
-Aquariums are also potential fishing spots. Only useful for catching fish you couldn't find in the wild, as a personal achievement and nothing more.
-If you don't have it already, there's a skillchip called Mast-Angl-Er that you can get from the library vending machine which can help if you're new to fishing. Other than dispensing tips, it provides more information when examining fish, rods and fishing spots as well.
-If fishing in lava and chasms, there's a chance you fish up a skeleton... Finally, someone who might care about you.
-How about you fish yourself some bitches?
+Знаете ли вы? Банка 'Свежих натуральных наживок' на самом деле содержит кронкаин.
+Легенды гласят, что Чувак как-то раз уронил свой кошелёк в унитаз.
+Легенды гласят, что знаменитый пират однажды потерял свой драгоценный сундук на Пляже.
+Вы могли бы купить рыбу дёшево на чёрном рынке, но вряд ли получите что-то действительно свежее.
+Спасательные крючки можно использовать для зацепа за других людей. Хорошо для вытаскивания обугленных тел из плазменных рек.
+Иглобрюхи известны медленным, но смертельным ядом, который хранится в их печени.
+Магнитные крюки отлично подходят для ловли всего, что НЕ является рыбой.
+Вы можете проводить сканирующие эксперименты с экспери-сканером и несколькими рыбами. Это даст науке дополнительные очки технопаутины и вам - больше модулей для генератора рыбного портала.
+Эксперименты по сканированию рыбы можно автоматически выполнять с помощью продвинутой удочки. Однако для её печати нужно как минимум завершить первый эксперимент.
+Продвинутые удочки поставляются с неиссякаемой наживкой, которая игнорирует предпочтения каждой рыбы, позволяя поймать их всех.
+Не ожидайте, что сможете поймать много рыбы без наживки.
+Некоторые рыбы (в основном хищники) строго плотоядны и будут игнорировать наживки не из мяса или морепродуктов, некоторые привередливы и будут клевать только на лучшие наживки, а меньшая часть более или менее строго травоядны.
+Вы можете рыбачить на пляже голопалубы, если не против, что рыба будет довольно фальшивой.
+Вы можете найти червей, копаясь в песке, золе и снегу.
+Вы можете оживить рыбу, использовав на ней инъектор Лазаря. Однако использование Странного Реагента было бы умнее.
+Вы можете кормить рыбу вне аквариума, ткнув в них банкой рыбного корма.
+Больше удочек и контейнеров для рыбы можно напечатать в автолате.
+Вы можете подключить генератор рыбного портала к другим рыбным местам с помощью мультитула. Максимальное количество подключаемых мест и работа между Z-уровнями зависит от качества компонентов.
+Настоящее название генератора рыбного портала - 'рыбо-портер 3000'. Но это абсолютно одно и то же.
+Ищете альтернативные способы ловли рыбы без лишних хлопот? Взрывчатку можно бросить в рыбные места, чтобы быстро получить несколько (мёртвых) рыб.
+Вы можете вырастить лобстрозити из крабов пропасти. Однако лобстрозити можно приручить только запасными конечностями или лава-рыбой, пока они молоды.
+Лава-рыба может быть опасным, но somewhat эффективным метательным оружием против крупной фауны.
+Генератор рыбного портала имеет разные модули, все из которых можно разблокировать, завершив эксперименты по сканированию рыбы... кроме Синдикатского...
+Черты рыбы влияют на то, как вы можете её поймать. Хищные рыбы будут игнорировать тесто, а травоядные - всё, что не из ботаники.
+Телескопические удочки можно купить в карго.
+Выращенных из крабов и прирученных лобстрозити можно направить рыбачить на рыбных местах за вас.
+Аквариумы можно улучшить до биоэлектрических генераторов специальным набором. Затем можно добавить электрогенных рыб, чтобы генерировать энергию для станции.
+С улучшением навыка рыбалки вы получите небольшие дополнительные преимущества, например, больше информации при осмотре рыбы или рыбного места.
+Размер и вес рыбы могут влиять на количество реагентов и филе, которые можно из них получить, их силу как оружия и насколько легко их хранить в контейнерах.
+Хотя большинство рыб - паршивое оружие, некоторые, вроде рыбы-меча и рыбы-пилы, могут быть quite мощными. В целом, чем они больше, тем сильнее бьют.
+Рыбу можно продавать в карго. Хотя большинство не стоит много, самые крупные экземпляры могут принести considerable bounty.
+Мясо таких рыб, как рыба-меч, лосось и иглобрюх (разве они не ядовиты?) является excellent ингредиентом, повышающим качество конечного продукта.
+Скаты известны своим жалом, которым они вводят яд врагам.
+Некоторые виды рыб можно вывести в новые виды при правильных условиях.
+Большинство рыб не выживают вне воды, так что поместите их в безопасное место - аквариум, контейнер для рыбы, или даже унитаз или влажную ловушку!
+Как ни посмотри, большинству людей будет плевать на рыбалку. Не позволяйте этому останавливать вас. Они просто завидуют.
+Для рыбалки на льду нужно сначала пробить ледяной слой киркой или лопатой.
+Удочки particularly эффективны как оружие ближнего боя против космонавтов, deeply насыщенных рыбьей ДНК от генетиков.
+В зависимости от видов рыбы внутри и того, живы они или мертвы, аквариум может улучшить или ухудшить красоту комнаты.
+Почти любую рыбу можно перемолоть в Универсальном измельчителе. Не думайте too hard о том, как вы помещаете гигантскую рыбу в блендер. Технологии Nanotrasen такие странные.
+Грязе-рыба из унитазов может быть steady поставщиком дешёвой рыбы и филе благодаря саморазмножению. Однако она quite хрупкая.
+В мгновение ока вы можете зачерпнуть головастиков из прудов голыми руками, поместить их в аквариумы и быстро вырастить в лягушек.
+Легендарная рыбацкая шляпа - не просто косметика. Космические карпы (а также молодые лобстрозити и лягушки) действительно боятся тех, кто её носит.
+Вы когда-нибудь слышали, как говорят омар или краб? Что ж, я тоже нет, но говорят, они мастера рыбных каламбуров.
+Вы можете получить экспери-сканер из науки для проведения экспериментов по сканированию рыбы, которые могут разблокировать больше модулей для рыбного портала, а также узлы рыболовных технологий (лучшее оборудование) для исследований.
+Рыбу, конечно, можно есть. Безопасно ли есть её сырой? Что ж, если у вас крепкий желудок, иначе лучше готовить её как минимум half космической минуты, если не хотите подхватить nasty болезни.
+После исследования Узла Продвинутых Рыболовных Технологий можно напечатать специальные рыболовные перчатки, позволяющие рыбачить без удочки. Есть пара, которая даже тренирует атлетику вдобавок к рыбалке.
+Если у вас достаточно кредитов, вы можете купить набор рыболовных приманок в карго (или в библиотечном торгомате). Каждая приманка позволяет ловить разные виды рыб и не расходуется, но её нужно периодически подкручивать.
+Разная одежда и предметы в руках, а также стулья, на которых вы сидите, могут облегчить (или иногда усложнить) рыбалку. Опытный рыбак может сказать, что поможет, а что нет, так что следите.
+Это может звучать глупо, но (живые) кальмары и их чернильные мешки можно использовать как оружие для временного ослепления врагов.
+Есть биоэлектрический аквариум, но нет электрогенных рыб? Не беспокойтесь, вы можете кормить своих рыб теслиумом или жидким электричеством, чтобы временно наделить их (менее мощной) электрогенностью. Однако это будет постепенно вредить им.
+Рыбы могут расти в размере и весе, если их regularly кормить. Дача сыворотки роста (от мухоморов) также ускорит их рост.
+Кормление рыбы мутагеном может утроить вероятность появления evolved потомства, при условии, что у неё есть эволюция.
+Вы можете печатать удочки из разных материалов в автолате, что может увеличить или уменьшить сложность рыбалки, дальность заброса, получаемый опыт и иметь другие special эффекты.
+Пусть и редко, но возможно поймать рыбу из того же материала, что и удочка кастомного материала. Блестящий крючок и качество наживки могут улучшить шансы.
+Вы можете использовать удочку, чтобы выхватывать случайные органы во время шага 'манипуляции органами' в операции 'манипуляции органами'.
+Вы можете попытаться сэкономить на торгоматах, используя удочку с прикреплённой монетой, голочипом или купюрой. Стоимость валюты, используемой как наживка, снизит сложность и риски и повысит шансы на дорогие предметы.
+Открыв панель аквариума и включив 'Безопасный режим', можно легко настроить чисто декоративный аквариум, не беспокоясь о еде, температуре и типе воды.
+Аквариумы также являются потенциальными рыбными местами. Полезно только для ловли рыбы, которую не найти в дикой природе, как личное достижение и не более.
+Если у вас его ещё нет, в библиотечном торгомате можно получить чип навыка Mast-Angl-Er, который поможет, если вы новичок в рыбалке. Помимо советов, он даёт больше информации при осмотре рыбы, удочек и рыбных мест.
+Если рыбачить в лаве и пропастях, есть шанс выудить скелет... Наконец-то кто-то, кому вы, возможно, небезразличны.
+Как насчёт того, чтобы наловить себе сучек?

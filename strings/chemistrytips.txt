@@ -1,16 +1,16 @@
-100% pure Inacusiate will let you hear whispers from a distance while it's in your system.
-A reaction can be slowed down by cooling the beaker it's in!
-Chemical analyzers scan more than just pH. They can tell you the purity of each reagent.
-ChemMaster 3000s can tell you the optimal pH of a reagent's reaction with their analyze function.
-Eigenstasium's wild ride can be halted by taking more Eigenstasium, Bluespace dust, or Stabilizing agent.
-Exact organ health values can be determined by using a health analyzer while Technetium 99 is in their system.
-Inverse Neurine will not delete an imaginary friend. Once a friend, always a friend!
-Merge my PRs!
-Nutriment can be created in the lab by failing food related reactions.
-Oculine slightly improves your eyesight while it's in your system, to a degree based on its purity.
-Overdosing on Mannitol will give you pro tips from your newfound enlightenment. Perhaps you know that already, though!
-Purity isn't that scary, I promise!
-The information depth of pH meter readouts can be reduced by using it in hand!
-The longer synthtissue has been growing, the more stuff it can do!
-Thermometers crafted in the chemistry section will let you detect the temperature of anything that has a reagent temperature. This includes people too!
-Turning sugar into caramel before attempting to make Eigenstasium makes it much easier to create.
+100% чистый инакузиат позволяет слышать шёпот на расстоянии, пока находится в вашей системе!
+Реакцию можно замедлить, охладив колбу, в которой она происходит!
+Химические анализаторы сканируют не только pH. Они могут показать чистоту каждого реагента.
+ХимМастер 3000 может показать оптимальный pH для реакции реагента с помощью функции анализа.
+Безумные качели эйгенстазиума можно остановить, приняв больше эйгенстазиума, блюспейс-пыли или стабилизирующего агента.
+Точные значения здоровья органов можно определить с помощью анализатора здоровья, пока технеций-99 находится в системе.
+Обратный нейрин не удалит воображаемого друга. Однажды подружившись — друзья навсегда!
+Мержьте мои пул-реквесты!
+Нутримент можно создать в лаборатории, провалив пищевые реакции.
+Окулин немного улучшает зрение, пока находится в вашей системе, в степени, зависящей от его чистоты.
+Передозировка маннитола даст вам про-советы от newfound просветления. Возможно, вы уже это знаете!
+Чистота не так страшна, обещаю!
+Информационная глубина показаний pH-метра может быть уменьшена при использовании его в руке!
+Чем дольше растёт синтетическая ткань, тем больше вещей она может делать!
+Термометры, созданные в химическом отделе, позволяют измерять температуру всего, что имеет температуру реагентов. Это включает и людей!
+Превращение сахара в карамель перед попыткой создания эйгенстазиума значительно облегчает его получение.

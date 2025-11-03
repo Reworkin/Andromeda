@@ -1,9 +1,10 @@
-##Listing maps here will make the shuttle not available to buy in comms console.
-##Maps must be the full path to them
-##Only shuttles with a price in the code will work with this!
-##SPECIFYING AN INVALID MAP WILL RESULT IN RUNTIMES ON GAME START
+## Чёрный список шаттлов
+## Указанные здесь шаттлы нельзя будет купить через коммуникационную консоль
+## Пути должны быть полными и точными
+## Работает только с шаттлами, имеющими цену в коде!
+## НЕВЕРНЫЕ ПУТИ ВЫЗОВУТ ОШИБКИ ПРИ ЗАПУСКЕ ИГРЫ
 
-##Station shuttles
+## Стандартные шаттлы станции
 #_maps/shuttles/emergency_birdboat.dmm
 #_maps/shuttles/emergency_box.dmm
 #_maps/shuttles/emergency_delta.dmm
@@ -11,7 +12,7 @@
 #_maps/shuttles/emergency_mini.dmm
 #_maps/shuttles/emergency_pubby.dmm
 
-##Others
+## Особые шаттлы
 #_maps/shuttles/emergency_arena.dmm
 #_maps/shuttles/emergency_asteroid.dmm
 #_maps/shuttles/emergency_bar.dmm

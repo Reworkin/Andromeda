@@ -1,201 +1,154 @@
 # tgui
 
-## Introduction
+## Введение
 
-tgui is a robust user interface framework of /tg/station.
+tgui — это надежный фреймворк пользовательского интерфейса, используемый на /tg/station.
 
-tgui is very different from most UIs you will encounter in BYOND programming. It
-is heavily reliant on Javascript and web technologies as opposed to DM. If you
-are familiar with NanoUI (a library which can be found on almost every other
-SS13 codebase), tgui should be fairly easy to pick up.
+tgui сильно отличается от большинства UI, с которыми вы сталкивались в программировании на BYOND. Он в значительной степени полагается на JavaScript и веб-технологии, в отличие от DM. Если вы знакомы с NanoUI (библиотека, которую можно найти почти в каждой другой кодовой базе SS13), изучить tgui должно быть довольно легко.
 
-## Learn tgui
+## Изучение tgui
 
-People come to tgui from different backgrounds and with different learning
-styles. Whether you prefer a more theoretical or a practical approach, we hope
-you’ll find this section helpful.
+Люди приходят к tgui с разным бэкграундом и разными стилями обучения. Независимо от того, предпочитаете ли вы более теоретический или практический подход, мы надеемся, что этот раздел будет вам полезен.
 
-### Practical Tutorial
+### Практическое руководство
 
-If you are completely new to frontend and prefer to **learn by doing**, start
-with our [practical tutorial](docs/tutorial-and-examples.md).
+Если вы совершенно новичок во фронтенде и предпочитаете **учиться на практике**, начните с нашего [практического руководства](docs/tutorial-and-examples.md).
 
-### Guides
+### Гайды
 
-This project uses React. Take your time to read the guide:
+Этот проект использует React. Не торопитесь, чтобы прочитать руководство:
 
-- [React guide](https://react.dev/learn)
+- [Руководство по React](https://react.dev/learn)
 
-If you were already familiar with an older, Ractive-based tgui and want to
-translate concepts between old and new tgui, read this
-[interface conversion guide](docs/converting-old-tgui-interfaces.md).
+Если вы уже были знакомы со старой версией tgui на основе Ractive и хотите перенести концепции между старой и новой tgui, прочтите это [руководство по конвертации интерфейсов](docs/converting-old-tgui-interfaces.md).
 
-### Other Documentation
+### Другая документация
 
-- [Component Reference](https://tgstation.github.io/tgui-core/?path=/docs/components-animatednumber--docs) - UI building blocks
-- [Tgui Core](https://github.com/tgstation/tgui-core) - The component library for tgui.
-- [Using TGUI and Byond API for custom HTML popups](docs/tgui-for-custom-html-popups.md)
-- [Chat Embedded Components](docs/chat-embedded-components.md)
-- [Writing Tests](docs/writing-tests.md)
+- [Справочник компонентов](https://tgstation.github.io/tgui-core/?path=/docs/components-animatednumber--docs) — Базовые строительные блоки UI
+- [Tgui Core](https://github.com/tgstation/tgui-core) — Библиотека компонентов для tgui.
+- [Использование TGUI и Byond API для пользовательских HTML-всплывающих окон](docs/tgui-for-custom-html-popups.md)
+- [Компоненты, встроенные в чат](docs/chat-embedded-components.md)
+- [Написание тестов](docs/writing-tests.md)
 
-## Pre-requisites
+## Предварительные требования
 
-If you are using the tooling provided in this repo, everything is included! Feel
-free to skip this step.
+Если вы используете инструменты, предоставленные в этом репозитории, всё включено! Можете смело пропустить этот шаг.
 
-However, if you want finer control over the installation or build process, you
-will need these:
+Однако, если вам нужен более детальный контроль над процессом установки или сборки, вам понадобится следующее:
 
 - [Node v22.11+](https://nodejs.org/en/download/)
-  - **LTS** release is recommended instead of latest
-  - **DO NOT install Chocolatey if Node installer asks you to!**
+  - Рекомендуется использовать **LTS**-релиз вместо последней версии.
+  - **НЕ УСТАНАВЛИВАЙТЕ Chocolatey, если установщик Node предложит это сделать!**
 - [Yarn v4.8.1+](https://yarnpkg.com/getting-started/install)
-  - Yarn is normally installed with corepack.
+  - Yarn обычно устанавливается с помощью corepack.
 
-## Usage
+## Использование
 
-**Via provided cmd scripts (Windows)**:
+**С помощью предоставленных cmd-скриптов (Windows)**:
 
-- `bin/tgui-build` - Build tgui in production mode and run a full suite of code
-  checks.
-- `bin/tgui-dev` - Launch a development server.
-  - `bin/tgui-dev --reload` - Reload byond cache once.
-  - `bin/tgui-dev --debug` - Run server with debug logging enabled.
+- `bin/tgui-build` — Собрать tgui в режиме production и запустить полный набор проверок кода.
+- `bin/tgui-dev` — Запустить сервер для разработки (dev-сервер).
+  - `bin/tgui-dev --reload` — Перезагрузить кеш BYOND один раз.
+  - `bin/tgui-dev --debug` — Запустить сервер с включенным отладочным логированием.
 
-> To open a CMD or PowerShell window in any open folder, right click **while
-> holding Shift** on any free space in the folder, then click on either
-> `Open command window here` or `Open PowerShell window here`.
+> Чтобы открыть окно CMD или PowerShell в любой открытой папке, щелкните правой кнопкой мыши **удерживая Shift** на любом свободном месте в папке, затем нажмите либо `Open command window here`, либо `Open PowerShell window here`.
 
-**Via Juke Build (cross-platform(No))**:
+**Через Juke Build (кроссплатформенно(Нет))**:
 
-- `tools/build/build.sh tgui` - Build tgui in production mode.
-- `tools/build/build.sh tgui-dev` - Build tgui in production mode.
-  - `tools/build/build.sh tgui-dev --reload` - Reload byond cache once.
-  - `tools/build/build.sh tgui-dev --debug` - Run server with debug logging
-    enabled.
-- `tools/build/build.sh tgui-lint` - Show (and auto-fix) problems with the code.
-- `tools/build/build.sh tgui-test` - Run unit and integration tests.
-- `tools/build/build.sh tgui-analyze` - Run a bundle analyzer.
-- `tools/build/build.sh tgui-clean` - Clean up tgui folder.
+- `tools/build/build.sh tgui` — Собрать tgui в режиме production.
+- `tools/build/build.sh tgui-dev` — Собрать tgui в режиме для разработки (development).
+  - `tools/build/build.sh tgui-dev --reload` — Перезагрузить кеш BYOND один раз.
+  - `tools/build/build.sh tgui-dev --debug` — Запустить сервер с включенным отладочным логированием.
+- `tools/build/build.sh tgui-lint` — Показать (и автоматически исправить) проблемы в коде.
+- `tools/build/build.sh tgui-test` — Запустить модульные и интеграционные тесты.
+- `tools/build/build.sh tgui-analyze` — Запустить анализатор бандла (bundle analyzer).
+- `tools/build/build.sh tgui-clean` — Очистить папку tgui.
 
-> With Juke Build, you can run multiple targets together, e.g.:
+> С Juke Build вы можете запускать несколько целей вместе, например:
 >
 > ```
 > tools/build/build.sh tgui tgui-lint tgui-tsc tgui-test
 > ```
 
-**Via Bun (cross-platform)**:
+**Через Bun (кроссплатформенно)**:
 
-Run `bun install` once to install tgui dependencies.
+Выполните `bun install` один раз, чтобы установить зависимости tgui.
 
-- `bun tgui:build` - Build tgui in production mode.
-  - `bun tgui:build [options]` - Build tgui with custom webpack options.
-- `bun tgui:dev` - Launch a development server.
-  - `bun tgui:dev --reload` - Reload byond cache once.
-  - `bun tgui:dev --debug` - Run server with debug logging enabled.
-- `bun tgui:lint` - Show (and auto-fix) problems with the code.
-- `bun tgui:tsc` - Check code with TypeScript compiler.
-- `bun tgui:test` - Run unit and integration tests.
-- `bun tgui:analyze` - Run a bundle analyzer.
-- `bun tgfont:build` - Build icon fonts.
+- `bun tgui:build` — Собрать tgui в режиме production.
+  - `bun tgui:build [options]` — Собрать tgui с пользовательскими опциями webpack.
+- `bun tgui:dev` — Запустить сервер для разработки (dev-сервер).
+  - `bun tgui:dev --reload` — Перезагрузить кеш BYOND один раз.
+  - `bun tgui:dev --debug` — Запустить сервер с включенным отладочным логированием.
+- `bun tgui:lint` — Показать (и автоматически исправить) проблемы в коде.
+- `bun tgui:tsc` — Проверить код с помощью компилятора TypeScript.
+- `bun tgui:test` — Запустить модульные и интеграционные тесты.
+- `bun tgui:analyze` — Запустить анализатор бандла (bundle analyzer).
+- `bun tgfont:build` — Собрать шрифты иконок.
 
-## Important Memo
+## Важное примечание
 
-Remember to always run a full build of tgui before submitting a PR, because it
-comes with the full suite of CI checks, and runs much faster on your computer
-than on GitHub servers. It will save you some time and possibly a few broken
-commits! Address the issues that are reported by the tooling as much as
-possible, because maintainers will beat you with a ruler and force you to
-address them anyway (unless it's a false positive or something unfixable).
+Помните, что всегда нужно выполнять полную сборку tgui перед отправкой PR (Pull Request), потому что она сопровождается полным набором проверок CI и работает на вашем компьютере намного быстрее, чем на серверах GitHub. Это сэкономит вам время и, возможно, несколько неудачных коммитов! Исправляйте проблемы, о которых сообщают инструменты, насколько это возможно, потому что сопровождающие (maintainers) будут бить вас линейкой и всё равно заставят вас их исправить (если это не ложное срабатывание или что-то неустранимое).
 
-## Troubleshooting
+## Решение проблем
 
-**Development server isn't attaching to the game**
+**Сервер разработки не подключается к игре**
 
-Make sure that you have a tgui window open before you run the dev server. Then,
-once it's running, you may need to press F5 to refresh the page.
+Убедитесь, что у вас открыто окно tgui, прежде чем запускать dev-сервер. Затем, когда он запустится, вам, возможно, потребуется нажать F5 для обновления страницы.
 
-**Development server is crashing**
+**Сервер разработки вылетает (crashing)**
 
-Make sure path to your working directory does not contain spaces, special
-unicode characters, exclamation marks or any other special symbols. If so, move
-codebase to a location which does not contain these characters.
+Убедитесь, что путь к вашей рабочей директории не содержит пробелов, специальных символов Юникода, восклицательных знаков или любых других специальных символов. Если это не так, переместите кодобазу в место, которое не содержит этих символов.
 
-**Development server doesn't find my BYOND cache!**
+**Сервер разработки не находит мой кеш BYOND!**
 
-This happens if your Documents folder in Windows has a custom location, for
-example in `E:\Libraries\Documents`. Development server tries its best to find
-this non-standard location (searches for a Windows Registry key), but it can
-fail. You have to run the dev server with an additional environmental variable,
-with a full path to BYOND cache.
+Это происходит, если ваша папка «Документы» в Windows имеет нестандартное расположение, например, в `E:\Libraries\Documents`. Сервер разработки делает всё возможное, чтобы найти это нестандартное расположение (ищет ключ в реестре Windows), но может и не найти. Вам нужно запустить dev-сервер с дополнительной переменной окружения, указывающей полный путь к кешу BYOND.
 
 ```
 BYOND_CACHE="E:/Libraries/Documents/BYOND/cache"
 ```
 
-**Webpack errors out with some cryptic messages!**
 
-> Example: `No template for dependency: PureExpressionDependency`
+**Webpack выдаёт ошибку с какими-то загадочными сообщениями!**
 
-Webpack stores its cache on disk since tgui 4.3, and it is very sensitive to
-build configuration. So if you update webpack, or share the same cache directory
-between development and production build, it will start hallucinating.
+> Пример: `No template for dependency: PureExpressionDependency`
 
-To fix this kind of problem, run `bin/tgui --clean` and try again.
+Начиная с tgui 4.3, Webpack хранит свой кеш на диске, и он очень чувствителен к конфигурации сборки. Поэтому, если вы обновите webpack или будете использовать один и тот же кеш для сборки в режимах development и production, он начнёт «глючить» (hallucinating).
 
-## Dev Server Tools
+Чтобы устранить проблему такого рода, выполните `bin/tgui --clean` и попробуйте снова.
 
-When developing with `tgui-dev-server`, you will have access to certain
-development only features.
+## Инструменты Dev-сервера
 
-**Debug Logs.** When running server via `bin/tgui --dev --debug`, server will
-print debug logs and time spent on rendering. Use this information to optimize
-your code, and try to keep re-renders below 16ms.
+При разработке с помощью `tgui-dev-server` у вас будет доступ к некоторым функциям, доступным только для разработки.
 
-**Kitchen Sink.** Press `F12` or click the green bug to open the KitchenSink
-interface. This interface is a playground to test various tgui components.
+**Отладочные логи (Debug Logs).** При запуске сервера через `bin/tgui --dev --debug` сервер будет выводить отладочные логи и время, затраченное на рендеринг. Используйте эту информацию для оптимизации вашего кода и старайтесь сохранять время повторного рендера ниже 16 мс.
 
-**Layout Debugger.** Press `F11` to toggle the _layout debugger_. It will show
-outlines of all tgui elements, which makes it easy to understand how everything
-comes together, and can reveal certain layout bugs which are not normally
-visible.
+**Кухонная раковина (Kitchen Sink).** Нажмите `F12` или нажмите на зеленого жучка, чтобы открыть интерфейс KitchenSink. Этот интерфейс представляет собой полигон для тестирования различных компонентов tgui.
 
-## Browser Developer Tools
+**Отладчик макета (Layout Debugger).** Нажмите `F11`, чтобы переключить *отладчик макета*. Он покажет контуры всех элементов tgui, что позволяет легко понять, как всё соединяется вместе, и может выявить определённые ошибки вёрстки, которые обычно не видны.
 
-WebView2 is chromium based, so you can access the dev tools much easier than its
-predecessor. Simply go to debug tab in your stat panel and click "Allow Browser
-Inspection". You can then f12 to open the standard chrome dev tools.
+## Инструменты разработчика браузера
 
-## Project Structure
+WebView2 основан на Chromium, поэтому получить доступ к инструментам разработчика стало намного проще, чем у его предшественника. Просто перейдите на вкладку отладки (debug) в панели состояния (stat panel) и нажмите «Allow Browser Inspection». Затем вы можете нажать F12, чтобы открыть стандартные инструменты разработчика Chrome.
 
-- `/packages` - Each folder here represents a self-contained Node module.
-- `/packages/common` - Helper functions that are used throughout all packages.
-- `/packages/tgui/index.ts` - Application entry point.
-- `/packages/tgui/interfaces` - Actual in-game interfaces.
-- `/packages/tgui/layouts` - Root level UI components, that affect the final
-  look and feel of the browser window. These hold various window elements, like
-  the titlebar and resize handlers, and control the UI theme.
-- `/packages/tgui/routes.ts` - This is where tgui decides which interface to
-  pull and render.
-- `/packages/tgui/styles/main.scss` - CSS entry point.
-- `/packages/tgui/styles/functions.scss` - Useful SASS functions. Stuff like
-  `lighten`, `darken`, `luminance` are defined here.
-- `/packages/tgui/styles/atomic` - Atomic CSS classes. These are very simple,
-  tiny, reusable CSS classes which you can use and combine to change appearance
-  of your elements. Keep them small.
-- `/packages/tgui/styles/interfaces` - Custom stylesheets for your interfaces.
-  Add stylesheets here if you really need a fine control over your UI styles.
-- `/packages/tgui/styles/layouts` - Layout-related styles.
-- `/packages/tgui/styles/themes` - Contains themes that you can use in tgui.
-  Each theme must be registered in `/packages/tgui/index.ts` file.
+## Структура проекта
 
-## License
+- `/packages` — Каждая папка здесь представляет собой автономный Node-модуль.
+- `/packages/common` — Вспомогательные функции, которые используются во всех пакетах.
+- `/packages/tgui/index.ts` — Точка входа в приложение.
+- `/packages/tgui/interfaces` — Фактические внутриигровые интерфейсы.
+- `/packages/tgui/layouts` — Компоненты UI корневого уровня, которые влияют на окончательный внешний вид и поведение окна браузера. Они содержат различные элементы окна, такие как строка заголовка и обработчики изменения размера, и управляют темой UI.
+- `/packages/tgui/routes.ts` — Здесь tgui решает, какой интерфейс нужно загрузить и отрендерить.
+- `/packages/tgui/styles/main.scss` — Точка входа для CSS.
+- `/packages/tgui/styles/functions.scss` — Полезные SASS-функции. Здесь определены такие функции, как `lighten`, `darken`, `luminance`.
+- `/packages/tgui/styles/atomic` — Атомарные CSS-классы. Это очень простые, маленькие, многократно используемые CSS-классы, которые вы можете использовать и комбинировать для изменения внешнего вида ваших элементов. Держите их небольшими.
+- `/packages/tgui/styles/interfaces` — Пользовательские таблицы стилей для ваших интерфейсов. Добавляйте таблицы стилей сюда, если вам действительно нужен детальный контроль над стилями вашего UI.
+- `/packages/tgui/styles/layouts` — Стили, связанные с макетом.
+- `/packages/tgui/styles/themes` — Содержит темы, которые вы можете использовать в tgui. Каждая тема должна быть зарегистрирована в файле `/packages/tgui/index.ts`.
 
-Source code is covered by /tg/station's parent license - **AGPL-3.0** (see the
-main [README](../README.md)), unless otherwise indicated.
+## Лицензия
 
-Some files are annotated with a copyright header, which explicitly states the
-copyright holder and license of the file. Most of the core tgui source code is
-available under the **MIT** license.
+Исходный код распространяется под родительской лицензией /tg/station — **AGPL-3.0** (см. основной [README](../README.md)), если не указано иное.
 
-The Authors retain all copyright to their respective work here submitted.
+Некоторые файлы снабжены заголовком об авторском праве, в котором явно указаны правообладатель и лицензия файла. Большая часть основного исходного кода tgui доступна по лицензии **MIT**.
+
+Авторы сохраняют за собой все авторские права на представленные здесь работы.

@@ -1,106 +1,106 @@
-### Config Flags for logging, compatibility flags are at the top
+### Флаги конфигурации для логирования. Флаги совместимости находятся вверху.
 
-## Whether or not admin/adminprivate logging is also sent to LOG_CATEGORY_GAME for legacy log parsers
+## Будет ли логирование действий админов и их личных сообщений также отправляться в LOG_CATEGORY_GAME для совместимости со старыми парсерами логов.
 LOGGING_COMPAT_ADMINPRIVATE
 
-## Should we also log entries as human readable
+## Следует ли также записывать записи логов в удобочитаемом формате.
 LOG_AS_HUMAN_READABLE
 
-### Actual logging flags
+### Непосредственно флаги логирования
 
-## log client access (logon/logoff)
+## Логировать вход и выход клиентов (подключение/отключение)
 LOG_ACCESS
 
-## log admin actions
+## Логировать действия администраторов
 LOG_ADMIN
 
-## log admin chat
+## Логировать чат администраторов
 LOG_ADMINCHAT
 
-## log asset debug logs
+## Логировать отладочную информацию ассетов
 # LOG_ASSET
 
-## log attack messages
+## Логировать сообщения об атаках
 LOG_ATTACK
 
-## log economy actions
+## Логировать действия в экономике
 LOG_ECON
 
-## log emotes
+## Логировать эмоции (emotes)
 LOG_EMOTE
 
-## log ghost polling
+## Логировать опросы призраков (ghost polling)
 LOG_GHOST_POLL
 
-## log game actions (start of round, results, etc.)
+## Логировать игровые события (начало раунда, результаты и т.д.)
 LOG_GAME
 
-## log job divide debugging information
+## Логировать отладочную информацию о распределении профессий
 # LOG_JOB_DEBUG
 
-## log crew manifest to separate file
+## Логировать манифест экипажа в отдельный файл
 LOG_MANIFEST
 
-## log mecha actions
+## Логировать действия мехов
 LOG_MECHA
 
-## log OOC channel
+## Логировать OOC-канал (Out-of-Character)
 LOG_OOC
 
-## log pda messages
+## Логировать сообщения КПК (PDA)
 LOG_PDA
 
-## Enable logging pictures
+## Включить логирование изображений
 LOG_PICTURES
 
-## log prayers
+## Логировать молитвы (prayers)
 LOG_PRAYER
 
-## log client Say
+## Логировать речь игроков (Say)
 LOG_SAY
 
-## log shuttle actions
+## Логировать действия шаттлов
 LOG_SHUTTLE
 
-## log silicons
+## Логировать действия ИИ и киборгов (silicons)
 LOG_SILICON
 
-## log speech indicators
+## Логировать индикаторы речи
 LOG_SPEECH_INDICATORS
 
-## Enables log entries for logins that failed due to suspicious circumstances (banned player, CID randomiser, spoofed BYOND version, etc.) to a dedicated file.
+## Включает запись в лог попыток входа, которые failed из-за подозрительных обстоятельств (забаненный игрок, рандомизатор CID, поддельная версия BYOND и т.д.), в выделенный файл.
 LOG_SUSPICIOUS_LOGIN
 
-## log telecomms messages
+## Логировать сообщения телекоммуникаций
 LOG_TELECOMMS
 
-## Log all timers on timer auto reset
+## Логировать все таймеры при автоматическом сбросе таймера (bucket reset)
 # LOG_TIMERS_ON_BUCKET_RESET
 
-## log tool interactions [/atom/proc/tool_act]
+## Логировать взаимодействия с инструментами [/atom/proc/tool_act]
 LOG_TOOLS
 
-## log traitor objectives
+## Логировать цели предателей (traitor objectives)
 LOG_TRAITOR
 
-## enables use of the proc twitterize() that lets you take a large list of strings and turn it into a JSON file of tweet sized strings.
-## As an example of how this could be """useful""" look towards Poly (https://twitter.com/Poly_the_Parrot)
+## включает использование процедуры twitterize(), которая позволяет взять большой список строк и превратить его в JSON-файл со строками размером с твит.
+## В качестве примера, как это может быть """полезно""", посмотрите на Поли (https://twitter.com/Poly_the_Parrot)
 # LOG_TWITTER
 
-## log uplink purchases
+## Логировать покупки в аплинке (uplink)
 LOG_UPLINK
 
-## log virus and actions
+## Логировать вирусы и действия с ними
 LOG_VIRUS
 
-## log player votes
+## Логировать голоса игроков
 LOG_VOTE
 
-## log client Whisper
+## Логировать шёпот игроков (Whisper)
 LOG_WHISPER
 
-## log all world.Topic() calls
+## Логировать все вызовы `world.Topic()`
 LOG_WORLD_TOPIC
 
-## log manual target zone switching
+## Логировать ручное переключение зоны прицеливания
 LOG_ZONE_SWITCH

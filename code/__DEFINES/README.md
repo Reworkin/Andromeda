@@ -1,13 +1,15 @@
-This folder is full of #define statements. They are similar to constants,
-but must come before any code that references them, and they do not take up
-memory the way constants do.
+Эта папка содержит директивы #define. Они похожи на константы,
+но должны объявляться ДО любого кода, который на них ссылается, и они
+не занимают память, как это делают обычные константы.
 
-The values in this folder are NOT options. They are not for hosts to play with.
-Some of the values are arbitrary and only need to be different from similar constants;
-for example, the genetic mutation numbers in genetics.dm mean nothing, but MUST be distinct.
+Значения в этой папке — НЕ настройки. Они не предназначены для экспериментов хостов.
+Некоторые значения произвольны и должны лишь отличаться от похожих констант;
+например, числовые коды генетических мутаций в genetics.dm ничего не значат, но ДОЛЖНЫ быть уникальными.
 
-It is wise not to touch them unless you understand what they do, where they're used,
-and most importantly,
-how to undo your changes if you screw it up.
+Настоятельно не рекомендуется изменять их, если вы не понимаете:
+— что они делают
+— где используются
+и самое главное:
+— как откатить изменения, если вы что-то испортите.
 
-- Sayu
+— Sayu

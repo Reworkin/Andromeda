@@ -1,39 +1,39 @@
 {
 	"do_something": [
-		"CLEAN YOUR ROOM THIS INSTANT!",
-		"DON'T SIT THAT CLOSE TO THE TV!",
-		"FOR GOD'S SAKE, GO TAKE A SHOWER!!",
-		"IT'S TIME TO WAKE UP FOR SCHOOL!!",
-		"PAUSE THAT ONLINE GAME! NOW!",
-		"PUT SOME CLOTHES ON! YOU'LL CATCH A COLD!",
-		"STOP ASKING FOR MONEY, I'M NOT AN ATM!",
-		"WATCH YOUR MOUTH, CHILD!!",
-		"WHY DON'T YOU ANSWER MY PHONE CALLS?!",
-		"YOU SHOULD @pick(verb) YOUR @pick(relative) ONCE IN A WHILE!"
+		"НЕМЕДЛЕННО УБЕРИСЬ В СВОЕЙ КОМНАТЕ!",
+		"НЕ СИДИ ТАК БЛИЗКО К ТЕЛЕВИЗОРУ!",
+		"РАДИ БОГА, ИДИ ПРИМИ ДУШ!!",
+		"ПОРА ВСТАВАТЬ, В ШКОЛУ!!",
+		"ПОСТАВЬ ЭТУ СВОЮ ОНЛАЙН-ИГРУ НА ПАУЗУ! НЕМЕДЛЕННО!",
+		"ОДЕНЬСЯ! ПРОСТУДИШЬСЯ!",
+		"ХВАТИТ ПРОСИТЬ ДЕНЕГ, Я НЕ БАНКОМАТ!",
+		"ПРИКРОЙ ВАРЕЖКУ, ДИТЯ!!",
+		"ПОЧЕМУ ТЫ НЕ БЕРЕШЬ ТРУБКУ?!",
+		"ТЫ БЫ ХОТЯ БЫ ИНОГДА @pick(verb) СВОИХ @pick(relative)!"
 	],
 
 	"be_upset": [
-		"BECAUSE I SAID SO!",
-		"I DON'T CARE WHAT YOU SAY!",
-		"I'M NOT ASKING; I'M TELLING!!",
-		"I WASN'T BORN YESTERDAY!",
-		"MONEY DOESN'T GROW ON TREES!",
-		"WHAT DID I DO TO DESERVE A KID LIKE THIS...",
-		"USELESS!",
-		"YOU INSULT YOUR GRANDPARENTS!"
+		"ПОТОМУ ЧТО Я ТАК СКАЗАЛ!",
+		"МНЕ НЕ ВАЖНО, ЧТО ТЫ ТАМ ГОВОРИШЬ!",
+		"Я НЕ СПРАШИВАЮ; Я ПРИКАЗЫВАЮ!!",
+		"Я ВЧЕРА НА ДЕРЕВЕ НЕ РОДИЛСЯ!",
+		"ДЕНЬГИ НА ДЕРЕВЕ НЕ РАСТУТ!",
+		"ЗА ЧТО МНЕ ТАКОЙ РЕБЕНОК...",
+		"БЕСПОЛЕЗНЫЙ!",
+		"ТЫ ОСКОРБЛЯЕШЬ СВОИХ БАБУШКУ С ДЕДУШКОЙ!"
 	],
 
 	"get_reprimanded": [
-		"I BROUGHT YOU INTO THIS WORLD, I CAN TAKE YOU OUT!!!",
-		"I'M GOING TO THROW A FLIP-FLOP AT YOU!!",
-		"NO VIDEOGAMES FOR THE REST OF THE DAY!",
-		"WAIT UNTIL YOUR FATHER GETS HOME!",
-		"YOU'LL THANK ME ONE DAY!",
-		"YOU'RE DISOWNED!!!",
-		"YOU'RE GROUNDED!!"
+		"Я ТЕБЯ НА ЭТОТ СВЕТ ПОРОДИЛ, Я ТЕБЯ И ОТСЮДА ЗАБЕРУ!!!",
+		"СЕЙЧАС ШЛЁПНЕЙ ЗАКИДАЮ!!",
+		"НИКАКИХ ВИДЕОИГР ДО КОНЦА ДНЯ!",
+		"СЕЙЧАС ПАПА ПРИДЁТ, ОН ТЕБЕ УСТРОИТ!",
+		"КОГДА-НИБУДЬ ТЫ МНЕ ЗА ЭТО СКАЖЕШЬ СПАСИБО!",
+		"Я ТЕБЯ ОТРЕКАЮСЬ!!!",
+		"ТЫ У МЕНЯ НАКАЗАН!!"
 	],
 
-	"verb": ["CALL", "HELP", "VISIT"],
+	"verb": ["ЗВАЛ", "ПОМОГАЛ", "НАВЕЩАЛ"],
 
-	"relative": ["AUNT AND UNCLE", "DAD", "GRANDPARENTS", "MOM"]
+	"relative": ["ТЁТЮ С ДЯДЕЙ", "РОДИТЕЛЕЙ", "БАБУШКУ С ДЕДУШКОЙ"]
 }

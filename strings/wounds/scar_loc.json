@@ -1,60 +1,60 @@
 {
-	"": ["general area"],
+	"": ["общая область"],
 
 	"head": [
-		"@pick(left_right)eyebrow",
-		"@pick(left_right)cheekbone",
-		"nose",
-		"neck",
-		"throat",
-		"jawline",
-		"entire face"
+		"@pick(left_right)бровь",
+		"@pick(left_right)скула",
+		"нос",
+		"шея",
+		"горло",
+		"линия подбородка",
+		"всё лицо"
 	],
 
 	"chest": [
-		"upper chest",
-		"@pick(upper_lower)abdomen",
-		"midsection",
-		"collarbone",
-		"lower back"
+		"верхняя часть груди",
+		"@pick(upper_lower)живот",
+		"талия",
+		"ключица",
+		"поясница"
 	],
 
 	"l_arm": [
-		"@pick(inner_outer)left forearm",
-		"@pick(inner_outer)left wrist",
-		"left elbow",
-		"left bicep",
-		"left shoulder",
-		"left hand"
+		"@pick(inner_outer)левое предплечье",
+		"@pick(inner_outer)левое запястье",
+		"левый локоть",
+		"левый бицепс",
+		"левое плечо",
+		"левая кисть"
 	],
 
 	"r_arm": [
-		"@pick(inner_outer)right forearm",
-		"@pick(inner_outer)right wrist",
-		"right elbow",
-		"right bicep",
-		"right shoulder",
-		"right hand"
+		"@pick(inner_outer)правое предплечье",
+		"@pick(inner_outer)правое запястье",
+		"правый локоть",
+		"правый бицепс",
+		"правое плечо",
+		"правая кисть"
 	],
 
 	"l_leg": [
-		"@pick(inner_outer)left thigh",
-		"@pick(free_move)left calf",
-		"@pick(free_move)left hip",
-		"left kneecap",
-		"@pick(free_move)left shin"
+		"@pick(inner_outer)левое бедро",
+		"@pick(free_move)левая икра",
+		"@pick(free_move)левый тазобедренный сустав",
+		"левая коленная чашечка",
+		"@pick(free_move)левая голень"
 	],
 
 	"r_leg": [
-		"@pick(inner_outer)right thigh",
-		"@pick(free_move)right calf",
-		"@pick(free_move)right hip",
-		"right kneecap",
-		"@pick(free_move)right shin"
+		"@pick(inner_outer)правое бедро",
+		"@pick(free_move)правая икра",
+		"@pick(free_move)правый тазобедренный сустав",
+		"правая коленная чашечка",
+		"@pick(free_move)правая голень"
 	],
 
-	"inner_outer": ["inner ", "outer ", "", ""],
-	"upper_lower": ["upper ", "lower ", "", ""],
-	"free_move": ["inner ", "outer ", "upper ", "lower ", "", ""],
-	"left_right": ["left ", "right "]
+	"inner_outer": ["внутренняя сторона ", "внешняя сторона ", "", ""],
+	"upper_lower": ["верхняя часть ", "нижняя часть ", "", ""],
+	"free_move": ["внутренняя ", "внешняя ", "верхняя ", "нижняя ", "", ""],
+	"left_right": ["левая ", "правая "]
 }

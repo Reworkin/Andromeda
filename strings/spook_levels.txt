@@ -1,30 +1,30 @@
-moderate
-regular
-okay
-somewhat irregular
-weird
-offputting
-ungodly
-off the charts
-earth-shattering
-station-shaking
-REDACTED
-annoying
-nuisance heavy
-intern
-clown
-Poly
-low
-medium
-high
-medium rare
-golem
-cheesy horror flick
-SKELLY TONE
-chair-moving
-hair-raising
-RUNTIME ERROR
-help
-IT COMES
-NAR
-hi
+умеренный
+обычный
+нормальный
+слегка нерегулярный
+странный
+отталкивающий
+нечеловеческий
+зашкаливающий
+землетрясный
+станционносотрясающий
+ЗАЧЕРКНУТО
+раздражающий
+назойливый
+стажёр
+клоун
+Поли
+низкий
+средний
+высокий
+с кровью
+голем
+сырный хоррор
+СКЕЛЕТОНСКИЙ ТОН
+передвижение стульев
+волосы дыбом
+ОШИБКА ВЫПОЛНЕНИЯ
+помогите
+ОНО ИДЁТ
+НАР
+привет
