@@ -456,7 +456,7 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 
 
 
-	var/msg = "Initializations complete within [time] second[time == 1 ? "" : "s"]!"
+	var/msg = "Инициализация завершена за [time] секунд[time == 1 ? "у" : "ы"]!"
 	to_chat(world, span_boldannounce("[msg]"), MESSAGE_TYPE_DEBUG)
 	log_world(msg)
 
@@ -535,19 +535,19 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 
 	switch(result)
 		if(SS_INIT_FAILURE)
-			message_prefix = "Failed to initialize [subsystem.name] subsystem after"
+			message_prefix = "Не удалось инициализировать подсистему [subsystem.name] после"
 			chat_warning = TRUE
 		if(SS_INIT_SUCCESS, SS_INIT_NO_MESSAGE)
-			message_prefix = "Initialized [subsystem.name] subsystem within"
+			message_prefix = "Подсистема [subsystem.name] инициализирована за"
 		if(SS_INIT_NO_NEED)
 			// This SS is disabled or is otherwise shy.
 			return
 		else
 			// SS_INIT_NONE or an invalid value.
-			message_prefix = "Initialized [subsystem.name] subsystem with errors within"
+			message_prefix = "Подсистема [subsystem.name] инициализирована с ошибками за"
 			chat_warning = TRUE
 
-	var/message = "[message_prefix] [seconds] second[seconds == 1 ? "" : "s"]!"
+	var/message = "[message_prefix] [seconds] секунд[seconds == 1 ? "у" : "ы"]!"
 	var/chat_message = chat_warning ? span_boldwarning(message) : span_boldannounce(message)
 
 	if(result != SS_INIT_NO_MESSAGE)

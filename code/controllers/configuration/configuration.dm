@@ -202,7 +202,7 @@
 		return
 	stack = stack + filename_to_test
 
-	log_config("Loading config file [filename]...")
+	log_config("Загрузка конфигурационного файла [filename]...")
 	var/list/lines = world.file2list("[directory]/[filename]")
 	var/list/_entries = entries
 	for(var/L in lines)
@@ -251,7 +251,7 @@
 
 		var/datum/config_entry/E = _entries[entry]
 		if(!E)
-			log_config("Unknown setting in configuration: '[entry]'")
+			log_config("Неизвестный параметр в конфигурации: '[entry]'")
 			continue
 
 		if(lockthis)
@@ -375,7 +375,7 @@ Example config:
 			policy = parsed
 
 /datum/controller/configuration/proc/loadmaplist(filename)
-	log_config("Loading config file [filename]...")
+	log_config("Загрузка конфигурационного файла [filename]...")
 	filename = "[directory]/[filename]"
 	var/list/Lines = world.file2list(filename)
 
@@ -444,7 +444,7 @@ Example config:
 		load_legacy_chat_filter()
 		return
 
-	log_config("Loading config file word_filter.toml...")
+	log_config("Загрузка конфигурационного файла word_filter.toml...")
 	var/list/result = rustg_raw_read_toml_file("[directory]/word_filter.toml")
 	if(!result["success"])
 		var/message = "The word filter is not configured correctly! [result["content"]]"
@@ -466,7 +466,7 @@ Example config:
 	if (!fexists("[directory]/in_character_filter.txt"))
 		return
 
-	log_config("Loading config file in_character_filter.txt...")
+	log_config("Загрузка конфигурационного файла in_character_filter.txt...")
 
 	ic_filter_reasons = list()
 	ic_outside_pda_filter_reasons = list()

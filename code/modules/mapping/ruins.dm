@@ -213,4 +213,4 @@
 			if(R.cost > budget || R.mineral_cost > mineral_budget)
 				ruins_available -= R
 
-	log_world("[ruins_type] loader finished placing [placed_ruins]/[ruins.len] ruins with [budget] left to spend.")
+	log_world("[ruins_type] загрузчик завершил размещение [placed_ruins]/[ruins.len] руин, осталось потратить [budget].")

@@ -313,7 +313,7 @@
 
 /// Initialize RETA config values
 /proc/reta_init_config()
-	log_world("RETA: System initialized with duration=[CONFIG_GET(number/reta_duration_ds)]ds, cooldown=[CONFIG_GET(number/reta_dept_cooldown_ds)]ds, enabled=[CONFIG_GET(flag/reta_enabled)]")
+	log_world("RETA: Система инициализирована с длительностью=[CONFIG_GET(number/reta_duration_ds)]дс, откат=[CONFIG_GET(number/reta_dept_cooldown_ds)]дс, включена=[CONFIG_GET(flag/reta_enabled)]")
 
 #undef RETA_DEFAULT_DURATION_DS
 #undef RETA_DEFAULT_COOLDOWN_DS
