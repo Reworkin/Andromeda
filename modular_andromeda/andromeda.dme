@@ -21,4 +21,9 @@
 // BEGIN_INCLUDE
 #include "_modpack.dm"
 #include "_modpacks.dm"
+#include "code\_DEFINES\keybindings.dm"
+#include "code\modules\admin\admin_helpers.dm"
+#include "code\modules\communication\LOOC.dm"
+#include "code\modules\communication\whisper.dm"
+#include "code\modules\cyrillic_fixes\cyrillic_fixes.dm"
 // END_INCLUDE
