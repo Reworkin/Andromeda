@@ -86,80 +86,80 @@ export enum Direction {
 
 export type CssColor = (typeof CSS_COLORS)[number];
 
-/* IF YOU CHANGE THIS KEEP IT IN SYNC WITH CHAT CSS */
+/* ЕСЛИ ВЫ ИЗМЕНЯЕТЕ ЭТО, СОБЛЮДАЙТЕ СИНХРОНИЗАЦИЮ С CSS ЧАТА */
 export const RADIO_CHANNELS = [
   {
-    name: 'Syndicate',
+    name: 'Синдикат',
     freq: 1213,
     color: '#8f4a4b',
   },
   {
-    name: 'Red Team',
+    name: 'Красная команда',
     freq: 1215,
     color: '#ff4444',
   },
   {
-    name: 'Blue Team',
+    name: 'Синяя команда',
     freq: 1217,
     color: '#3434fd',
   },
   {
-    name: 'Green Team',
+    name: 'Зелёная команда',
     freq: 1219,
     color: '#34fd34',
   },
   {
-    name: 'Yellow Team',
+    name: 'Желтая команда',
     freq: 1221,
     color: '#fdfd34',
   },
   {
-    name: 'CentCom',
+    name: 'ЦентКом',
     freq: 1337,
     color: '#2681a5',
   },
   {
-    name: 'Supply',
+    name: 'Карго',
     freq: 1347,
     color: '#b88646',
   },
   {
-    name: 'Service',
+    name: 'Сервис',
     freq: 1349,
     color: '#6ca729',
   },
   {
-    name: 'Science',
+    name: 'Наука',
     freq: 1351,
     color: '#c68cfa',
   },
   {
-    name: 'Command',
+    name: 'Командование',
     freq: 1353,
     color: '#fcdf03',
   },
   {
-    name: 'Medical',
+    name: 'Медицинский',
     freq: 1355,
     color: '#57b8f0',
   },
   {
-    name: 'Engineering',
+    name: 'Инженерия',
     freq: 1357,
     color: '#f37746',
   },
   {
-    name: 'Security',
+    name: 'Безопасность',
     freq: 1359,
     color: '#dd3535',
   },
   {
-    name: 'AI Private',
+    name: 'ИИ Частный',
     freq: 1447,
     color: '#d65d95',
   },
   {
-    name: 'Common',
+    name: 'Общий',
     freq: 1459,
     color: '#1ecc43',
   },
