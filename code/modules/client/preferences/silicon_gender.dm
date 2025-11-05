@@ -1,13 +1,13 @@
-#define SILICON_MALE "He/Him"
-#define SILICON_FEMALE "She/Her"
-#define SILICON_PLURAL "They/Them"
-#define SILICON_NEUTER "It/Its"
+#define SILICON_MALE "Он/Его"
+#define SILICON_FEMALE "Она/Её"
+#define SILICON_PLURAL "Они/Их"
+#define SILICON_NEUTER "Оно/Его"
 
 /datum/preference/choiced/silicon_gender
 	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "silicon_gender"
-	var/static/use_character_gender = "Use character gender"
+	var/static/use_character_gender = "Использовать пол персонажа"
 	///Used to convert the read value of this preference into a gender
 	var/static/list/pronouns_to_genders = list(
 		"[SILICON_MALE]" = MALE,

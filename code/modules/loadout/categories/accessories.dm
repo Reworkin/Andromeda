@@ -1,6 +1,6 @@
 /// Accessory Items (Moves overrided items to backpack)
 /datum/loadout_category/accessories
-	category_name = "Accessory"
+	category_name = "Аксессуары"
 	category_ui_icon = FA_ICON_VEST
 	type_to_generate = /datum/loadout_item/accessory
 	tab_order = /datum/loadout_category/head::tab_order + 3
@@ -62,24 +62,3 @@
 	var/obj/item/clothing/accessory/accessory_item = equipped_item
 	accessory_item.above_suit = !!item_details[INFO_LAYER]
 	return . | ITEM_SLOT_OCLOTHING | ITEM_SLOT_ICLOTHING
-
-/datum/loadout_item/accessory/maid_apron
-	name = "Maid Apron"
-	item_path = /obj/item/clothing/accessory/maidapron
-
-/datum/loadout_item/accessory/waistcoat
-	name = "Waistcoat"
-	item_path = /obj/item/clothing/accessory/waistcoat
-
-/datum/loadout_item/accessory/pocket_protector
-	name = "Pocket Protector"
-	item_path = /obj/item/clothing/accessory/pocketprotector
-
-/datum/loadout_item/accessory/full_pocket_protector
-	name = "Pocket Protector (Filled)"
-	item_path = /obj/item/clothing/accessory/pocketprotector/full
-
-/datum/loadout_item/accessory/pride
-	name = "Pride Pin"
-	item_path = /obj/item/clothing/accessory/pride
-	loadout_flags = LOADOUT_FLAG_ALLOW_RESKIN

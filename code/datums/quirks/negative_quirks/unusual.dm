@@ -1,11 +1,11 @@
 /datum/quirk/touchy
 	name = "Touchy"
-	desc = "You are very touchy and have to physically be able to touch something to examine it."
+	desc = "(Осязательный) - Вы очень осязательны и должны физически иметь возможность прикоснуться к чему-либо, чтобы осмотреть это."
 	icon = FA_ICON_HAND
 	value = -2
-	gain_text = span_danger("You feel like you can't examine things from a distance.")
-	lose_text = span_notice("You feel like you can examine things from a distance.")
-	medical_record_text = "Patient is unable to tell objects apart from a distance."
+	gain_text = span_danger("Вы чувствуете, что не можете осматривать вещи на расстоянии.")
+	lose_text = span_notice("Вы чувствуете, что можете осматривать вещи на расстоянии.")
+	medical_record_text = "Пациент не может различать объекты на расстоянии."
 	hardcore_value = 4
 
 /datum/quirk/touchy/add(client/client_source)

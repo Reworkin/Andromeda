@@ -1,5 +1,6 @@
 /datum/species/android
-	name = "Android"
+	name = "Андроид"
+	plural_form = "Андроиды"
 	id = SPECIES_ANDROID
 	examine_limb_id = SPECIES_HUMAN
 	inherent_traits = list(
@@ -49,16 +50,16 @@
 	)
 
 /datum/species/android/get_physical_attributes()
-	return "Androids are almost, but not quite, identical to fully augmented humans. \
-	Unlike those, though, they're completely immune to toxin damage, don't have blood or organs (besides their head), don't get hungry, and can reattach their limbs! \
-	That said, an EMP will devastate them and they cannot process any chemicals."
+	return "Андроиды почти, но не совсем, идентичны полностью аугментированным людям. \
+	В отличие от них, они полностью невосприимчивы к токсичному воздействию, не имеют крови или органов, кроме головы, не испытывают голода и могут прикреплять оторванные конечности! \
+	Тем не менее, ЭМИ повредить или полностью вывести их и они не могут перерабатывать химические вещества."
 
 /datum/species/android/get_species_description()
-	return "Androids are an entirely synthetic species."
+	return "Андроиды - полностью синтетический вид."
 
 /datum/species/android/get_species_lore()
 	return list(
-		"Androids are a synthetic species created by Nanotrasen as an intermediary between humans and cyborgs."
+		"Андроиды - это синтетический вид, созданный Нанотрейзен в качестве промежуточного звена между людьми и киборгами."
 	)
 
 /datum/species/android/create_pref_traits_perks()
@@ -66,22 +67,22 @@
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_SHIELD_ALT,
-		SPECIES_PERK_NAME = "Android Aptitude",
-		SPECIES_PERK_DESC = "As a synthetic lifeform, Androids are immune to many forms of damage humans are susceptible to. \
-			Fire, cold, heat, pressure, radiation, and toxins are all ineffective against them. \
-			They also can't overdose on drugs, don't need to breathe or eat, can't catch on fire, and are immune to being pierced.",
+		SPECIES_PERK_NAME = "Способности андроида",
+		SPECIES_PERK_DESC = "Будучи синтетической формой жизни, андроиды невосприимчивы ко многим видам урона, к которым уязвимы люди. \
+			Огонь, холод, жара, давление, радиация и токсины - всё это неэффективно против них. \
+			Они также не могут передозировать наркотики, не нуждаются в дыхании или еде, не могут загореться и невосприимчивы к пронзанию.",
 	))
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_COGS,
-		SPECIES_PERK_NAME = "Modular Lifeform",
-		SPECIES_PERK_DESC = "Android limbs are modular, allowing them to easily reattach severed bodyparts.",
+		SPECIES_PERK_NAME = "Модульная форма жизни",
+		SPECIES_PERK_DESC = "Конечности андроидов модульные, что позволяет им легко прикреплять оторванные части тела.",
 	))
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_DNA,
-		SPECIES_PERK_NAME = "Not Human After All",
-		SPECIES_PERK_DESC = "There is no humanity behind the eyes of the Android, and as such, they have no DNA to genetically alter.",
+		SPECIES_PERK_NAME = "Всё-таки не человек",
+		SPECIES_PERK_DESC = "За глазами андроида нет человечности, и поэтому у них нет ДНК для генетического изменения.",
 	))
 	return perks
 
@@ -90,14 +91,14 @@
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = FA_ICON_SHIELD_HEART,
-		SPECIES_PERK_NAME = "Some Components Optional",
-		SPECIES_PERK_DESC = "Androids have very few internal organs. While they can survive without many of them, \
-			they don't have any benefits from them either.",
+		SPECIES_PERK_NAME = "Некоторые компоненты опциональны",
+		SPECIES_PERK_DESC = "У андроидов очень мало внутренних органов. Хотя они могут выжить без многих из них, \
+			они также не получают от них никаких преимуществ.",
 	))
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_ROBOT,
-		SPECIES_PERK_NAME = "Synthetic",
-		SPECIES_PERK_DESC = "Being synthetic, Androids are vulnernable to EMPs.",
+		SPECIES_PERK_NAME = "Синтетический",
+		SPECIES_PERK_DESC = "Будучи синтетическими, андроиды уязвимы для ЭМИ.",
 	))
 	return perks

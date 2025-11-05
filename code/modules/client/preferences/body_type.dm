@@ -1,4 +1,6 @@
-#define USE_GENDER "Use gender"
+#define USE_GENDER "Использовать пол персонажа"
+#define MALE "Женский"
+#define FEMALE "Мужской"
 
 /datum/preference/choiced/body_type
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
@@ -27,3 +29,5 @@
 	return initial(species.sexes)
 
 #undef USE_GENDER
+#undef MALE
+#undef FEMALE

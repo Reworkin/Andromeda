@@ -1,12 +1,12 @@
 /datum/species/zombie
 	// 1spooky
-	name = "High-Functioning Zombie"
+	name = "Высокофункциональный Зомби"
 	id = SPECIES_ZOMBIE
 	sexes = FALSE
 	meat = /obj/item/food/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie
 	inherent_traits = list(
-		// SHARED WITH ALL ZOMBIES
+		// ОБЩЕЕ ДЛЯ ВСЕХ ЗОМБИ
 		TRAIT_BLOODY_MESS,
 		TRAIT_EASILY_WOUNDED,
 		TRAIT_EASYDISMEMBER,
@@ -24,7 +24,7 @@
 		TRAIT_RESISTHIGHPRESSURE,
 		TRAIT_RESISTLOWPRESSURE,
 		TRAIT_TOXIMMUNE,
-		// HIGH FUNCTIONING UNIQUE
+		// УНИКАЛЬНО ДЛЯ ВЫСОКОФУНКЦИОНАЛЬНЫХ
 		TRAIT_NOBLOOD,
 		TRAIT_SUCCUMB_OVERRIDE,
 	)
@@ -34,9 +34,9 @@
 	mutantlungs = null
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | ERT_SPAWN
-	bodytemp_normal = T0C // They have no natural body heat, the environment regulates body temp
-	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_EXIST // Take damage at fire temp
-	bodytemp_cold_damage_limit = MINIMUM_TEMPERATURE_TO_MOVE // take damage below minimum movement temp
+	bodytemp_normal = T0C // У них нет естественного тепла тела, температура регулируется окружающей средой
+	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_EXIST // Получают урон при температуре огня
+	bodytemp_cold_damage_limit = MINIMUM_TEMPERATURE_TO_MOVE // получают урон ниже минимальной температуры для движения
 
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/zombie,
@@ -47,7 +47,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/zombie
 	)
 
-	/// Spooky growls we sometimes play while alive
+	/// Жуткие рычания, которые мы иногда проигрываем при жизни
 	var/static/list/spooks = list(
 		'sound/effects/hallucinations/growl1.ogg',
 		'sound/effects/hallucinations/growl2.ogg',
@@ -56,7 +56,7 @@
 		'sound/effects/hallucinations/wail.ogg',
 	)
 
-/// Zombies do not stabilize body temperature they are the walking dead and are cold blooded
+/// Зомби не стабилизируют температуру тела - они ходячие мертвецы и хладнокровны
 /datum/species/zombie/body_temperature_core(mob/living/carbon/human/humi, seconds_per_tick, times_fired)
 	return
 
@@ -66,43 +66,43 @@
 	return ..()
 
 /datum/species/zombie/get_physical_attributes()
-	return "Zombies are undead, and thus completely immune to any environmental hazard, or any physical threat besides blunt force trauma and burns. \
-		Their limbs are easy to pop off their joints, but they can somehow just slot them back in."
+	return "Зомби - нежить, и поэтому полностью невосприимчивы к любым опасностям окружающей среды или любым физическим угрозам, кроме тупой травмы и ожогов. \
+		Их конечности легко выскакивают из суставов, но они могут каким-то образом просто вставить их обратно."
 
 /datum/species/zombie/get_species_description()
-	return "A rotting zombie! They descend upon Space Station Thirteen Every year to spook the crew! \"Sincerely, the Zombies!\""
+	return "Гниющий зомби! Они спускаются на Космическую Станцию Тринадцать каждый год, чтобы напугать экипаж!"
 
 /datum/species/zombie/get_species_lore()
-	return list("Zombies have long lasting beef with Botanists. Their last incident involving a lawn with defensive plants has left them very unhinged.")
+	return list("У зомби давняя вражда с ботаниками. Их последний инцидент с газоном с защитными растениями оставил их очень расстроенными.")
 
-// Override for the default temperature perks, so we can establish that they don't care about temperature very much
+// Переопределение стандартных перков температуры, чтобы установить, что их не очень волнует температура
 /datum/species/zombie/create_pref_temperature_perks()
 	var/list/to_add = list()
 
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = "thermometer-half",
-		SPECIES_PERK_NAME = "No Body Temperature",
-		SPECIES_PERK_DESC = "Having long since departed, Zombies do not have anything \
-			regulating their body temperature anymore. This means that \
-			the environment decides their body temperature - which they don't mind at \
-			all, until it gets a bit too hot.",
+		SPECIES_PERK_NAME = "Нет температуры тела",
+		SPECIES_PERK_DESC = "Давно ушедшие, у зомби больше нет ничего, \
+			регулирующего температуру их тела. Это означает, что \
+			окружающая среда определяет их температуру тела - что их совсем не волнует, \
+			пока не станет слишком жарко.",
 	))
 
 	return to_add
 
 /datum/species/zombie/infectious
-	name = "Infectious Zombie"
+	name = "Инфекционный Зомби"
 	id = SPECIES_ZOMBIE_INFECTIOUS
 	examine_limb_id = SPECIES_ZOMBIE
-	damage_modifier = 20 // 120 damage to KO a zombie, which kills it
+	damage_modifier = 20 // 120 урона для нокаута зомби, что убивает его
 	mutanteyes = /obj/item/organ/eyes/zombie
 	mutantbrain = /obj/item/organ/brain/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 
 	inherent_traits = list(
-		// SHARED WITH ALL ZOMBIES
+		// ОБЩЕЕ ДЛЯ ВСЕХ ЗОМБИ
 		TRAIT_BLOODY_MESS,
 		TRAIT_EASILY_WOUNDED,
 		TRAIT_EASYDISMEMBER,
@@ -119,12 +119,12 @@
 		TRAIT_RESISTHIGHPRESSURE,
 		TRAIT_RESISTLOWPRESSURE,
 		TRAIT_TOXIMMUNE,
-		// INFECTIOUS UNIQUE
-		TRAIT_STABLEHEART, // Replacement for noblood. Infectious zombies can bleed but don't need their heart.
-		TRAIT_STABLELIVER, // Not necessary but for consistency with above
+		// УНИКАЛЬНО ДЛЯ ИНФЕКЦИОННЫХ
+		TRAIT_STABLEHEART, // Замена noblood. Инфекционные зомби могут истекать кровью, но не нуждаются в сердце.
+		TRAIT_STABLELIVER, // Не обязательно, но для согласованности с вышеуказанным
 	)
 
-	// Infectious zombies have slow legs
+	// У инфекционных зомби медленные ноги
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/zombie,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/zombie,
@@ -137,12 +137,12 @@
 /datum/species/zombie/infectious/on_species_gain(mob/living/carbon/human/new_zombie, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 	new_zombie.set_combat_mode(TRUE)
-	// Needs to be added after combat mode is set
+	// Нужно добавить после установки боевого режима
 	ADD_TRAIT(new_zombie, TRAIT_COMBAT_MODE_LOCK, SPECIES_TRAIT)
 
-	// Deal with the source of this zombie corruption
-	// Infection organ needs to be handled separately from mutant_organs
-	// because it persists through species transitions
+	// Разберитесь с источником этой зомби-порчи
+	// Орган заражения нужно обрабатывать отдельно от mutant_organs
+	// потому что он сохраняется при смене видов
 	var/obj/item/organ/zombie_infection/infection = new_zombie.get_organ_slot(ORGAN_SLOT_ZOMBIE)
 	if(isnull(infection))
 		infection = new()
@@ -179,9 +179,9 @@
 	if(!HAS_TRAIT(carbon_mob, TRAIT_CRITICAL_CONDITION) && SPT_PROB(2, seconds_per_tick))
 		playsound(carbon_mob, pick(spooks), 50, TRUE, 10)
 
-// Your skin falls off
+// У вас отваливается кожа
 /datum/species/human/krokodil_addict
-	name = "\improper Krokodil Human"
+	name = "Кроколюд"
 	id = SPECIES_ZOMBIE_KROKODIL
 	examine_limb_id = SPECIES_HUMAN
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN

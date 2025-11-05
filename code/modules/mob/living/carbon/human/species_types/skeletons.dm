@@ -1,6 +1,6 @@
 /datum/species/skeleton
 	// 2spooky
-	name = "Spooky Scary Skeleton"
+	name = "Скелет"
 	id = SPECIES_SKELETON
 	sexes = FALSE
 	meat = /obj/item/food/meat/slab/human/mutant/skeleton
@@ -31,7 +31,7 @@
 	mutantheart = null
 	mutantliver = /obj/item/organ/liver/bone
 	mutantlungs = null
-	//They can technically be in an ERT
+	//Технически они могут быть в ОБР
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | ERT_SPAWN
 	species_cookie = /obj/item/reagent_containers/condiment/milk
 	species_language_holder = /datum/language_holder/skeleton
@@ -51,18 +51,18 @@
 	return ..()
 
 /datum/species/skeleton/get_physical_attributes()
-	return "These humerus folk lack any fleshy biology, which allows them to resist pressure, temperature, radiation, asphyxiation and even toxins. \
-		However, due to that same fact, it is quite hard to heal them as well. The calcium found in common space milk is highly effective at treating their wounds. \
-		Their limbs are easy to pop off their joints, but they can somehow just slot them back in."
+	return "Эти плечевые кости лишены какой-либо плоти, что позволяет им сопротивляться давлению, температуре, радиации, удушью и даже токсинам. \
+		Однако, по той же причине, их довольно сложно лечить. Кальций, содержащийся в обычном космическом молоке, очень эффективен для лечения их ран. \
+		Их конечности легко выскакивают из суставов, но они могут каким-то образом просто вставить их обратно."
 
 /datum/species/skeleton/get_species_description()
-	return "A rattling skeleton! They descend upon Space Station 13 \
-		Every year to spook the crew! \"I've got a BONE to pick with you!\""
+	return "Гремящий скелет! Они спускаются на Космическую Станцию 13 \
+		каждый год, чтобы напугать экипаж!"
 
 /datum/species/skeleton/get_species_lore()
 	return list(
-		"Skeletons want to be feared again! Their presence in media has been destroyed, \
-		or at least that's what they firmly believe. They're always the first thing fought in an RPG, \
-		they're Flanderized into pun rolling JOKES, and it's really starting to get to them. \
-		You could say they're deeply RATTLED. Hah."
+		"Скелеты хотят, чтобы их снова боялись! Их присутствие в медиа было разрушено, \
+		или, по крайней мере, они в это твёрдо верят. Они всегда первые, с кем сражаются в RPG, \
+		их фландеризировали в шутки с каламбурами, и это действительно начинает их доставать. \
+		Можно сказать, что они глубоко ПОТРЯСЕНЫ. Ха."
 	)

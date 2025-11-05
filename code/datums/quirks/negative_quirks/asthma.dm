@@ -1,11 +1,11 @@
 /datum/quirk/item_quirk/asthma
 	name = "Asthma"
-	desc = "You suffer from asthma, a inflammatory disorder that causes your airpipe to squeeze shut! Be careful around smoke!"
+	desc = "(Астмат) - Вы страдаете астмой, воспалительным заболеванием, которое вызывает сужение дыхательных путей! Будьте осторожны рядом с дымом!"
 	icon = FA_ICON_LUNGS_VIRUS
-	value = -4 // trivialized by NOBREATH but still quite dangerous
-	gain_text = span_danger("You have a harder time breathing.")
-	lose_text = span_notice("You suddenly feel like your lungs just got a lot better at breathing!")
-	medical_record_text = "Patient suffers from asthma."
+	value = -4 // упрощается NOBREATH, но всё ещё довольно опасно
+	gain_text = span_danger("Вам стало труднее дышать.")
+	lose_text = span_notice("Вы внезапно чувствуете, что ваши лёгкие стали намного лучше дышать!")
+	medical_record_text = "Пациент страдает астмой."
 	hardcore_value = 2
 	quirk_flags = QUIRK_HUMAN_ONLY
 	mail_goodies = list(/obj/item/reagent_containers/inhaler_canister/albuterol)
@@ -71,7 +71,7 @@
 	. = ..()
 
 	var/obj/item/inhaler/albuterol/asthma/rescue_inhaler = new(get_turf(quirk_holder))
-	give_item_to_holder(rescue_inhaler, list(LOCATION_BACKPACK, LOCATION_HANDS), flavour_text = "You can use this to quickly relieve the symptoms of your asthma.")
+	give_item_to_holder(rescue_inhaler, list(LOCATION_BACKPACK, LOCATION_HANDS), flavour_text = "Вы можете использовать это для быстрого облегчения симптомов вашей астмы.")
 
 	COOLDOWN_START(src, next_attack_cooldown, time_first_attack_can_happen)
 
@@ -98,13 +98,13 @@
 
 	var/datum/reagent/toxin/histamine/holder_histamine = quirk_holder.reagents.has_reagent(/datum/reagent/toxin/histamine)
 	if (holder_histamine)
-		if (holder_histamine.overdosed) // uh oh!
+		if (holder_histamine.overdosed) // ой-ой!
 			if (SPT_PROB(15, seconds_per_tick))
-				to_chat(quirk_holder, span_boldwarning("You feel your neck swelling, squeezing on your windpipe more and more!"))
+				to_chat(quirk_holder, span_boldwarning("Вы чувствуете, как ваша шея опухает, всё сильнее сжимая дыхательное горло!"))
 			adjust_inflammation(histamine_OD_inflammation * seconds_per_tick)
 		else
 			if (SPT_PROB(5, seconds_per_tick))
-				to_chat(quirk_holder, span_warning("You find yourself wheezing a little harder as your neck swells..."))
+				to_chat(quirk_holder, span_warning("Вы замечаете, что хрипите немного сильнее, пока ваша шея опухает..."))
 			adjust_inflammation(histamine_inflammation * seconds_per_tick)
 
 	var/datum/reagent/medicine/albuterol/albuterol = quirk_holder.reagents.has_reagent(/datum/reagent/medicine/albuterol)
@@ -129,7 +129,7 @@
 	RegisterSignal(current_attack, COMSIG_QDELETING, PROC_REF(attack_deleting))
 
 	if (current_attack.alert_ghosts)
-		notify_ghosts("[quirk_holder] is having an asthma attack: [current_attack.name]!", source = quirk_holder, notify_flags = NOTIFY_CATEGORY_NOFLASH, header = "Asthma attack!")
+		notify_ghosts("[quirk_holder] испытывает приступ астмы: [current_attack.name]!", source = quirk_holder, notify_flags = NOTIFY_CATEGORY_NOFLASH, header = "Приступ астмы!")
 
 /// Setter proc for [inflammation]. Adjusts the amount by lung health, adjusts pressure mult, gives feedback messages if silent is FALSE.
 /datum/quirk/item_quirk/asthma/proc/adjust_inflammation(amount, silent = FALSE)
@@ -174,18 +174,18 @@
 
 /// Sends feedback to our owner of which direction our asthma is intensifying/recovering.
 /datum/quirk/item_quirk/asthma/proc/do_inflammation_change_feedback(difference)
-	var/change_mult = 1 + (difference / 300) // 300 is arbitrary
-	if (difference > 0) // it decreased
+	var/change_mult = 1 + (difference / 300) // 300 произвольное значение
+	if (difference > 0) // уменьшилось
 		if (prob(1 * change_mult))
-			// in my experience with asthma an inhaler causes a bunch of mucous and you tend to cough it up
-			to_chat(quirk_holder, span_notice("The phlem in your throat forces you to cough!"))
+			// по моему опыту с астмой, ингалятор вызывает выделение слизи, которую приходится откашливать
+			to_chat(quirk_holder, span_notice("Мокрота в горле заставляет вас кашлять!"))
 			quirk_holder.emote("cough")
 
-	else if (difference < 0)// it increased
+	else if (difference < 0)// увеличилось
 		if (prob(1 * change_mult))
 			quirk_holder.emote("wheeze")
 		if (prob(5 * change_mult))
-			to_chat(quirk_holder, span_warning("You feel your windpipe tightening..."))
+			to_chat(quirk_holder, span_warning("Вы чувствуете, как ваше дыхательное горло сужается..."))
 
 /// Returns the % of health our lungs have, from 1-0. Used in reducing recovery and intensifying inflammation.
 /datum/quirk/item_quirk/asthma/proc/get_lung_health_mult()

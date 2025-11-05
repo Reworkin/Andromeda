@@ -1,6 +1,7 @@
-///Spirit mob that lacks legs but still roams the station as part of the unliving.
+/// Моб-дух, у которого нет ног, но который всё ещё бродит по станции как часть нежити.
 /datum/species/ghost
-	name = "Ghost"
+	name = "Призрак"
+	plural_form = "Призраки"
 	id = SPECIES_GHOST
 	inherent_traits = list(
 		TRAIT_GENELESS,
@@ -38,7 +39,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/ghost,
 	)
 
-	///Innate passthrough ability given to ghosts that allows them to phase but drops their stuff.
+	/// Врождённая способность призраков проходить сквозь стены, но сбрасывающая их вещи.
 	var/datum/action/innate/toggle_passthrough/passthrough_ability
 
 /datum/species/ghost/check_roundstart_eligible()
@@ -56,19 +57,19 @@
 	return ..()
 
 /datum/species/ghost/get_physical_attributes()
-	return "Ghosts are the spiritual remains of long-passed entities. They lack legs, can fly, and phase through walls, \
-		but still eat, breathe, hear and see."
+	return "Призраки - это духовные останки давно ушедших существ. У них нет ног, они могут летать и проходить сквозь стены, \
+		но всё ещё едят, дышат, слышат и видят."
 
 /datum/species/ghost/get_species_description()
-	return "Spirits are spirits of long-dead creatures whom, for one reason or another, still roam around."
+	return "Призраки - это духи давно умерших существ, которые по той или иной причине всё ещё бродят вокруг."
 
 /datum/species/ghost/get_species_lore()
 	return list(
-		"Ghosts are one of the spookiest creatures known in the galaxy. \
-		While they still need their protein to sustain themselves, they are able to control their own bodies, \
-		going through walls and getting rid of all their posessions at will. \
-		Most knowledge known about them is kept secret by Nanotrasen's top Chaplains, who are keen \
-		to keep it private.",
+		"Призраки - одни из самых жутких существ, известных в галактике. \
+		Хотя им всё ещё нужен белок для поддержания себя, они способны контролировать свои тела, \
+		проходя сквозь стены и избавляясь от всех своих пожитков по желанию. \
+		Большинство знаний о них хранится в секрете ведущими святыми Нанотрейзен, которые стремятся \
+		сохранить это в тайне.",
 	)
 
 /datum/species/ghost/create_pref_unique_perks()
@@ -77,49 +78,49 @@
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "body",
-		SPECIES_PERK_NAME = "Leg-less",
-		SPECIES_PERK_DESC = "Ghosts lack legs and float, preventing you from falling into holes in the ground.",
+		SPECIES_PERK_NAME = "Без ног",
+		SPECIES_PERK_DESC = "У призраков нет ног, и они парят, предотвращая падение в дыры в земле.",
 	))
 
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = "ghost",
-		SPECIES_PERK_NAME = "Incorporeal",
-		SPECIES_PERK_DESC = "Ghost carry their tombstones with them and are directly tied to it. \
-			dropping the tombstone will allow you to phase through solid matter, but leaves you vulnerable.",
+		SPECIES_PERK_NAME = "Бестелесный",
+		SPECIES_PERK_DESC = "Призраки носят свои надгробия с собой и напрямую связаны с ними. \
+			Бросив надгробие, вы сможете проходить сквозь твёрдую материю, но станете уязвимыми.",
 	))
 
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "shoe-prints",
-		SPECIES_PERK_NAME = "No Feet",
-		SPECIES_PERK_DESC = "You lack feet, therefore the ability to wear any shoes!",
+		SPECIES_PERK_NAME = "Нет ног",
+		SPECIES_PERK_DESC = "У вас нет ног, следовательно и возможности носить любую обувь!",
 	))
 
 	return to_add
 
 /**
- * Passthrough ability
+ * Способность прохождения
  *
- * Ghost innate ability that allows them to enter ghost mode,
- * which gives them the phasing ability, but makes them unable to use anything,
- * and they will be tied to a tombstone that, if dug up, will kill them and turn them
- * into a skeleton.
+ * Врождённая способность призраков входить в режим призрака,
+ * который даёт им способность фазового прохождения, но делает их неспособными использовать что-либо,
+ * и они будут привязаны к надгробию, которое, если его выкопать, убьёт их и превратит
+ * в скелета.
  */
 /datum/action/innate/toggle_passthrough
-	name = "Toggle passthrough"
-	desc = "Toggles phasing through everything, including your hands. You are tied to your tombstone while this is active. \
-		At least you know how to keep your clothes on."
+	name = "Переключить прохождение"
+	desc = "Переключает прохождение сквозь всё, включая ваши руки. Вы привязаны к своему надгробию, пока это активно. \
+		По крайней мере, вы знаете, как сохранить свою одежду на себе."
 	button_icon = 'icons/hud/actions.dmi'
 	button_icon_state = "ghost"
 
-	///Grave that appears when we're passing through, which we are also tied to.
+	/// Могила, которая появляется, когда мы проходим сквозь стены, и к которой мы также привязаны.
 	var/obj/structure/closet/crate/grave/skeleton/grave
 
 /datum/action/innate/toggle_passthrough/Grant(mob/grant_to)
 	. = ..()
 	grave = new()
-	//contents are initialized when the grave is robbed as that's when the crate is opened for the first time.
+	// Содержимое инициализируется, когда могилу ограбят, так как тогда ящик открывается впервые.
 	RegisterSignal(grave, COMSIG_CLOSET_CONTENTS_INITIALIZED, PROC_REF(on_grave_robbed))
 	RegisterSignal(grave, COMSIG_CLOSET_POST_OPEN, PROC_REF(post_grave_robbed))
 
@@ -135,9 +136,9 @@
 		return
 	swap_mode()
 
-///Swaps the mode, allowing us to phase through stuff but drops everything. Optional 'force_off' arg to prevent being able to turn it on.
+/// Переключает режим, позволяя нам проходить сквозь вещи, но сбрасывая всё. Необязательный аргумент 'force_off' предотвращает возможность включения.
 /datum/action/innate/toggle_passthrough/proc/swap_mode(force_off)
-	//we can only turn off, early return if we're trying to turn it on instead.
+	// мы можем только выключить, ранний возврат, если мы пытаемся включить вместо этого.
 	if(force_off && HAS_TRAIT_FROM(owner, TRAIT_NO_FLOATING_ANIM, SPECIES_TRAIT))
 		return
 
@@ -168,14 +169,14 @@
 			TRAIT_UI_BLOCKED,
 		), SPECIES_TRAIT)
 
-///Called when the contents are made, which means the grave has been 'opened', therefore robbed.
+/// Вызывается, когда содержимое создано, что означает, что могила была 'открыта', следовательно, ограблена.
 /datum/action/innate/toggle_passthrough/proc/on_grave_robbed(obj/structure/closet/crate/grave/skeleton/source)
 	SIGNAL_HANDLER
 	var/mob/living/carbon/human/species/skeleton/skeletons_in_the_closet = locate() in source.contents
 	owner.mind.transfer_to(skeletons_in_the_closet, force_key_move = TRUE)
 	skeletons_in_the_closet.death(gibbed = FALSE)
 
-///Called AFTER the contents have been spit out, which means the owner is now in the skeleton. Let's clean up.
+/// Вызывается ПОСЛЕ того, как содержимое было выброшено, что означает, что владелец теперь в скелете. Давайте приберёмся.
 /datum/action/innate/toggle_passthrough/proc/post_grave_robbed(obj/structure/closet/crate/grave/skeleton/source)
 	SIGNAL_HANDLER
 	qdel(owner)

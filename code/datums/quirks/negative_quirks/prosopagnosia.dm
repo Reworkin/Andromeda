@@ -1,9 +1,9 @@
 /datum/quirk/prosopagnosia
 	name = "Prosopagnosia"
-	desc = "You have a mental disorder that prevents you from being able to recognize faces at all."
+	desc = "(Прозопагнозия) - У вас психическое расстройство, из-за которого вы вообще не можете распознавать лица."
 	icon = FA_ICON_USER_SECRET
 	value = -4
-	medical_record_text = "Patient suffers from prosopagnosia and cannot recognize faces."
+	medical_record_text = "Пациент страдает прозопагнозией и не может распознавать лица."
 	hardcore_value = 5
 	mail_goodies = list(/obj/item/skillchip/appraiser) // bad at recognizing faces but good at recognizing IDs
 
@@ -22,7 +22,7 @@
 		return NONE
 
 	var/id_name = examined.get_id_name("", honorifics = TRUE)
-	name_override[1] = id_name ? "[id_name]?" : "Unknown"
+	name_override[1] = id_name ? "[id_name]?" : "Неизвестный"
 	return COMPONENT_EXAMINE_NAME_OVERRIDEN
 
 /datum/quirk/prosopagnosia/proc/screentip_name_override(datum/source, list/returned_name, obj/item/held_item, mob/living/carbon/human/hovered)
@@ -32,5 +32,5 @@
 		return NONE
 
 	var/id_name = hovered.get_id_name("", honorifics = TRUE)
-	returned_name[1] = id_name ? "[id_name]?" : "Unknown"
+	returned_name[1] = id_name ? "[id_name]?" : "Неизвестный"
 	return SCREENTIP_NAME_SET

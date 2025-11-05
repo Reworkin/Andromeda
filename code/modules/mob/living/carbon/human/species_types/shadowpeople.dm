@@ -1,7 +1,7 @@
 /datum/species/shadow
-	// Humans cursed to stay in the darkness, lest their life forces drain. They regain health in shadow and die in light.
-	name = "Shadow"
-	plural_form = "Shadowpeople"
+	// Люди, проклятые оставаться в темноте, чтобы их жизненные силы не истощались. Они восстанавливают здоровье в тени и умирают на свету.
+	name = "Теневой"
+	plural_form = "Теневые"
 	id = SPECIES_SHADOW
 	sexes = FALSE
 	meat = /obj/item/food/meat/slab/human/mutant/shadow
@@ -46,27 +46,27 @@
 	return ..()
 
 /datum/species/shadow/get_physical_attributes()
-	return "These cursed creatures heal in the dark, but suffer in the light much more heavily. Their eyes let them see in the dark as though it were day."
+	return "Эти проклятые существа исцеляются в темноте, но сильно страдают на свету. Их глаза позволяют им видеть в темноте как днём."
 
 /datum/species/shadow/get_species_description()
-	return "Victims of a long extinct space alien. Their flesh is a sickly \
-		seethrough filament, their tangled insides in clear view. Their form \
-		is a mockery of life, leaving them mostly unable to work with others under \
-		normal circumstances."
+	return "Жертвы давно вымершего космического вида. Их плоть - болезненно \
+		прозрачная нить, их спутанные внутренности на виду. Их форма \
+		- это насмешка над жизнью, оставляющая их в основном неспособными работать с другими при \
+		нормальных обстоятельствах."
 
 /datum/species/shadow/get_species_lore()
 	return list(
-		"Long ago, the Spinward Sector used to be inhabited by terrifying aliens aptly named \"Shadowlings\" \
-		after their control over darkness, and tendancy to kidnap victims into the dark maintenance shafts. \
-		Around 2558, the long campaign Nanotrasen waged against the space terrors ended with the full extinction of the Shadowlings.",
+		"Давным-давно Спинвардский сектор был населён видом, метко названными \"Теневые\" \
+		из-за их контроля над темнотой и склонности похищать жертв в тёмные технические тоннели. \
+		Около 2558 года, Нанотрейзен вела долгую компанию против космических ужасов, закончилась полным вымиранием Теневых.",
 
-		"Victims of their kidnappings would become brainless thralls, and via surgery they could be freed from the Shadowling's control. \
-		Those more unlucky would have their entire body transformed by the Shadowlings to better serve in kidnappings. \
-		Unlike the brain tumors of lesser control, these greater thralls could not be reverted.",
+		"Жертвы их похищений становились безмозглыми рабами и с помощью хирургии их можно было освободить от контроля Теневых. \
+		Те, кому не повезло больше, подвергались полному преобразованию тела Теневыми для лучшего служения в похищениях. \
+		В отличие от опухолей мозга при меньшем контроле, этих рабов нельзя было вернуть обратно.",
 
-		"With Shadowlings long gone, their will is their own again. But their bodies have not reverted, burning in exposure to light. \
-		Nanotrasen has assured the victims that they are searching for a cure. No further information has been given, even years later. \
-		Most shadowpeople now assume Nanotrasen has long since shelfed the project.",
+		"С исчезновением Теневых их воля снова стала их собственной. Но их тела не вернулись обратно, сгорая при воздействии света. \
+		Нанотрейзен заверил жертв, что они ищут лекарство. Дальнейшая информация не предоставлялась, даже спустя годы. \
+		Большинство теневых людей теперь предполагают, что Нанотрейзен давно положил проект на пыльную полку.",
 	)
 
 /datum/species/shadow/create_pref_unique_perks()
@@ -76,22 +76,22 @@
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "moon",
-			SPECIES_PERK_NAME = "Shadowborn",
-			SPECIES_PERK_DESC = "Their skin blooms in the darkness. All kinds of damage, \
-				no matter how extreme, will heal over time as long as there is no light.",
+			SPECIES_PERK_NAME = "Рождённый во тьме",
+			SPECIES_PERK_DESC = "Их кожа расцветает в темноте. Любые виды повреждений, \
+				независимо от степени тяжести, будут со временем заживать, пока нет света.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "eye",
-			SPECIES_PERK_NAME = "Nightvision",
-			SPECIES_PERK_DESC = "Their eyes are adapted to the night, and can see in the dark with no problems.",
+			SPECIES_PERK_NAME = "Ночное зрение",
+			SPECIES_PERK_DESC = "Их глаза адаптированы к ночи и могут видеть в темноте без проблем.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "sun",
-			SPECIES_PERK_NAME = "Lightburn",
-			SPECIES_PERK_DESC = "Their flesh withers in the light. Any exposure to light is \
-				incredibly painful for the shadowperson, charring their skin.",
+			SPECIES_PERK_NAME = "Световой ожог",
+			SPECIES_PERK_DESC = "Их плоть увядает на свету. Любое воздействие света \
+				невероятно болезненно для теневого человека, обугливая его кожу.",
 		),
 	)
 
@@ -99,17 +99,17 @@
 
 /obj/item/organ/eyes/shadow
 	name = "burning red eyes"
-	desc = "Even without their shadowy owner, looking at these eyes gives you a sense of dread."
+	desc = "Даже без их тенистого владельца, взгляд на эти глаза вызывает чувство страха."
 	icon = 'icons/obj/medical/organs/shadow_organs.dmi'
 	iris_overlay = null
 	color_cutoffs = list(20, 10, 40)
 	pepperspray_protect = TRUE
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 
-/// the key to none of their powers
+/// ключ ко всем их способностям
 /obj/item/organ/brain/shadow
 	name = "shadowling tumor"
-	desc = "Something that was once a brain, before being remolded by a shadowling. It has adapted to the dark, irreversibly."
+	desc = "Что-то, что когда-то было мозгом, прежде чем быть переделанным теневым. Оно адаптировалось к темноте, необратимо."
 	icon = 'icons/obj/medical/organs/shadow_organs.dmi'
 	shade_color = "grey-ish"
 
@@ -119,16 +119,16 @@
 /datum/species/shadow/proc/on_flashed(source, mob/living/carbon/flashed, flash, deviation)
 	SIGNAL_HANDLER
 
-	if(deviation == DEVIATION_FULL) //If no deviation, we can assume it's a non-assembly flash and should do max flash damage.
+	if(deviation == DEVIATION_FULL) // Если нет отклонения, мы можем предположить, что это не сборная вспышка и должна наносить максимальный урон от вспышки.
 		flashed.apply_damage(16, BURN, attacking_item = flash)
 		flashed.adjust_confusion_up_to(3 SECONDS, 6 SECONDS)
-	else //If it's anything less than a full hit, it does less than stellar damage. Bear in mind that this damage is dished out much faster since flashes have a quicker cooldown on clicks.
+	else // Если это что-то меньшее, чем полное попадание, оно наносит менее звёздный урон. Имейте в виду, что этот урон наносится гораздо быстрее, поскольку у вспышек более быстрое время восстановления между кликами.
 		flashed.apply_damage(8, BURN, attacking_item = flash)
 		flashed.adjust_confusion_up_to(1 SECONDS, 3 SECONDS)
 
 	INVOKE_ASYNC(flashed, TYPE_PROC_REF(/mob, emote), "scream")
-	flashed.visible_message(span_danger("[flashed] wails in pain as a burst of light singes their flesh!"), \
-		span_danger("You wail in pain as the sudden burst of light singes your flesh!"), \
-		span_danger("Something wails in pain! It sounds like a terrifying monster! Good thing you can't see it, or you'd probably be freaking out right now."))
+	flashed.visible_message(span_danger("[flashed] вопит от боли, когда вспышка света опаляет его плоть!"), \
+		span_danger("Вы вопите от боли, когда внезапная вспышка света опаляет вашу плоть!"), \
+		span_danger("Кто-то вопит от боли! Это звучит как ужасающий монстр! Хорошо, что вы не можете его видеть, иначе вы бы сейчас наверняка запаниковали."))
 
 	return FLASH_OVERRIDDEN

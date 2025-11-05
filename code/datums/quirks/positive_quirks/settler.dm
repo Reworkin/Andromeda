@@ -1,15 +1,15 @@
 /datum/quirk/settler
 	name = "Settler"
-	desc = "You are from a lineage of the earliest space settlers! While your family's generational exposure to varying gravity \
-		has resulted in a ... smaller height than is typical for your species, you make up for it by being much better at outdoorsmanship and \
-		carrying heavy equipment. You also get along great with animals. However, you are a bit on the slow side due to your small legs."
-	gain_text = span_bold("You feel like the world is your oyster!")
-	lose_text = span_danger("You think you might stay home today.")
+	desc = "(Поселенец) - Вы из рода самых первых космических поселенцев! Хотя многолетнее воздействие различной гравитации на вашу семью \
+		привело к ... меньшему росту, чем обычно для вашего вида, вы компенсируете это лучшими навыками выживания на природе и \
+		переноски тяжелого оборудования. Вы также отлично ладите с животными. Однако вы немного медлительны из-за своих коротких ног."
+	gain_text = span_bold("Вы чувствуете, что весь мир у ваших ног!")
+	lose_text = span_danger("Вы думаете, что, возможно, останетесь сегодня дома.")
 	icon = FA_ICON_HOUSE
 	value = 4
 	mob_trait = TRAIT_SETTLER
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
-	medical_record_text = "Patient has been exposed to planetary conditions for extended periods, resulting in an excessively stout build."
+	medical_record_text = "Пациент длительное время подвергался воздействию планетарных условий, что привело к чрезмерно коренастому телосложению."
 	mail_goodies = list(
 		/obj/item/clothing/shoes/workboots/mining,
 		/obj/item/gps,

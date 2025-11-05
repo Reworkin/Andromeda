@@ -19,7 +19,7 @@ export const CrewManifest = (props) => {
   } = useBackend();
 
   return (
-    <Window title="Crew Manifest" width={350} height={500}>
+    <Window title="Манифест Экипажа" width={350} height={500}>
       <Window.Content scrollable>
         {Object.entries(manifest).map(([dept, crew]) => (
           <Section
@@ -28,7 +28,7 @@ export const CrewManifest = (props) => {
             title={
               dept +
               (dept !== 'Misc'
-                ? ` (${positions[dept].open} positions open)`
+                ? ` (позиций открыто: ${positions[dept].open})`
                 : '')
             }
           >
@@ -69,7 +69,7 @@ export const CrewManifest = (props) => {
                       </Tooltip>
                     )}
                     {commandJobs.includes(crewMember.trim) && (
-                      <Tooltip content="Member of command" position="bottom">
+                      <Tooltip content="Член командования" position="bottom">
                         <Icon
                           className={classes([
                             'CrewManifest__Icon',

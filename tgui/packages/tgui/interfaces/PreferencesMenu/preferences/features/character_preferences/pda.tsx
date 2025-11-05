@@ -6,12 +6,12 @@ import {
 import { FeatureDropdownInput } from '../dropdowns';
 
 export const pda_theme: FeatureChoiced = {
-  name: 'PDA Theme',
-  category: 'GAMEPLAY',
+  name: 'Тема КПК',
+  category: 'ГЕЙМПЛЕЙ',
   component: FeatureDropdownInput,
 };
 
 export const pda_ringtone: Feature<string> = {
-  name: 'PDA Ringtone',
+  name: 'Мелодия КПК',
   component: FeatureShortTextInput,
 };

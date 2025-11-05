@@ -30,14 +30,14 @@ function getButtonColors(
     return {
       backgroundColor: 'rgba(64, 34, 34, 0.5)',
       borderColor: 'darkred',
-      tooltip: `You cannot select this personality with ${invalid}.`,
+      tooltip: `Вы не можете выбрать эту черту характера с ${invalid}.`,
     };
   }
   if (disabled) {
     return {
       backgroundColor: 'rgba(64, 64, 64, 0.5)',
       borderColor: '#666666',
-      tooltip: 'You are at the maximum number of personalities.',
+      tooltip: 'Вы достигли максимального количества черт характера.',
     };
   }
   if (selected) {
@@ -155,7 +155,7 @@ function PersonalityButton(props: ButtonProps) {
   );
 }
 
-// Sort by selected first, then by name
+// Сортировка: выбранные первыми, затем по имени
 function sortPersonalities(
   a: Personality,
   b: Personality,
@@ -170,8 +170,8 @@ function sortPersonalities(
   return a.name < b.name ? -1 : 1;
 }
 
-// Checks if the passed personality is incompatible with the selected personalities
-// Returns the name of the incompatible personality or null if there is no incompatibility
+// Проверяет, несовместима ли личность с выбранными личностями
+// Возвращает имя несовместимой личности или null, если нет несовместимости
 function isIncompatible(
   personality: Personality,
   allPersonalities: Personality[],
@@ -179,15 +179,15 @@ function isIncompatible(
   personalityIncompatibilities: Record<string, string[]>,
 ): string | null {
   if (!selectedPersonalities || !personality.groups) return null;
-  // personalityIncompatibilities is keyed by group -
-  // where value is a list of incompatible personality typePaths
+  // personalityIncompatibilities ключается по группам -
+  // где значение - список несовместимых typePath личностей
   for (const group of personality.groups) {
     for (const selectedTypePath of selectedPersonalities) {
       if (selectedTypePath === personality.path) continue;
       if (personalityIncompatibilities[group].includes(selectedTypePath)) {
         return (
           getPersonalityName(allPersonalities, selectedTypePath) ||
-          'an unknown personality'
+          'неизвестная черта характера'
         );
       }
     }
@@ -196,7 +196,7 @@ function isIncompatible(
   return null;
 }
 
-// Checks if the passed personality is disabled
+// Проверяет, отключена ли личность
 function isDisabled(
   selectedPersonalities: string[] | null,
   personality: Personality,
@@ -214,7 +214,7 @@ function isDisabled(
   return !selectedPersonalities.includes(personality.path);
 }
 
-// Takes a typePath, returns the name of the personality
+// Принимает typePath, возвращает имя личности
 function getPersonalityName(
   allPersonalities: Personality[],
   personalityPath: string,
@@ -227,7 +227,7 @@ function getPersonalityName(
   return undefined;
 }
 
-// Returns a string of all selected personalities formatted in a readable way
+// Возвращает строку всех выбранных личностей в читаемом формате
 function getAllSelectedPersonalitiesString(
   allPersonalities: Personality[],
   selectedPersonalities: string[] | null,
@@ -239,7 +239,7 @@ function getAllSelectedPersonalitiesString(
     }
   }
   if (personalityNames.length === 0) {
-    return 'You have no personality.';
+    return 'У вас нет черты характера.';
   }
   personalityNames.sort((a, b) => (a < b ? -1 : 1));
   let finalString = '';
@@ -254,10 +254,10 @@ function getAllSelectedPersonalitiesString(
       if (finalString[finalString.length - 1] !== ' ') {
         finalString += ' ';
       }
-      finalString += 'and ';
+      finalString += 'и ';
     }
   }
-  return `You are ${finalString}.`;
+  return `Вы - ${finalString}.`;
 }
 
 export function PersonalityPage() {
@@ -336,8 +336,8 @@ export function PersonalityPage() {
                   <Icon name="exclamation-triangle" mr={1} />
                 </Flex.Item>
                 <Flex.Item>
-                  Mood is disabled on this server. You can still select
-                  personalities, but they will have no effect.
+                  Настройка отключена на этом сервере. Вы всё ещё можете выбирать
+                  черты характера, но они НЕ будут иметь эффекта.
                 </Flex.Item>
               </Flex>
             </NoticeBox>
@@ -346,7 +346,7 @@ export function PersonalityPage() {
         <Stack.Item mb={1}>
           <Input
             fluid
-            placeholder="Search..."
+            placeholder="Поиск..."
             value={searchQuery}
             onChange={(v) => setSearchQuery(v)}
           />

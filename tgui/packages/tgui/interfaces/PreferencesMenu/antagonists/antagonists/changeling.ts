@@ -1,17 +1,17 @@
 import { type Antagonist, Category } from '../base';
 
 export const CHANGELING_MECHANICAL_DESCRIPTION = `
-Transform yourself or others into different identities, and buy from an
-arsenal of biological weaponry with the DNA you collect.
+Превращайте себя или других в разные личности и покупайте из арсенала
+биологического оружия с помощью ДНК, которую вы собираете.
 `;
 
 const Changeling: Antagonist = {
   key: 'changeling',
-  name: 'Changeling',
+  name: 'Генокрад',
   description: [
     `
-      A highly intelligent alien predator that is capable of altering their
-      shape to flawlessly resemble a human.
+      Разумный инопланетный хищник, способный изменять свою форму,
+      чтобы безупречно походить на человека.
     `,
     CHANGELING_MECHANICAL_DESCRIPTION,
   ],

@@ -1,17 +1,17 @@
 /datum/quirk/evil
 	name = "Fundamentally Evil"
-	desc = "Where you would have a soul is but an ink-black void. While you are committed to maintaining your social standing, \
-		anyone who stares too long into your cold, uncaring eyes will know the truth. You are truly evil. There is nothing \
-		wrong with you. You chose to be evil, committed to it. Your ambitions come first above all."
+	desc = "(Фундаментально злой) - Там, где у вас должна быть душа, находится лишь чернильно-чёрная пустота. Хотя вы стремитесь сохранить свой социальный статус, \
+		любой, кто слишком долго будет смотреть в ваши холодные, безразличные глаза, узнает правду. Вы поистине злы. С вами \
+		всё в порядке. Вы выбрали путь зла и преданы ему. Ваши амбиции стоят выше всего."
 	icon = FA_ICON_HAND_MIDDLE_FINGER
 	value = 0
 	mob_trait = TRAIT_EVIL
-	gain_text = span_notice("You shed what little remains of your humanity. You have work to do.")
-	lose_text = span_notice("You suddenly care more about others and their needs.")
-	medical_record_text = "Patient has passed all our social fitness tests with flying colours, but had trouble on the empathy tests."
+	gain_text = span_notice("Вы сбрасываете то немногое, что осталось от вашей человечности. У вас есть работа.")
+	lose_text = span_notice("Вы внезапно начинаете больше заботиться о других и их потребностях.")
+	medical_record_text = "Пациент блестяще прошёл все наши тесты на социальную пригодность, но испытывал трудности с тестами на эмпатию."
 	mail_goodies = list(/obj/item/food/grown/citrus/lemon)
 
 /datum/quirk/evil/post_add()
-	var/evil_policy = get_policy("[type]") || "Please note that while you may be [LOWER_TEXT(name)], this does NOT give you any additional right to attack people or cause chaos."
-	// We shouldn't need this, but it prevents people using it as a dumb excuse in ahelps.
+	var/evil_policy = get_policy("[type]") || "Пожалуйста, учтите, что хотя вы можете быть [LOWER_TEXT(name)], это НЕ даёт вам никаких дополнительных прав атаковать людей или устраивать хаос."
+	// Нам не должно это понадобиться, но это предотвращает использование этой особенности как глупого оправдания в жалобах.
 	to_chat(quirk_holder, span_big(span_info(evil_policy)))

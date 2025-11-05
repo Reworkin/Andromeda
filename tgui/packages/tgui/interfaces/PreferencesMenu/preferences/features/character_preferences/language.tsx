@@ -9,25 +9,25 @@ import {
 } from '../dropdowns';
 
 export const language: FeatureChoiced = {
-  name: 'Language',
+  name: 'Язык',
   component: FeatureIconnedDropdownInput,
 };
 
 export const language_speakable: FeatureToggle = {
-  name: 'Language Speakable',
-  description: `If unchecked, you'll only be able to understand the language,
-    but not speak it.`,
+  name: 'Возможность говорить',
+  description: `Если не отмечено, вы сможете только понимать язык,
+    но не говорить на нём.`,
   component: CheckboxInput,
 };
 
 export const language_skill: FeatureChoiced = {
-  name: 'Language Skill',
-  description: 'The percentage of the language you can understand.',
+  name: 'Уровень языка',
+  description: 'Процент языка, который вы можете понимать.',
   component: FeatureDropdownInput,
 };
 
 export const csl_strength: FeatureChoiced = {
-  name: 'Language Skill',
-  description: 'The percentage of Common you can understand.',
+  name: 'Уровень языка',
+  description: 'Процент Общего языка, который вы можете понимать.',
   component: FeatureDropdownInput,
 };

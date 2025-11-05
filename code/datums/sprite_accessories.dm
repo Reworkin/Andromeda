@@ -997,27 +997,27 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	icon_state = "none"
 
 /datum/sprite_accessory/gradient/full
-	name = "Full"
+	name = "Полный"
 	icon_state = "full"
 
 /datum/sprite_accessory/gradient/fadeup
-	name = "Fade Up"
+	name = "Верхнее затухание"
 	icon_state = "fadeup"
 
 /datum/sprite_accessory/gradient/fadedown
-	name = "Fade Down"
+	name = "Нижнее затухание"
 	icon_state = "fadedown"
 
 /datum/sprite_accessory/gradient/vertical_split
-	name = "Vertical Split"
+	name = "Вертикальное разделение"
 	icon_state = "vsplit"
 
 /datum/sprite_accessory/gradient/horizontal_split
-	name = "Horizontal Split"
+	name = "Горизонтальное разделение"
 	icon_state = "bottomflat"
 
 /datum/sprite_accessory/gradient/reflected
-	name = "Reflected"
+	name = "Отражённый"
 	icon_state = "reflected_high"
 	gradient_category = GRADIENT_APPLIES_TO_HAIR
 
@@ -1026,7 +1026,7 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	gradient_category = GRADIENT_APPLIES_TO_FACIAL_HAIR
 
 /datum/sprite_accessory/gradient/reflected_inverse
-	name = "Reflected Inverse"
+	name = "Инвертированный отражённый"
 	icon_state = "reflected_inverse_high"
 	gradient_category = GRADIENT_APPLIES_TO_HAIR
 
@@ -1035,20 +1035,20 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	gradient_category = GRADIENT_APPLIES_TO_FACIAL_HAIR
 
 /datum/sprite_accessory/gradient/wavy
-	name = "Wavy"
+	name = "Волнистый"
 	icon_state = "wavy"
 	gradient_category = GRADIENT_APPLIES_TO_HAIR
 
 /datum/sprite_accessory/gradient/long_fade_up
-	name = "Long Fade Up"
+	name = "Длинное верхнее затухание"
 	icon_state = "long_fade_up"
 
 /datum/sprite_accessory/gradient/long_fade_down
-	name = "Long Fade Down"
+	name = "Длинное нижнее затухание"
 	icon_state = "long_fade_down"
 
 /datum/sprite_accessory/gradient/short_fade_up
-	name = "Short Fade Up"
+	name = "Короткое верхнее затухание"
 	icon_state = "short_fade_up"
 	gradient_category = GRADIENT_APPLIES_TO_HAIR
 
@@ -1057,7 +1057,7 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	gradient_category = GRADIENT_APPLIES_TO_FACIAL_HAIR
 
 /datum/sprite_accessory/gradient/short_fade_down
-	name = "Short Fade Down"
+	name = "Короткое нижнее затухание"
 	icon_state = "short_fade_down_beard"
 	gradient_category = GRADIENT_APPLIES_TO_HAIR
 
@@ -1066,16 +1066,16 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	gradient_category = GRADIENT_APPLIES_TO_FACIAL_HAIR
 
 /datum/sprite_accessory/gradient/wavy_spike
-	name = "Spiked Wavy"
+	name = "Волнистый с шипами"
 	icon_state = "wavy_spiked"
 	gradient_category = GRADIENT_APPLIES_TO_HAIR
 
 /datum/sprite_accessory/gradient/striped
-	name = "striped"
+	name = "Полосатый"
 	icon_state = "striped"
 
 /datum/sprite_accessory/gradient/striped_vertical
-	name = "Striped Vertical"
+	name = "Вертикально полосатый"
 	icon_state = "striped_vertical"
 
 /////////////////////////////

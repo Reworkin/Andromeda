@@ -1,12 +1,13 @@
 /datum/species/dullahan
-	name = "Dullahan"
+	name = "Дуллахан"
+	plural_form = "Дуллаханы"
 	id = SPECIES_DULLAHAN
 	examine_limb_id = SPECIES_HUMAN
 	inherent_traits = list(
 		TRAIT_NOBREATH,
 		TRAIT_NOHUNGER,
 		TRAIT_USES_SKINTONES,
-		TRAIT_ADVANCEDTOOLUSER, // Normally applied by brain but we don't have one
+		TRAIT_ADVANCEDTOOLUSER, // Обычно применяется мозгом, но у нас его нет
 		TRAIT_LITERATE,
 		TRAIT_CAN_STRIP,
 	)
@@ -28,9 +29,9 @@
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 
-	/// The dullahan relay that's associated with the owner, used to handle many things such as talking and hearing.
+	/// Реле дуллахана, связанное с владельцем, используется для обработки многих вещей, таких как речь и слух.
 	var/obj/item/dullahan_relay/my_head
-	/// Did our owner's first client connection get handled yet? Useful for when some proc needs to be called once we're sure that a client has moved into our owner, like for Dullahans.
+	/// Была ли уже обработана первая клиентская связь владельца? Полезно, когда процедуру нужно вызвать после того, как клиент переместился в нашего владельца, как для дуллаханов.
 	var/owner_first_client_connection_handled = FALSE
 
 /datum/species/dullahan/check_roundstart_eligible()
@@ -48,12 +49,12 @@
 	if(isnull(human.drop_location()))
 		return
 	head?.drop_limb()
-	if(QDELETED(head)) //drop_limb() deletes the limb if no drop location exists and character setup dummies are located in nullspace.
+	if(QDELETED(head)) // drop_limb() удаляет конечность, если нет места для падения, а дамми настройки персонажа находятся в нуль-пространстве.
 		return
 	my_head = new /obj/item/dullahan_relay(head, human)
 	human.put_in_hands(head)
 
-	// We want to give the head some boring old eyes just so it doesn't look too jank on the head sprite.
+	// Мы хотим дать голове обычные глаза, чтобы спрайт головы не выглядел слишком странно.
 	var/obj/item/organ/eyes/eyes = new /obj/item/organ/eyes(head)
 	eyes.eye_color_left = human.eye_color_left
 	eyes.eye_color_right = human.eye_color_right
@@ -64,28 +65,28 @@
 	RegisterSignal(head, COMSIG_QDELETING, PROC_REF(on_head_destroyed))
 	RegisterSignal(my_head, COMSIG_MOVABLE_MOVED, PROC_REF(on_relay_move))
 
-/// If we gained a new body part, it had better not be a head
+/// Если мы получили новую часть тела, лучше бы это была не голова
 /datum/species/dullahan/proc/on_gained_part(mob/living/carbon/human/dullahan, obj/item/bodypart/part)
 	SIGNAL_HANDLER
 	if(part.body_zone != BODY_ZONE_HEAD)
 		return
 	if(isnull(dullahan.drop_location()))
-		return // don't gib nullspace
+		return // не превращаем в гиббс в нуль-пространстве
 	my_head = null
-	dullahan.investigate_log("has been gibbed by having an illegal head put on [dullahan.p_their()] shoulders.", INVESTIGATE_DEATHS)
-	dullahan.gib(DROP_ALL_REMAINS) // Yeah so giving them a head on their body is really not a good idea, so their original head will remain but uh, good luck fixing it after that.
+	dullahan.investigate_log("был превращён в гиббс из-за установки незаконной головы на [dullahan.p_their()] плечи.", INVESTIGATE_DEATHS)
+	dullahan.gib(DROP_ALL_REMAINS) // Да, так что установка головы на тело - не очень хорошая идея, поэтому их оригинальная голова останется, но, удачи починить это после этого.
 
-/// If our head is destroyed, so are we
+/// Если наша голова уничтожена, то и мы тоже
 /datum/species/dullahan/proc/on_head_destroyed()
 	SIGNAL_HANDLER
 	var/mob/living/human = my_head?.owner
 	if(QDELETED(human))
-		return // guess we already died
+		return // наверное, мы уже умерли
 	my_head = null
-	human.investigate_log("has been gibbed by the loss of [human.p_their()] head.", INVESTIGATE_DEATHS)
+	human.investigate_log("был превращён в гиббс из-за потери [human.p_their()] головы.", INVESTIGATE_DEATHS)
 	human.gib(DROP_ALL_REMAINS)
 
-/// Head was butchered? No more dullahan
+/// Голова была разделана? Больше не дуллахан
 /datum/species/dullahan/proc/on_relay_move()
 	SIGNAL_HANDLER
 	if(QDELETED(my_head?.owner) || !isdullahan(my_head?.owner))
@@ -128,25 +129,25 @@
 			prevent_perspective_change = TRUE
 		return
 
-	// As it's the first time there's a client in our mob, we can finally update its vision to place it in the head instead!
+	// Поскольку это первый раз, когда в нашем мобе есть клиент, мы можем наконец обновить его зрение, чтобы поместить его в голову!
 	var/datum/action/item_action/organ_action/dullahan/eyes_toggle_perspective_action = locate() in eyes?.actions
 
 	eyes_toggle_perspective_action?.Trigger()
 	owner_first_client_connection_handled = TRUE
 
 /datum/species/dullahan/get_physical_attributes()
-	return "A dullahan is much like a human, but their head is detached from their body and must be carried around."
+	return "Дуллахан очень похож на человека, но его голова отделена от тела и должна носиться с собой."
 
 /datum/species/dullahan/get_species_description()
-	return "An angry spirit, hanging onto the land of the living for \
-		unfinished business. Or that's what the books say. They're quite nice \
-		when you get to know them."
+	return "Злой дух, цепляющийся за землю живых из-за \
+		незаконченных дел. Или так говорят книги. Они довольно милые, \
+		когда узнаешь их получше."
 
 /datum/species/dullahan/get_species_lore()
 	return list(
-		"\"No wonder they're all so grumpy! Their hands are always full! I used to think, \
-		\"Wouldn't this be cool?\" but after watching these creatures suffer from their head \
-		getting dunked down disposals for the nth time, I think I'm good.\" - Captain Larry Dodd"
+		"\"Неудивительно, что они все такие ворчливые! Их руки всегда заняты! Я раньше думал, \
+		\"Разве это не круто?\" но после того, как я в н-ный раз наблюдал, как эти существа \
+		страдают от того, что их голову сбрасывают в утилизатор, я думаю, что мне хватит.\" - Капитан Ларри Додд"
 	)
 
 /datum/species/dullahan/create_pref_unique_perks()
@@ -155,33 +156,33 @@
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "horse-head",
-		SPECIES_PERK_NAME = "Headless and Horseless",
-		SPECIES_PERK_DESC = "Dullahans must lug their head around in their arms. While \
-			many creative uses can come out of your head being independent of your \
-			body, Dullahans will find it mostly a pain.",
+		SPECIES_PERK_NAME = "Безголовый и бесконный",
+		SPECIES_PERK_DESC = "Дуллаханы должны таскать свою голову в руках. Хотя \
+			многие творческие применения могут возникнуть из-за независимости вашей головы от \
+			тела, дуллаханы в основном считают это проблемой.",
 	))
 
 	return to_add
 
-// There isn't a "Minor Undead" biotype, so we have to explain it in an override (see: vampires)
+// Не существует биотипа \"Малый нежить\", поэтому мы должны объяснить это в переопределении (см.: вампиры)
 /datum/species/dullahan/create_pref_biotypes_perks()
 	var/list/to_add = list()
 
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "skull",
-		SPECIES_PERK_NAME = "Minor Undead",
-		SPECIES_PERK_DESC = "[name] are minor undead. \
-			Minor undead enjoy some of the perks of being dead, like \
-			not needing to breathe or eat, but do not get many of the \
-			environmental immunities involved with being fully undead.",
+		SPECIES_PERK_NAME = "Малый нежить",
+		SPECIES_PERK_DESC = "[name] являются малой нежитью. \
+			Малая нежить наслаждается некоторыми преимуществами мёртвых, такими как \
+			отсутствие необходимости дышать или есть, но не получает многих \
+			иммунитетов к окружающей среде, связанных с полной нежитью.",
 	))
 
 	return to_add
 
 /obj/item/organ/brain/dullahan
 	decoy_override = TRUE
-	organ_flags = ORGAN_ORGANIC //not vital
+	organ_flags = ORGAN_ORGANIC // не жизненно важный
 
 /obj/item/organ/tongue/dullahan
 	zone = BODY_ZONE_CHEST
@@ -195,7 +196,7 @@
 			var/datum/species/dullahan/dullahan_species = human.dna.species
 			if(isobj(dullahan_species.my_head.loc))
 				var/obj/head = dullahan_species.my_head.loc
-				if(speech_args[SPEECH_MODS][WHISPER_MODE]) // whisper away
+				if(speech_args[SPEECH_MODS][WHISPER_MODE]) // шепот
 					speech_args[SPEECH_SPANS] |= SPAN_ITALICS
 				head.say(speech_args[SPEECH_MESSAGE], spans = speech_args[SPEECH_SPANS], sanitize = FALSE, language = speech_args[SPEECH_LANGUAGE], message_range = speech_args[SPEECH_RANGE], message_mods = speech_args[SPEECH_MODS])
 	speech_args[SPEECH_MESSAGE] = ""
@@ -207,16 +208,16 @@
 
 /obj/item/organ/eyes/dullahan
 	name = "head vision"
-	desc = "An abstraction."
+	desc = "Абстракция."
 	actions_types = list(/datum/action/item_action/organ_action/dullahan)
 	zone = BODY_ZONE_CHEST
 	organ_flags = parent_type::organ_flags | ORGAN_UNREMOVABLE
 	decay_factor = 0
-	tint = INFINITY // to switch the vision perspective to the head on species_gain() without issue.
+	tint = INFINITY // для переключения перспективы зрения на голову при species_gain() без проблем.
 
 /datum/action/item_action/organ_action/dullahan
-	name = "Toggle Perspective"
-	desc = "Switch between seeing normally from your head, or blindly from your body."
+	name = "Переключить перспективу"
+	desc = "Переключиться между нормальным зрением из головы или слепым зрением из тела."
 
 /datum/action/item_action/organ_action/dullahan/do_effect(trigger_flags)
 	var/obj/item/organ/eyes/dullahan/dullahan_eyes = target
@@ -228,10 +229,9 @@
 	dullahan_species.update_vision_perspective(human)
 	return TRUE
 
-
 /obj/item/dullahan_relay
 	name = "dullahan relay"
-	/// The mob (a dullahan) that owns this relay.
+	/// Моб (дуллахан), который владеет этим реле.
 	var/mob/living/owner
 
 /obj/item/dullahan_relay/Initialize(mapload, mob/living/carbon/human/new_owner)
@@ -253,19 +253,19 @@
 	owner = null
 	return ..()
 
-/// Updates our names after applying name prefs
+/// Обновляет наши имена после применения настроек имени
 /obj/item/dullahan_relay/proc/on_prefs_loaded(mob/living/carbon/human/headless)
 	SIGNAL_HANDLER
 	var/obj/item/bodypart/head/detached_head = loc
 	if (!istype(detached_head))
-		return // It's so over
+		return // Всё кончено
 	detached_head.real_name = headless.real_name
 	detached_head.name = headless.real_name
 	name = headless.real_name
 	detached_head.voice = headless.voice
 	detached_head.pitch = pitch
 	var/obj/item/organ/brain/brain = locate(/obj/item/organ/brain) in detached_head
-	brain.name = "[headless.name]'s brain"
+	brain.name = "мозг [headless.name]"
 
 	detached_head.copy_appearance_from(headless, overwrite_eyes = TRUE)
 	detached_head.update_icon_dropped()
@@ -281,12 +281,12 @@
 		return FALSE
 	return owner.Hear(speaker, message_language, raw_message, radio_freq, radio_freq_name, radio_freq_color, spans, message_mods, message_range = INFINITY)
 
-///Stops dullahans from gibbing when regenerating limbs
+/// Останавливает превращение дуллаханов в гиббс при регенерации конечностей
 /obj/item/dullahan_relay/proc/unlist_head(datum/source, list/excluded_zones)
 	SIGNAL_HANDLER
 	excluded_zones |= BODY_ZONE_HEAD
 
-///Retrieving the owner's head for better ahealing.
+/// Извлечение головы владельца для лучшего лечения.
 /obj/item/dullahan_relay/proc/retrieve_head(datum/source, full_heal_flags)
 	SIGNAL_HANDLER
 	if(!(full_heal_flags & HEAL_ADMIN))

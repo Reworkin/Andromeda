@@ -1,7 +1,7 @@
 /datum/species/pod
-	// A mutation caused by a human being ressurected in a revival pod. These regain health in light, and begin to wither in darkness.
-	name = "\improper Podperson"
-	plural_form = "Podpeople"
+	// Мутация, вызванная воскрешением человека в капсуле ревитализации. Они восстанавливают здоровье на свету и начинают увядать в темноте.
+	name = "Подлюд"
+	plural_form = "Подлюди"
 	id = SPECIES_PODPERSON
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -45,18 +45,18 @@
 	human.update_body(is_creating = TRUE)
 
 /datum/species/pod/get_physical_attributes()
-	return "Podpeople are in many ways the inverse of shadows, healing in light and starving with the dark. \
-		Their bodies are like tinder and easy to char."
+	return "Подлюди во многом противоположны теням: они исцеляются на свету и увядают в темноте. \
+		Их тела подобны труту и легко обугливаются."
 
 /datum/species/pod/get_species_description()
-	return "Podpeople are largely peaceful plant based lifeforms, resembling a humanoid figure made of leaves, flowers, and vines."
+	return "Подлюди - в основном мирные формы жизни на растительной основе, напоминающие гуманоидную фигуру из листьев, цветов и лоз."
 
 /datum/species/pod/get_species_lore()
 	return list(
-		"Not much is known about the origins of the Podpeople. \
-		Many assume them to be the result of a long forgotten botanical experiment, slowly mutating for years on years until they became the beings they are today. \
-		Ever since they were uncovered long ago, their kind have been found on board stations and planets across the galaxy, \
-		often working in hydroponics bays, kitchens, or science departments, working with plants and other botanical lifeforms.",
+		"О происхождении подлюдей известно немногое. \
+		Многие полагают, что они являются результатом давно забытого ботанического эксперимента, медленно мутировавшего годами, пока они не стали теми существами, которыми являются сегодня. \
+		С тех пор, как они были обнаружены давным-давно, их вид находили на борту станций и планет по всей галактике, \
+		часто работая в гидропонических отсеках, кухнях или научных отделах, работая с растениями и другими ботаническими формами жизни.",
 	)
 
 /datum/species/pod/create_pref_unique_perks()
@@ -65,24 +65,24 @@
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = "lightbulb",
-		SPECIES_PERK_NAME = "Photosynthetic",
-		SPECIES_PERK_DESC = "As long as you are conscious, and within a well-lit area, you will slowly heal brute, burn, toxin and oxygen damage and gain nutrition - and never get fat! \
-		However, if you are LOW on nutrition, you will progressively take brute damage until you die or enter the light once more."
+		SPECIES_PERK_NAME = "Фотосинтез",
+		SPECIES_PERK_DESC = "Пока вы в сознании и находитесь в хорошо освещённой зоне, вы будете медленно исцелять физический, ожоговый, токсический урон и урон от удушья, а также получать питание - и никогда не толстеть! \
+		Однако, если у вас НИЗКОЕ питание, вы будете постепенно получать физический урон до тех пор, пока не умрёте или не вернётесь на свет."
 	))
 
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "biohazard",
-		SPECIES_PERK_NAME = "Weedkiller Susceptability",
-		SPECIES_PERK_DESC = "Being a floral life form, you are susceptable to anti-florals and will take extra toxin damage from it!"
+		SPECIES_PERK_NAME = "Уязвимость к гербицидам",
+		SPECIES_PERK_DESC = "Будучи цветочной формой жизни, вы уязвимы для антифлоралов и будете получать дополнительный токсический урон от них!"
 	))
 
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "briefcase-medical",
-		SPECIES_PERK_NAME = "Semi-Complex Biology",
-		SPECIES_PERK_DESC = "Your biology is extremely complex, making ordinary health scanners unable to scan you. Make sure the doctor treating you either has a \
-		plant analyzer or a advanced health scanner!"
+		SPECIES_PERK_NAME = "Сложная биология",
+		SPECIES_PERK_DESC = "Ваша биология чрезвычайно сложна, что делает обычные медицинские сканеры неспособными просканировать вас. Убедитесь, что врач, лечащий вас, имеет \
+		анализатор растений или продвинутый медицинский сканер!"
 	))
 
 	return to_add

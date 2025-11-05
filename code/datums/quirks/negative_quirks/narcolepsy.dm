@@ -1,21 +1,20 @@
 /datum/quirk/item_quirk/narcolepsy
 	name = "Narcolepsy"
-	desc = "You feel drowsy often, and could fall asleep at any moment. Staying caffeinated, walking or even supressing symptoms with stimulants, prescribed or otherwise, can help you get through the shift..."
+	desc = "(Нарколепсия) - Вы часто чувствуете сонливость и можете заснуть в любой момент. Кофеин, ходьба или даже подавление симптомов стимуляторами, назначенными или иными, могут помочь вам продержаться смену..."
 	icon = FA_ICON_BED
 	value = -8
 	hardcore_value = 8
-	medical_record_text = "Patient may involuntarily fall asleep during normal activities, and feel drowsy at any given moment."
+	medical_record_text = "Пациент может непроизвольно засыпать во время обычной деятельности и чувствовать сонливость в любой момент."
 	mail_goodies = list(
 		/obj/item/reagent_containers/cup/glass/coffee,
 		/obj/item/reagent_containers/cup/soda_cans/space_mountain_wind,
 		/obj/item/storage/pill_bottle/prescription_stimulant,
 	)
 
-/datum/quirk/item_quirk/narcolepsy/add(client/client_source)
+/datum/quirk/item_quirk/narcolepsy/add_unique(client/client_source)
 	var/mob/living/carbon/carbon_user = quirk_holder
 	carbon_user.gain_trauma(/datum/brain_trauma/severe/narcolepsy/permanent, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/datum/quirk/item_quirk/narcolepsy/add_unique(client/client_source)
 	give_item_to_holder(
 		/obj/item/storage/pill_bottle/prescription_stimulant,
 		list(
@@ -24,7 +23,7 @@
 			LOCATION_RPOCKET,
 			LOCATION_HANDS,
 		),
-		flavour_text = "Given to you to aid in staying awake this shift...",
+		flavour_text = "Выдано вам для помощи в поддержании бодрости в эту смену...",
 		notify_player = TRUE,
 	)
 

@@ -25,14 +25,14 @@
 
 /datum/personality/nt/loyalist
 	savefile_key = "loyalist"
-	name = "Loyal"
-	desc = "I believe in the station and in Central Command, till the very end!"
-	pos_gameplay_desc = "Likes company posters and signs"
+	name = "Лояльный"
+	desc = "Я верю в станцию и в Центральное Командование, до самого конца!"
+	pos_gameplay_desc = "Любит корпоративные плакаты и знаки"
 	mood_event_type = /datum/mood_event/nt_loyalist
 
 /datum/personality/nt/disillusioned
 	savefile_key = "disillusioned"
-	name = "Disillusioned"
-	desc = "Nanotrasen isn't what it used to be. This isn't what I signed up for."
-	neg_gameplay_desc = "Dislikes company posters and signs"
+	name = "Разочарованный"
+	desc = "Nanotrasen - не та компания, которой была раньше. Это не то, на что я подписывался."
+	neg_gameplay_desc = "Не любит корпоративные плакаты и знаки"
 	mood_event_type = /datum/mood_event/nt_disillusioned

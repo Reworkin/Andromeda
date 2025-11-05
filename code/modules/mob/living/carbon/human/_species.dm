@@ -593,14 +593,14 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			if((H.bodyshape & BODYSHAPE_DIGITIGRADE) && !(I.item_flags & IGNORE_DIGITIGRADE))
 				if(!(I.supports_variations_flags & DIGITIGRADE_VARIATIONS))
 					if(!disable_warning)
-						to_chat(H, span_warning("The footwear around here isn't compatible with your feet!"))
+						to_chat(H, span_warning("Обувь не совместима с вашими ногами!"))
 					return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_BELT)
 			var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
 			if(!H.w_uniform && !HAS_TRAIT(H, TRAIT_NO_JUMPSUIT) && (!O || IS_ORGANIC_LIMB(O)))
 				if(!disable_warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [I.name]!"))
+					to_chat(H, span_warning("Вам нужна форма, прежде чем вы сможете надеть [I.name]!"))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_EYES)
@@ -624,7 +624,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
 			if(!H.w_uniform && !HAS_TRAIT(H, TRAIT_NO_JUMPSUIT) && (!O || IS_ORGANIC_LIMB(O)))
 				if(!disable_warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [I.name]!"))
+					to_chat(H, span_warning("Вам нужна форма, прежде чем вы сможете прикрепить [I.name]!"))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_LPOCKET)
@@ -637,7 +637,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 			if(!H.w_uniform && !HAS_TRAIT(H, TRAIT_NO_JUMPSUIT) && (!O || IS_ORGANIC_LIMB(O)))
 				if(!disable_warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [I.name]!"))
+					to_chat(H, span_warning("Вам нужна форма, прежде чем вы сможете прикрепить [I.name]!"))
 				return FALSE
 			return TRUE
 		if(ITEM_SLOT_RPOCKET)
@@ -650,7 +650,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 			if(!H.w_uniform && !HAS_TRAIT(H, TRAIT_NO_JUMPSUIT) && (!O || IS_ORGANIC_LIMB(O)))
 				if(!disable_warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [I.name]!"))
+					to_chat(H, span_warning("Вам нужна форма, прежде чем вы сможете прикрепить [I.name]!"))
 				return FALSE
 			return TRUE
 		if(ITEM_SLOT_SUITSTORE)
@@ -658,14 +658,14 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				return FALSE
 			if(!H.wear_suit)
 				if(!disable_warning)
-					to_chat(H, span_warning("You need a suit before you can attach this [I.name]!"))
+					to_chat(H, span_warning("Вам нужен костюм, прежде чем вы сможете прикрепить [I.name]!"))
 				return FALSE
 			var/any_suit_storage = (is_type_in_typecache(I, GLOB.any_suit_storage) || I.w_class == WEIGHT_CLASS_TINY)
 			if(any_suit_storage)
 				return TRUE
 			if(I.w_class > WEIGHT_CLASS_BULKY)
 				if(!disable_warning)
-					to_chat(H, span_warning("\The [I] is too big to attach!")) //should be src?
+					to_chat(H, span_warning("[I] слишком велик для крепления!")) //should be src?
 				return FALSE
 			if( is_type_in_list(I, H.wear_suit.allowed) )
 				return TRUE
@@ -687,7 +687,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 /datum/species/proc/equip_delay_self_check(obj/item/I, mob/living/carbon/human/H, bypass_equip_delay_self)
 	if(!I.equip_delay_self || bypass_equip_delay_self)
 		return TRUE
-	H.visible_message(span_notice("[H] start putting on [I]..."), span_notice("You start putting on [I]..."))
+	H.visible_message(span_notice("[H] начинает надевать [I]..."), span_notice("Вы начинаете надевать [I]..."))
 	return do_after(H, I.equip_delay_self, target = H)
 
 
@@ -705,25 +705,25 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	human_to_equip.equipOutfit(outfit_important_for_life)
 
 /**
- * Species based handling for irradiation
+ * Обработка радиации в зависимости от вида
  *
- * Arguments:
- * - [source][/mob/living/carbon/human]: The mob requesting handling
- * - time_since_irradiated: The amount of time since the mob was first irradiated
- * - seconds_per_tick: The amount of time that has passed since the last tick
+ * Аргументы:
+ * - [source][/mob/living/carbon/human]: Моб, для которого требуется обработка
+ * - time_since_irradiated: Время с момента первого облучения моба
+ * - seconds_per_tick: Количество времени, прошедшее с последнего тика
  */
 /datum/species/proc/handle_radiation(mob/living/carbon/human/source, time_since_irradiated, seconds_per_tick)
 	if(time_since_irradiated > RAD_MOB_KNOCKDOWN && SPT_PROB(RAD_MOB_KNOCKDOWN_PROB, seconds_per_tick))
 		if(!source.IsParalyzed())
 			source.emote("collapse")
 		source.Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
-		to_chat(source, span_danger("You feel weak."))
+		to_chat(source, span_danger("Вы чувствуете слабость."))
 
 	if(time_since_irradiated > RAD_MOB_VOMIT && SPT_PROB(RAD_MOB_VOMIT_PROB, seconds_per_tick))
 		source.vomit(VOMIT_CATEGORY_BLOOD, lost_nutrition = 10)
 
 	if(time_since_irradiated > RAD_MOB_MUTATE && SPT_PROB(RAD_MOB_MUTATE_PROB, seconds_per_tick))
-		to_chat(source, span_danger("You mutate!"))
+		to_chat(source, span_danger("Вы мутируете!"))
 		source.easy_random_mutate(NEGATIVE + MINOR_NEGATIVE)
 		source.emote("gasp")
 		source.domutcheck()
@@ -731,7 +731,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	if(time_since_irradiated > RAD_MOB_HAIRLOSS && SPT_PROB(RAD_MOB_HAIRLOSS_PROB, seconds_per_tick))
 		var/obj/item/bodypart/head/head = source.get_bodypart(BODY_ZONE_HEAD)
 		if(!(source.hairstyle == "Bald") && (head?.head_flags & (HEAD_HAIR|HEAD_FACIAL_HAIR)))
-			to_chat(source, span_danger("Your hair starts to fall out in clumps..."))
+			to_chat(source, span_danger("Ваши волосы начинают выпадать клочьями..."))
 			addtimer(CALLBACK(src, PROC_REF(go_bald), source), 5 SECONDS)
 
 /**
@@ -762,10 +762,10 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	user.do_cpr(target)
 
-///This proc handles punching damage. IMPORTANT: Our owner is the TARGET and not the USER in this proc. For whatever reason...
+///Эта процедура обрабатывает урон от ударов. ВАЖНО: Наш владелец - это ЦЕЛЬ, а не ИСПОЛНИТЕЛЬ в этой процедуре. По какой-то причине...
 /datum/species/proc/harm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM) && !attacker_style?.pacifist_style)
-		to_chat(user, span_warning("You don't want to harm [target]!"))
+		to_chat(user, span_warning("Вы не хотите причинять вред [target]!"))
 		return FALSE
 
 	var/obj/item/organ/brain/brain = user.get_organ_slot(ORGAN_SLOT_BRAIN)
@@ -776,7 +776,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	var/atk_verb_index = rand(1, length(attacking_bodypart.unarmed_attack_verbs))
 	var/atk_verb = attacking_bodypart.unarmed_attack_verbs[atk_verb_index]
-	var/atk_verb_continuous = "[atk_verb]s"
+	var/atk_verb_continuous = "[atk_verb]"
 	if (length(attacking_bodypart.unarmed_attack_verbs_continuous) >= atk_verb_index) // Just in case
 		atk_verb_continuous = attacking_bodypart.unarmed_attack_verbs_continuous[atk_verb_index]
 
@@ -789,12 +789,12 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			attacking_bodypart = user.get_active_hand()
 			atk_verb_index = rand(1, length(attacking_bodypart.unarmed_attack_verbs))
 			atk_verb = attacking_bodypart.unarmed_attack_verbs[atk_verb_index]
-			atk_verb_continuous = "[atk_verb]s"
+			atk_verb_continuous = "[atk_verb]"
 			if (length(attacking_bodypart.unarmed_attack_verbs_continuous) >= atk_verb_index) // Just in case
 				atk_verb_continuous = attacking_bodypart.unarmed_attack_verbs_continuous[atk_verb_index]
 			atk_effect = attacking_bodypart.unarmed_attack_effect
 		else  //Nothing? Okay. Fail.
-			user.balloon_alert(user, "can't attack!")
+			user.balloon_alert(user, "не могу атаковать!")
 			return FALSE
 
 	user.do_attack_animation(target, atk_effect)
@@ -1500,7 +1500,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
  */
 
 /datum/species/proc/get_physical_attributes()
-	return "An unremarkable species."
+	return "Ничем не примечательный вид."
 /**
  * Gets a short description for the specices. Should be relatively succinct.
  * Used in the preference menu.
@@ -1511,8 +1511,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 /datum/species/proc/get_species_description()
 	SHOULD_CALL_PARENT(FALSE)
 
-	stack_trace("Species [name] ([type]) did not have a description set, and is a selectable roundstart race! Override get_species_description.")
-	return "No species description set, file a bug report!"
+	stack_trace("Вид [name] ([type]) не имеет установленного описания и является выбираемой расой для старта раунда! Переопределите get_species_description.")
+	return "Описание вида не установлено, сообщите об ошибке!"
 
 /**
  * Gets the lore behind the type of species. Can be long.
@@ -1525,8 +1525,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	SHOULD_CALL_PARENT(FALSE)
 	RETURN_TYPE(/list)
 
-	stack_trace("Species [name] ([type]) did not have lore set, and is a selectable roundstart race! Override get_species_lore.")
-	return list("No species lore set, file a bug report!")
+	stack_trace("Вид [name] ([type]) не имеет установленной истории и является выбираемой расой для старта раунда! Переопределите get_species_lore.")
+	return list("История вида не установлена, сообщите об ошибке!")
 
 /**
  * Translate the species liked foods from bitfields into strings
@@ -1596,8 +1596,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		// If we find a perk that isn't postiive, negative, or neutral,
 		// it's a bad entry - don't add it to our list. Throw a stack trace and skip it instead.
 		if(isnull(perks_to_return[perk_type]))
-			stack_trace("Invalid species perk ([perk[SPECIES_PERK_NAME]]) found for species [name]. \
-				The type should be positive, negative, or neutral. (Got: [perk_type])")
+			stack_trace("Обнаружен некорректный перк вида ([perk[SPECIES_PERK_NAME]]) для расы [name]. \
+				Тип должен быть positive, negative или neutral. (Получено: [perk_type])")
 			continue
 
 		perks_to_return[perk_type] += list(perk)
@@ -1613,156 +1613,156 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	return null
 
 /**
- * Adds adds any perks related to sustaining damage.
- * For example, brute damage vulnerability, or fire damage resistance.
+ * Добавляет перки, связанные с получением урона.
+ * Например, уязвимость к дробящему урону или устойчивость к огненному урону.
  *
- * Returns a list containing perks, or an empty list.
+ * Возвращает список, содержащий перки, или пустой список.
  */
 /datum/species/proc/create_pref_damage_perks()
-	// We use the chest to figure out brute and burn mod perks
+	// Мы используем грудь для определения перков модификаторов дробящего и ожогового урона
 	var/obj/item/bodypart/chest/fake_chest = bodypart_overrides[BODY_ZONE_CHEST]
 
 	var/list/to_add = list()
 
-	// Brute related
+	// Дробящий урон
 	if(initial(fake_chest.brute_modifier) > 1)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "band-aid",
-			SPECIES_PERK_NAME = "Brutal Weakness",
-			SPECIES_PERK_DESC = "[plural_form] are weak to brute damage.",
+			SPECIES_PERK_NAME = "Уязвимость к ударам",
+			SPECIES_PERK_DESC = "[plural_form] уязвимы к дробящему урону.",
 		))
 
 	if(initial(fake_chest.brute_modifier) < 1)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "shield-alt",
-			SPECIES_PERK_NAME = "Brutal Resilience",
-			SPECIES_PERK_DESC = "[plural_form] are resilient to brute damage.",
+			SPECIES_PERK_NAME = "Устойчивость к ударам",
+			SPECIES_PERK_DESC = "[plural_form] устойчивы к дробящему урону.",
 		))
 
-	// Burn related
+	// Ожоговый урон
 	if(initial(fake_chest.burn_modifier) > 1)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "burn",
-			SPECIES_PERK_NAME = "Burn Weakness",
-			SPECIES_PERK_DESC = "[plural_form] are weak to burn damage.",
+			SPECIES_PERK_NAME = "Уязвимость к ожогам",
+			SPECIES_PERK_DESC = "[plural_form] уязвимы к ожоговому урону.",
 		))
 
 	if(initial(fake_chest.burn_modifier) < 1)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "shield-alt",
-			SPECIES_PERK_NAME = "Burn Resilience",
-			SPECIES_PERK_DESC = "[plural_form] are resilient to burn damage.",
+			SPECIES_PERK_NAME = "Устойчивость к ожогам",
+			SPECIES_PERK_DESC = "[plural_form] устойчивы к ожоговому урону.",
 		))
 
-	// Shock damage
+	// Электрошоковый урон
 	if(siemens_coeff > 1)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "bolt",
-			SPECIES_PERK_NAME = "Shock Vulnerability",
-			SPECIES_PERK_DESC = "[plural_form] are vulnerable to being shocked.",
+			SPECIES_PERK_NAME = "Уязвимость к электрошоку",
+			SPECIES_PERK_DESC = "[plural_form] уязвимы к электрошоку.",
 		))
 
 	if(siemens_coeff < 1)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "shield-alt",
-			SPECIES_PERK_NAME = "Shock Resilience",
-			SPECIES_PERK_DESC = "[plural_form] are resilient to being shocked.",
+			SPECIES_PERK_NAME = "Устойчивость к электрошоку",
+			SPECIES_PERK_DESC = "[plural_form] устойчивы к электрошоку.",
 		))
 
 	return to_add
 
 /**
- * Adds adds any perks related to how the species deals with temperature.
+ * Добавляет перки, связанные с тем, как вид справляется с температурой.
  *
- * Returns a list containing perks, or an empty list.
+ * Возвращает список, содержащий перки, или пустой список.
  */
 /datum/species/proc/create_pref_temperature_perks()
 	var/list/to_add = list()
 
-	// Hot temperature tolerance
+	// Устойчивость к высокой температуре
 	if(heatmod > 1 || bodytemp_heat_damage_limit < BODYTEMP_HEAT_DAMAGE_LIMIT)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "temperature-high",
-			SPECIES_PERK_NAME = "Heat Vulnerability",
-			SPECIES_PERK_DESC = "[plural_form] are vulnerable to high temperatures.",
+			SPECIES_PERK_NAME = "Уязвимость к жаре",
+			SPECIES_PERK_DESC = "[plural_form] уязвимы к высоким температурам.",
 		))
 
 	if(heatmod < 1 || bodytemp_heat_damage_limit > BODYTEMP_HEAT_DAMAGE_LIMIT)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "thermometer-empty",
-			SPECIES_PERK_NAME = "Heat Resilience",
-			SPECIES_PERK_DESC = "[plural_form] are resilient to hotter environments.",
+			SPECIES_PERK_NAME = "Устойчивость к жаре",
+			SPECIES_PERK_DESC = "[plural_form] устойчивы к жарким средам.",
 		))
 
-	// Cold temperature tolerance
+	// Устойчивость к низкой температуре
 	if(coldmod > 1 || bodytemp_cold_damage_limit > BODYTEMP_COLD_DAMAGE_LIMIT)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "temperature-low",
-			SPECIES_PERK_NAME = "Cold Vulnerability",
-			SPECIES_PERK_DESC = "[plural_form] are vulnerable to cold temperatures.",
+			SPECIES_PERK_NAME = "Уязвимость к холоду",
+			SPECIES_PERK_DESC = "[plural_form] уязвимы к низким температурам.",
 		))
 
 	if(coldmod < 1 || bodytemp_cold_damage_limit < BODYTEMP_COLD_DAMAGE_LIMIT)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "thermometer-empty",
-			SPECIES_PERK_NAME = "Cold Resilience",
-			SPECIES_PERK_DESC = "[plural_form] are resilient to colder environments.",
+			SPECIES_PERK_NAME = "Устойчивость к холоду",
+			SPECIES_PERK_DESC = "[plural_form] устойчивы к холодным средам.",
 		))
 
 	return to_add
 
 /**
- * Adds adds any perks related to the species' blood (or lack thereof).
+ * Добавляет перки, связанные с кровью вида (или её отсутствием).
  *
- * Returns a list containing perks, or an empty list.
+ * Возвращает список, содержащий перки, или пустой список.
  */
 /datum/species/proc/create_pref_blood_perks()
 	var/list/to_add = list()
 	var/datum/blood_type/blood_type = exotic_bloodtype ? get_blood_type(exotic_bloodtype) : null
 
-	// TRAIT_NOBLOOD takes priority by default
+	// TRAIT_NOBLOOD имеет приоритет по умолчанию
 	if(TRAIT_NOBLOOD in inherent_traits)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "tint-slash",
-			SPECIES_PERK_NAME = "Bloodletted",
-			SPECIES_PERK_DESC = "[plural_form] do not have blood.",
+			SPECIES_PERK_NAME = "Без крови",
+			SPECIES_PERK_DESC = "У [plural_form] нет крови.",
 		))
 
-	// Otherwise, check if their exotic blood is a valid typepath
+	// Иначе проверяем, является ли их экзотическая кровь валидным типом
 	else if(ispath(blood_type?.reagent_type))
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = "tint",
 			SPECIES_PERK_NAME = initial(blood_type.reagent_type.name),
-			SPECIES_PERK_DESC = "[name] blood is [initial(blood_type.reagent_type.name)], which can make receiving medical treatment harder.",
+			SPECIES_PERK_DESC = "Кровь [plural_form] - это [initial(blood_type.reagent_type.name)], что может затруднить медицинское лечение.",
 		))
 
-	// Otherwise otherwise, see if they have an exotic bloodtype set
+	// Иначе проверяем, установлен ли у них экзотический тип крови
 	else if(exotic_bloodtype)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = "tint",
-			SPECIES_PERK_NAME = "Exotic Blood",
-			SPECIES_PERK_DESC = "[plural_form] have \"[exotic_bloodtype]\" type blood, which can make receiving medical treatment harder.",
+			SPECIES_PERK_NAME = "Экзотическая кровь",
+			SPECIES_PERK_DESC = "У [plural_form] кровь типа \"[exotic_bloodtype]\", что может затруднить медицинское лечение.",
 		))
 
 	return to_add
 
 /**
- * Adds adds any perks related to the species' inherent_traits list.
+ * Добавляет перки, связанные со списком inherent_traits вида.
  *
- * Returns a list containing perks, or an empty list.
+ * Возвращает список, содержащий перки, или пустой список.
  */
 /datum/species/proc/create_pref_traits_perks()
 	var/list/to_add = list()
@@ -1771,58 +1771,58 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "user-plus",
-			SPECIES_PERK_NAME = "Limbs Easily Reattached",
-			SPECIES_PERK_DESC = "[plural_form] limbs are easily readded, and as such do not \
-				require surgery to restore. Simply pick it up and pop it back in, champ!",
+			SPECIES_PERK_NAME = "Конечности легко прикрепляются",
+			SPECIES_PERK_DESC = "Конечности [plural_form] легко переприкрепляются и не требуют \
+				хирургического вмешательства для восстановления. Просто поднимите и вставьте обратно, чемпион!",
 		))
 
 	if(TRAIT_EASYDISMEMBER in inherent_traits)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "user-times",
-			SPECIES_PERK_NAME = "Limbs Easily Dismembered",
-			SPECIES_PERK_DESC = "[plural_form] limbs are not secured well, and as such they are easily dismembered.",
+			SPECIES_PERK_NAME = "Конечности легко отрываются",
+			SPECIES_PERK_DESC = "Конечности [plural_form] плохо закреплены, поэтому они легко отрываются.",
 		))
 
 	if(TRAIT_EASILY_WOUNDED in inherent_traits)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "user-times",
-			SPECIES_PERK_NAME = "Easily Wounded",
-			SPECIES_PERK_DESC = "[plural_form] skin is very weak and fragile. They are much easier to apply serious wounds to.",
+			SPECIES_PERK_NAME = "Легко ранимый",
+			SPECIES_PERK_DESC = "Кожа [plural_form] очень слабая и хрупкая. Им намного легче нанести серьёзные раны.",
 		))
 
 	if(TRAIT_TOXINLOVER in inherent_traits)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = "syringe",
-			SPECIES_PERK_NAME = "Toxins Lover",
-			SPECIES_PERK_DESC = "Toxins damage dealt to [plural_form] are reversed - healing toxins will instead cause harm, and \
-				causing toxins will instead cause healing. Be careful around purging chemicals!",
+			SPECIES_PERK_NAME = "Любитель токсинов",
+			SPECIES_PERK_DESC = "Урон от токсинов для [plural_form] обращён - лечение токсинов вместо этого причинит вред, а \
+				причинение токсинов вместо этого исцелит. Будьте осторожны с очищающими химикатами!",
 		))
 
 	if (TRAIT_GENELESS in inherent_traits)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = "dna",
-			SPECIES_PERK_NAME = "No Genes",
-			SPECIES_PERK_DESC = "[plural_form] have no genes, making genetic scrambling a useless weapon, but also locking them out from getting genetic powers.",
+			SPECIES_PERK_NAME = "Без генов",
+			SPECIES_PERK_DESC = "У [plural_form] нет генов, что делает генетическое скремблирование бесполезным оружием, но также блокирует получение генетических способностей.",
 		))
 
 	if (TRAIT_NOBREATH in inherent_traits)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "wind",
-			SPECIES_PERK_NAME = "No Respiration",
-			SPECIES_PERK_DESC = "[plural_form] have no need to breathe!",
+			SPECIES_PERK_NAME = "Не дышит",
+			SPECIES_PERK_DESC = "[plural_form] не нуждаются в дыхании!",
 		))
 
 	return to_add
 
 /**
- * Adds adds any perks related to the species' inherent_biotypes flags.
+ * Добавляет перки, связанные с флагами inherent_biotypes вида.
  *
- * Returns a list containing perks, or an empty list.
+ * Возвращает список, содержащий перки, или пустой список.
  */
 /datum/species/proc/create_pref_biotypes_perks()
 	var/list/to_add = list()
@@ -1831,9 +1831,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "skull",
-			SPECIES_PERK_NAME = "Undead",
-			SPECIES_PERK_DESC = "[plural_form] are of the undead! The undead do not have the need to eat or breathe, and \
-				most viruses will not be able to infect a walking corpse. Their worries mostly stop at remaining in one piece, really.",
+			SPECIES_PERK_NAME = "Нежить",
+			SPECIES_PERK_DESC = "[plural_form] относятся к нежити! Нежить не нуждается в еде или дыхании, и \
+				большинство вирусов не смогут заразить ходячий труп. Их заботы в основном сводятся к тому, чтобы оставаться в одном куске, правда.",
 		))
 
 	return to_add
@@ -1868,31 +1868,31 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	if (tolerance_difference != 0)
 		var/difference_positive = (tolerance_difference > 0)
-		var/more_or_less = (difference_positive) ? "more" : "less"
+		var/more_or_less = (difference_positive) ? "более" : "менее"
 		var/perk_type = (difference_positive) ? SPECIES_NEGATIVE_PERK : SPECIES_POSITIVE_PERK
-		var/perk_name = "Alcohol " + ((difference_positive) ? "Weakness" : "Tolerance")
+		var/perk_name = "Алкогольная " + ((difference_positive) ? "Слабость" : "Устойчивость")
 		var/percent_difference = (alcohol_tolerance / initial(base_liver.alcohol_tolerance)) * 100
 
 		to_add += list(list(
 			SPECIES_PERK_TYPE = perk_type,
 			SPECIES_PERK_ICON = "wine-glass",
 			SPECIES_PERK_NAME = perk_name,
-			SPECIES_PERK_DESC = "[name] livers are [more_or_less] susceptable to alcohol than human livers, by about [percent_difference]%."
+			SPECIES_PERK_DESC = "Печень [plural_form] [more_or_less] восприимчива к алкоголю, чем человеческая, примерно на [percent_difference]%."
 		))
 
 	var/tox_shrugging = initial(mutantliver.toxTolerance)
 	var/shrugging_difference = tox_shrugging - initial(base_liver.toxTolerance)
 	if (shrugging_difference != 0)
 		var/difference_positive = (shrugging_difference > 0)
-		var/more_or_less = (difference_positive) ? "more" : "less"
+		var/more_or_less = (difference_positive) ? "более" : "менее"
 		var/perk_type = (difference_positive) ? SPECIES_POSITIVE_PERK : SPECIES_NEGATIVE_PERK
-		var/perk_name = ("Toxin " + ((difference_positive) ? "Resistant" : "Vulnerable")) + " Liver"
+		var/perk_name = "Печень " + ((difference_positive) ? "Устойчивая к Токсинам" : "Уязвимая к Токсинам")
 
 		to_add += list(list(
 			SPECIES_PERK_TYPE = perk_type,
 			SPECIES_PERK_ICON = "biohazard",
 			SPECIES_PERK_NAME = perk_name,
-			SPECIES_PERK_DESC = "[name] livers are capable of rapidly shrugging off [tox_shrugging]u of toxins, which is [more_or_less] than humans."
+			SPECIES_PERK_DESC = "Печень [plural_form] способна быстро выводить [tox_shrugging]ед. токсинов, что [more_or_less], чем у людей."
 		))
 
 	return to_add
@@ -1909,24 +1909,24 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "wind",
-			SPECIES_PERK_NAME = "[capitalize(breathid)] Breathing",
-			SPECIES_PERK_DESC = "[plural_form] must breathe [breathid] to survive. You receive a tank when you arrive.",
+			SPECIES_PERK_NAME = "Дыхание [capitalize(breathid)]",
+			SPECIES_PERK_DESC = "[plural_form] должны дышать [breathid] для выживания. Вы получаете баллон при прибытии.",
 		))
 
 	return to_add
 
 /**
- * Adds in a language perk based on all the languages the species
- * can speak by default (according to their language holder).
+ * Добавляет языковой перк на основе всех языков, которые вид
+ * может говорить по умолчанию (согласно их держателю языков).
  *
- * Returns a list containing perks, or an empty list.
+ * Возвращает список, содержащий перки, или пустой список.
  */
 /datum/species/proc/create_pref_language_perk()
 
-	// Grab galactic common as a path, for comparisons
+	// Получаем галактический общий как путь для сравнений
 	var/datum/language/common_language = /datum/language/common
 
-	// Now let's find all the languages they can speak that aren't common
+	// Теперь найдём все языки, которые они могут говорить, кроме общего
 	var/list/bonus_languages = list()
 	var/datum/language_holder/basic_holder = GLOB.prototype_language_holders[species_language_holder]
 	for(var/datum/language/language_type as anything in basic_holder.spoken_languages)
@@ -1935,23 +1935,23 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		bonus_languages += initial(language_type.name)
 
 	if(!length(bonus_languages))
-		return // You're boring
+		return // Вы скучный
 
 	var/list/to_add = list()
 	if(common_language in basic_holder.spoken_languages)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "comment",
-			SPECIES_PERK_NAME = "Native Speaker",
-			SPECIES_PERK_DESC = "Alongside [initial(common_language.name)], [plural_form] gain the ability to speak [english_list(bonus_languages)].",
+			SPECIES_PERK_NAME = "Родной язык",
+			SPECIES_PERK_DESC = "Наряду с [initial(common_language.name)], [plural_form] получают способность говорить на [english_list(bonus_languages)].",
 		))
 
 	else
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = "comment",
-			SPECIES_PERK_NAME = "Foreign Speaker",
-			SPECIES_PERK_DESC = "[plural_form] may not speak [initial(common_language.name)], but they can speak [english_list(bonus_languages)].",
+			SPECIES_PERK_NAME = "Иностранный язык",
+			SPECIES_PERK_DESC = "[plural_form] могут не говорить на [initial(common_language.name)], но они могут говорить на [english_list(bonus_languages)].",
 		))
 
 	return to_add
@@ -1987,10 +1987,10 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	target.create_bodyparts(override_limbs)
 
 /**
- * Checks if the species has a head with these head flags, by default.
- * Admittedly, this is a very weird and seemingly redundant proc, but it
- * gets used by some preferences (such as hair style) to determine whether
- * or not they are accessible.
+ * Проверяет, имеет ли вид голову с указанными флагами головы, по умолчанию.
+ * Признаться, это очень странная и на вид избыточная процедура, но она
+ * используется некоторыми настройками (такими как причёска) для определения,
+ * доступны ли они.
  **/
 /datum/species/proc/check_head_flags(check_flags = NONE)
 	var/obj/item/bodypart/head/fake_head = bodypart_overrides[BODY_ZONE_HEAD]
@@ -2000,7 +2000,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	if(harddel_deets_dumped)
 		return
 	harddel_deets_dumped = TRUE
-	return "Gained / Owned: [properly_gained ? "Yes" : "No"]"
+	return "Получен / Владеет: [properly_gained ? "Да" : "Нет"]"
 
 /**
  * Get what hair color is used by this species for a mob.

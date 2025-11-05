@@ -1,5 +1,6 @@
 /datum/species/abductor
-	name = "Abductor"
+	name = "Абдуктор"
+	plural_form = "Абдукторы"
 	id = SPECIES_ABDUCTOR
 	sexes = FALSE
 	inherent_traits = list(
@@ -30,18 +31,18 @@
 	)
 
 /datum/species/abductor/get_physical_attributes()
-	return "Abductors do not need to breathe, eat, do not have blood, a heart, stomach, or lungs and cannot be infected by human viruses. \
-		Their hardy physique prevents their skin from being wounded or dismembered, but their chunky tridactyl hands make it hard to operate human equipment."
+	return "Абдукторам не нужно дышать, есть, у них нет крови, сердца, желудка или лёгких и они не могут быть заражены человеческими вирусами. \
+		Их выносливое телосложение предотвращает ранение или расчленение их кожи, но их неуклюжие трёхпалые руки затрудняют использование человеческого оборудования."
 
 /datum/species/abductor/get_species_description()
-	return "Abductors, colloquially known as \"Greys\" (or \"Grays\"), \
-		are, three fingered, pale skinned inquisitive aliens who can't communicate well to the average crew-member."
+	return "Абдукторы, в просторечии известные как \"Серые\", \
+		являются трёхпалыми, бледнокожими любознательными инопланетянами, которые не могут хорошо общаться со средним членом экипажа."
 
 /datum/species/abductor/get_species_lore()
 	return list(
-		"Little are known about Abductors. \
-		While they (as a species) have been known to abduct other species of 'lesser intellect' for experimentation, \
-		some have been known to - on rare occasions - work with the very species they abduct, for reasons unknown.",
+		"Об абдукторах известно мало. \
+		Хотя известно, что они, как вид, похищают другие виды 'меньшего интеллекта' для экспериментов, \
+		некоторые из них, как известно, - в редких случаях - работают с теми самыми видами, которых похищают, по неизвестным причинам.",
 	)
 
 /datum/species/abductor/create_pref_traits_perks()
@@ -49,15 +50,15 @@
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_WIND,
-		SPECIES_PERK_NAME = "Lungs Optional",
-		SPECIES_PERK_DESC = "Abductors don't need to breathe, though exposure to a vacuum is still a hazard.",
+		SPECIES_PERK_NAME = "Лёгкие опциональны",
+		SPECIES_PERK_DESC = "Абдукторам не нужно дышать, хотя воздействие вакуума всё ещё опасно.",
 	))
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_SHIELD,
-		SPECIES_PERK_NAME = "Resilient Skin",
-		SPECIES_PERK_DESC = "The grey (or gray) skin of an Abductor is tough and resistant. \
-			They cannot be wounded or dismembered by conventional means.",
+		SPECIES_PERK_NAME = "Устойчивая кожа",
+		SPECIES_PERK_DESC = "Серая кожа абдуктора прочная и устойчивая. \
+			Их нельзя ранить или расчленить обычными средствами.",
 	))
 	return perks
 
@@ -66,28 +67,28 @@
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_SYRINGE,
-		SPECIES_PERK_NAME = "Disease Immunity",
-		SPECIES_PERK_DESC = "Abductors are immune to all viral infections found naturally on the station.",
+		SPECIES_PERK_NAME = "Иммунитет к болезням",
+		SPECIES_PERK_DESC = "Абдукторы невосприимчивы ко всем вирусным инфекциям, встречающимся на станции естественным образом.",
 	))
 	perks += list(list(
-		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK, // It may be a stretch to call nohunger a neutral perk but the Abductor's tongue describes it as much, so.
+		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK, // Возможно, назвать отсутствие голода нейтральной чертой - натяжка, но язык абдуктора описывает это именно так.
 		SPECIES_PERK_ICON = FA_ICON_UTENSILS,
-		SPECIES_PERK_NAME = "Hungry for Knowledge",
-		SPECIES_PERK_DESC = "Abductors have a greater hunger for knowledge than food, and as such don't need to eat. \
-			Which is fortunate, as their speech matrix prevents them from consuming food.",
+		SPECIES_PERK_NAME = "Голод к знаниям",
+		SPECIES_PERK_DESC = "У абдукторов больше голод к знаниям, чем к еде, и поэтому им не нужно есть. \
+			Что удачно, поскольку их речевой матрикс не позволяет им потреблять пищу.",
 	))
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = FA_ICON_VOLUME_XMARK,
-		SPECIES_PERK_NAME = "Superlingual Matrix",
-		SPECIES_PERK_DESC = "Abductors cannot physically speak with their natural tongue. \
-			They intead naturally communicate telepathically to other Abductors, a process which all other species cannot hear. \
-			Great for secret conversations, not so great for ordering something from the bar.",
+		SPECIES_PERK_NAME = "Суперлингвальный матрикс",
+		SPECIES_PERK_DESC = "Абдукторы не могут физически говорить своим естественным языком. \
+			Вместо этого они естественным образом общаются телепатически с другими абдукторами, процесс, который все другие виды не слышат. \
+			Отлично подходит для секретных разговоров, не так хорошо для заказа чего-либо в баре.",
 	))
 	perks += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_HANDSHAKE_SLASH,
-		SPECIES_PERK_NAME = "Tridactyl Hands",
-		SPECIES_PERK_DESC = "Abductor hands are not designed for human equipment. Utilizing the station's equipment is difficult for them.",
+		SPECIES_PERK_NAME = "Трёхпалые руки",
+		SPECIES_PERK_DESC = "Руки абдукторов не предназначены для человеческого оборудования. Использование оборудования станции затруднено для них.",
 	))
 	return perks

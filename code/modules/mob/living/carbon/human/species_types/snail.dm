@@ -1,6 +1,6 @@
 /datum/species/snail
-	name = "\improper Snailperson"
-	plural_form = "Snailpeople"
+	name = "Улитколюд"
+	plural_form = "Улитколюди"
 	id = SPECIES_SNAIL
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -8,10 +8,10 @@
 		TRAIT_NO_SLIP_ALL,
 	)
 
-	coldmod = 0.5 //snails only come out when its cold and wet
-	siemens_coeff = 2 //snails are mostly water
+	coldmod = 0.5 // улитки появляются только когда холодно и влажно
+	siemens_coeff = 2 // улитки в основном состоят из воды
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP
-	sexes = FALSE //snails are hermaphrodites
+	sexes = FALSE // улитки - гермафродиты
 
 	mutanteyes = /obj/item/organ/eyes/snail
 	mutanttongue = /obj/item/organ/tongue/snail
@@ -32,16 +32,16 @@
 	human.update_body(is_creating = TRUE)
 
 /datum/species/snail/get_physical_attributes()
-	return "Snailpeople emit a viscous, slippery ooze when crawling along the ground, which they are somewhat faster at than other species. \
-		They are almost purely made of water, making them extremely susceptible to shocks, and salt will scour them heavily."
+	return "Улитколюди выделяют вязкую, скользкую слизь при ползании по земле, что делает их несколько быстрее в этом, чем другие виды. \
+		Они почти полностью состоят из воды, что делает их чрезвычайно восприимчивыми к ударам током, а соль сильно разъедает их."
 
 /datum/species/snail/get_species_description()
-	return "Snailpeople are viscous, slimy beings with a shell on their back."
+	return "Улитколюди - вязкие, слизистые существа с раковиной на спине."
 
 /datum/species/snail/get_species_lore()
 	return list(
-		"Normally, Snailpeople are a result of a genetic experiment gone wrong, but they have since become recognized species in their own right, \
-		similar to the Felinid.",
+		"Обычно улитколюди являются результатом неудачного генетического эксперимента, но с тех пор они стали признанным видом сами по себе, \
+		подобно фелинидам.",
 	)
 
 /datum/species/snail/create_pref_unique_perks()
@@ -49,27 +49,27 @@
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = FA_ICON_RUNNING,
-		SPECIES_PERK_NAME = "Turbo",
-		SPECIES_PERK_DESC = "Snailpeople walk and run very slow, but crawl around very fast. While crawling, they leave a trail of slippery slime behind them.",
+		SPECIES_PERK_NAME = "Турбо",
+		SPECIES_PERK_DESC = "Улитколюди ходят и бегают очень медленно, но ползают очень быстро. При ползании они оставляют за собой след скользкой слизи.",
 	))
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = FA_ICON_SHRIMP,
-		SPECIES_PERK_NAME = "Shelled",
-		SPECIES_PERK_DESC = "The back of a Snailperson is covered in an armored shell, which is effectively an unremovable backpack. \
-			Good for keeping your things from being stolen, but bad for needing to wear a MODsuit, or disguising.",
+		SPECIES_PERK_NAME = "Раковина",
+		SPECIES_PERK_DESC = "Спина улиткочеловека покрыта бронированной раковиной, которая фактически является несъёмным рюкзаком. \
+			Хорошо для защиты вещей от кражи, но плохо для ношения МОДов или маскировки.",
 	))
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_SKULL_CROSSBONES,
-		SPECIES_PERK_NAME = "Salty",
-		SPECIES_PERK_DESC = "Being evolved from Snails, Snailpeople are extremely susceptible to salt, which burns them.",
+		SPECIES_PERK_NAME = "Солевой",
+		SPECIES_PERK_DESC = "Будучи эволюционировавшими от улиток, улитколюди чрезвычайно восприимчивы к соли, которая обжигает их.",
 	))
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = FA_ICON_HAND_FIST,
-		SPECIES_PERK_NAME = "Squishy",
-		SPECIES_PERK_DESC = "Snailpeople are squishy and slimy, making their punches and kicks far less effective than other species.",
+		SPECIES_PERK_NAME = "Мягкий",
+		SPECIES_PERK_DESC = "Улитколюди мягкие и слизистые, что делает их удары и пинки гораздо менее эффективными, чем у других видов.",
 	))
 	return to_add
 
@@ -89,7 +89,7 @@
 
 /obj/item/storage/backpack/snail
 	name = "snail shell"
-	desc = "Worn by snails as armor and storage compartment."
+	desc = "Используется улитками в качестве брони и отсека для хранения."
 	icon_state = "snailshell"
 	inhand_icon_state = null
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'

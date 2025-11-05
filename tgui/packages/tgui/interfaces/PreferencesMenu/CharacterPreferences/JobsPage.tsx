@@ -94,13 +94,13 @@ function PriorityHeaders() {
     <Stack>
       <Stack.Item grow />
 
-      <Stack.Item className={className}>Off</Stack.Item>
+      <Stack.Item className={className}>Выкл</Stack.Item>
 
-      <Stack.Item className={className}>Low</Stack.Item>
+      <Stack.Item className={className}>Низк</Stack.Item>
 
-      <Stack.Item className={className}>Medium</Stack.Item>
+      <Stack.Item className={className}>Средн</Stack.Item>
 
-      <Stack.Item className={className}>High</Stack.Item>
+      <Stack.Item className={className}>Высок</Stack.Item>
     </Stack>
   );
 }
@@ -126,7 +126,7 @@ function PriorityButtons(props: PriorityButtonsProps) {
       {isOverflow ? (
         <>
           <PriorityButton
-            name="Off"
+            name="Выкл"
             modifier="off"
             color="light-grey"
             enabled={!priority}
@@ -134,7 +134,7 @@ function PriorityButtons(props: PriorityButtonsProps) {
           />
 
           <PriorityButton
-            name="On"
+            name="Вкл"
             color="green"
             enabled={!!priority}
             onClick={createSetPriority(JobPriority.High)}
@@ -143,7 +143,7 @@ function PriorityButtons(props: PriorityButtonsProps) {
       ) : (
         <>
           <PriorityButton
-            name="Off"
+            name="Выкл"
             modifier="off"
             color="light-grey"
             enabled={!priority}
@@ -151,21 +151,21 @@ function PriorityButtons(props: PriorityButtonsProps) {
           />
 
           <PriorityButton
-            name="Low"
+            name="Низк"
             color="red"
             enabled={priority === JobPriority.Low}
             onClick={createSetPriority(JobPriority.Low)}
           />
 
           <PriorityButton
-            name="Medium"
+            name="Средн"
             color="yellow"
             enabled={priority === JobPriority.Medium}
             onClick={createSetPriority(JobPriority.Medium)}
           />
 
           <PriorityButton
-            name="High"
+            name="Высок"
             color="green"
             enabled={priority === JobPriority.High}
             onClick={createSetPriority(JobPriority.High)}
@@ -203,7 +203,7 @@ function JobRow(props: JobRowProps) {
     rightSide = (
       <Stack align="center" height="100%" pr={1}>
         <Stack.Item grow textAlign="right">
-          <b>{hoursNeeded}h</b> as {experience_type}
+          <b>{hoursNeeded}h</b> в качестве {experience_type}
         </Stack.Item>
       </Stack>
     );
@@ -211,7 +211,7 @@ function JobRow(props: JobRowProps) {
     rightSide = (
       <Stack align="center" height="100%" pr={1}>
         <Stack.Item grow textAlign="right">
-          <b>{daysLeft}</b> day{daysLeft === 1 ? '' : 's'} left
+          <b>{daysLeft}</b> д{daysLeft === 1 ? 'ень' : 'ней'} осталось
         </Stack.Item>
       </Stack>
     );
@@ -219,7 +219,7 @@ function JobRow(props: JobRowProps) {
     rightSide = (
       <Stack align="center" height="100%" pr={1}>
         <Stack.Item grow textAlign="right">
-          <b>Banned</b>
+          <b>Забанен</b>
         </Stack.Item>
       </Stack>
     );
@@ -312,15 +312,15 @@ function JoblessRoleDropdown(props) {
 
   const options = [
     {
-      displayText: `Join as ${data.overflow_role} if unavailable`,
+      displayText: `Присоединиться за ${data.overflow_role}, если не удалось войти.`,
       value: JoblessRole.BeOverflow,
     },
     {
-      displayText: `Join as a random job if unavailable`,
+      displayText: `Присоединиться за случайную должность, если не удалось войти.`,
       value: JoblessRole.BeRandomJob,
     },
     {
-      displayText: `Return to lobby if unavailable`,
+      displayText: `Вернуться в лобби, если не удалось войти.`,
       value: JoblessRole.ReturnToLobby,
     },
   ];
@@ -330,7 +330,7 @@ function JoblessRoleDropdown(props) {
   )!.displayText;
 
   return (
-    <Box position="absolute" right={0} width="30%">
+    <Box position="absolute" right={0} width="50%">
       <Dropdown
         width="100%"
         selected={selection}

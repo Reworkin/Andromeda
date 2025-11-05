@@ -4,8 +4,8 @@ import {
 } from '../dropdowns';
 
 export const preferred_ai_emote_display: FeatureWithIcons<string> = {
-  name: 'AI emote display',
+  name: 'Отображение эмоций ИИ',
   description:
-    'If you are the AI, the default image displayed on all AI displays on station.',
+    'Если вы ИИ, изображение по умолчанию, отображаемое на всех дисплеях ИИ на станции.',
   component: FeatureIconnedDropdownInput,
 };

@@ -1,6 +1,6 @@
 /// Pocket items (Moved to backpack)
 /datum/loadout_category/pocket
-	category_name = "Other"
+	category_name = "Разное"
 	category_ui_icon = FA_ICON_QUESTION
 	type_to_generate = /datum/loadout_item/pocket_items
 	tab_order = /datum/loadout_category/head::tab_order + 5
@@ -9,7 +9,7 @@
 
 /datum/loadout_category/pocket/New()
 	. = ..()
-	category_info = "([max_allowed] allowed)"
+	category_info = "(максимум [max_allowed])"
 
 /datum/loadout_category/pocket/handle_duplicate_entires(
 	datum/preference_middleware/loadout/manager,
@@ -39,7 +39,7 @@
 
 
 /datum/loadout_item/pocket_items/plush
-	group = "Plushies"
+	group = "Игрушки"
 	abstract_type = /datum/loadout_item/pocket_items/plush
 	loadout_flags = LOADOUT_FLAG_ALLOW_NAMING
 
@@ -54,13 +54,6 @@
 /datum/loadout_item/pocket_items/plush/lizard_greyscale
 	name = "Plush (Lizard, Colorable)"
 	item_path = /obj/item/toy/plush/lizard_plushie/greyscale
-
-/datum/loadout_item/pocket_items/plush/lizard_random
-	name = "Plush (Lizard, Random)"
-	loadout_flags = parent_type::loadout_flags | LOADOUT_FLAG_BLOCK_GREYSCALING
-	ui_icon = 'icons/obj/fluff/previews.dmi'
-	ui_icon_state = "plushie_lizard_random"
-	item_path = /obj/item/toy/plush/lizard_plushie
 
 /datum/loadout_item/pocket_items/plush/moth
 	name = "Plush (Moth)"
@@ -95,7 +88,7 @@
 	item_path = /obj/item/toy/plush/horse
 
 /datum/loadout_item/pocket_items/dice
-	group = "Dice"
+	group = "Игральная кости"
 	abstract_type = /datum/loadout_item/pocket_items/dice
 
 /datum/loadout_item/pocket_items/dice/dice_bag

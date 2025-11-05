@@ -33,14 +33,14 @@ GLOBAL_VAR_INIT(looc_allowed, TRUE)
 
 /client/verb/looc(msg as text)
 	set name = "LOOC"
-	set desc = "Локальный OOC, seen only by those in view."
+	set desc = "Локальный OOC, видимый только находящимся в поле зрения."
 	set category = "OOC"
 
 	looc_message(msg)
 
 /client/verb/looc_wallpierce(msg as text)
 	set name = "LOOC (Сквозь стены)"
-	set desc = "Локальный OOC, видимый всеми в пределах 7 тайтлов от вас."
+	set desc = "Локальный OOC, видимый всеми в пределах 7 тайлов от вас."
 	set category = "OOC"
 
 	looc_message(msg, TRUE)

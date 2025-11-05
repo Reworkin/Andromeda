@@ -110,7 +110,7 @@ export function CharacterPreferenceWindow(props) {
               setPage={setCurrentPage}
               otherActivePages={[Page.Species]}
             >
-              Character
+              Персонаж
             </PageButton>
           </Stack.Item>
 
@@ -120,7 +120,7 @@ export function CharacterPreferenceWindow(props) {
               page={Page.Loadout}
               setPage={setCurrentPage}
             >
-              Loadout
+              Лодаут
             </PageButton>
           </Stack.Item>
 
@@ -134,7 +134,7 @@ export function CharacterPreferenceWindow(props) {
                     Fun fact: This isn't "Jobs" so that it intentionally
                     catches your eyes, because it's really important!
                   */}
-              Occupations
+              Профессии
             </PageButton>
           </Stack.Item>
 
@@ -144,7 +144,7 @@ export function CharacterPreferenceWindow(props) {
               page={Page.Antags}
               setPage={setCurrentPage}
             >
-              Antagonists
+              Антагонисты
             </PageButton>
           </Stack.Item>
 
@@ -154,7 +154,7 @@ export function CharacterPreferenceWindow(props) {
               page={Page.Quirks}
               setPage={setCurrentPage}
             >
-              Quirks and Personality
+              Особенности
             </PageButton>
           </Stack.Item>
         </Stack>

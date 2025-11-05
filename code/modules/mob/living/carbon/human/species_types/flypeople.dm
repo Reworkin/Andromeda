@@ -1,6 +1,6 @@
 /datum/species/fly
-	name = "Flyperson"
-	plural_form = "Flypeople"
+	name = "Мухолюд"
+	plural_form = "Мухолюди"
 	id = SPECIES_FLYPERSON
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	meat = /obj/item/food/meat/slab/human/mutant/fly
@@ -38,29 +38,29 @@
 	SIGNAL_HANDLER
 
 	if(istype(attacking_item, /obj/item/melee/flyswatter))
-		MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, 30) // Yes, a 30x damage modifier
+		MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, 30) // Да, модификатор урона x30
 
 /datum/species/fly/get_physical_attributes()
-	return "These hideous creatures suffer from pesticide immensely, eat waste, and are incredibly vulnerable to bright lights. They do have wings though."
+	return "Эти отвратительные существа сильно страдают от пестицидов, едят отходы и невероятно уязвимы для яркого света. Но у них есть крылья."
 
 /datum/species/fly/get_species_description()
-	return "With no official documentation or knowledge of the origin of \
-		this species, they remain a mystery to most. Any and all rumours among \
-		Nanotrasen staff regarding flypeople are often quickly silenced by high \
-		ranking staff or officials."
+	return "Без официальной документации или знаний о происхождении \
+		этого вида, они остаются загадкой для большинства. Любые слухи среди \
+		сотрудников Нанотрейзен о мухолюдях часто быстро пресекаются высокопоставленными \
+		сотрудниками или официальными лицами."
 
 /datum/species/fly/get_species_lore()
 	return list(
-		"Flypeople are a curious species with a striking resemblance to the insect order of Diptera, \
-		commonly known as flies. With no publically known origin, flypeople are rumored to be a side effect of bluespace travel, \
-		despite statements from Nanotrasen officials.",
+		"Мухолюди - любопытный вид с поразительным сходством с отрядом насекомых Двукрылые, \
+		обычно известных как мухи. Без публично известного происхождения, ходят слухи, что мухолюди являются побочной побочкой блюспейс-путешествий, \
+		несмотря на заявления о безопасности от официальных лиц Нанотрейзен.",
 
-		"Little is known about the origins of this race, \
-		however they posess the ability to communicate with giant spiders, originally discovered in the Australicus sector \
-		and now a common occurence in black markets as a result of a breakthrough in syndicate bioweapon research.",
+		"Мало что известно о происхождении этой расы, \
+		однако они обладают способностью общаться с гигантскими пауками, изначально обнаруженными в секторе Австраликус \
+		и теперь часто встречающимися на чёрных рынках в результате прорыва в исследованиях биологического оружия Синдиката.",
 
-		"Flypeople are often feared or avoided among other species, their appearance often described as unclean or frightening in some cases, \
-		and their eating habits even more so with an insufferable accent to top it off.",
+		"Мухолюдей часто боятся или избегают среди других видов, их внешний вид часто описывается как нечистый или пугающий в некоторых случаях, \
+		а их пищевые привычки ещё больше, с невыносимым акцентом в придачу.",
 	)
 
 /datum/species/fly/create_pref_unique_perks()
@@ -70,28 +70,28 @@
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "grin-tongue",
-			SPECIES_PERK_NAME = "Uncanny Digestive System",
-			SPECIES_PERK_DESC = "Flypeople regurgitate their stomach contents and drink it \
-				off the floor to eat and drink with little care for taste, favoring gross foods.",
+			SPECIES_PERK_NAME = "Сверхъестественная пищеварительная система",
+			SPECIES_PERK_DESC = "Мухолюди отрыгивают содержимое своего желудка и пьют его \
+				с пищи, чтобы есть и пить без заботы о вкусе, предпочитая отвратительную пищу.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "fist-raised",
-			SPECIES_PERK_NAME = "Insectoid Biology",
-			SPECIES_PERK_DESC = "Fly swatters will deal significantly higher amounts of damage to a Flyperson.",
+			SPECIES_PERK_NAME = "Инсектоидная биология",
+			SPECIES_PERK_DESC = "Мухобойки наносят значительно больше урона мухолюдям.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "sun",
-			SPECIES_PERK_NAME = "Radial Eyesight",
-			SPECIES_PERK_DESC = "Flypeople can be flashed from all angles.",
+			SPECIES_PERK_NAME = "Радиальное зрение",
+			SPECIES_PERK_DESC = "Мухолюдей можно ослепить вспышкой с любого угла.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "briefcase-medical",
-			SPECIES_PERK_NAME = "Weird Organs",
-			SPECIES_PERK_DESC = "Flypeople take specialized medical knowledge to be \
-				treated. Their organs are disfigured and organ manipulation can be interesting...",
+			SPECIES_PERK_NAME = "Странные органы",
+			SPECIES_PERK_DESC = "Для лечения мухолюдей требуется специализированные медицинские знания. \
+				Их органы деформированы и манипуляции с органами могут быть интересными...",
 		),
 	)
 

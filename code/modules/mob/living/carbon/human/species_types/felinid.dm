@@ -1,6 +1,7 @@
-//Subtype of human
+// Подвид человека
 /datum/species/human/felinid
-	name = "Felinid"
+	name = "Фелинид"
+	plural_form = "Фелиниды"
 	id = SPECIES_FELINE
 	examine_limb_id = SPECIES_HUMAN
 	mutantbrain = /obj/item/organ/brain/felinid
@@ -20,19 +21,19 @@
 	species_language_holder = /datum/language_holder/felinid
 	payday_modifier = 1.0
 	family_heirlooms = list(/obj/item/toy/cattoy)
-	/// When false, this is a felinid created by mass-purrbation
+	/// Когда false, это фелинид, созданный массовым мурбацией
 	var/original_felinid = TRUE
-	/// Yummy!
+	/// Вкусняшка!
 	species_cookie = /obj/item/food/nugget
 
 /datum/species/human/felinid/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons = TRUE, replace_missing = TRUE)
-	if(!pref_load) //Hah! They got forcefully purrbation'd. Force default felinid parts on them if they have no mutant parts in those areas!
+	if(!pref_load) //Ха! Их насильно подвергли мурбации. Принудительно установить части фелинида по умолчанию, если у них нет мутантных частей в этих областях!
 		if(human_who_gained_species.dna.features[FEATURE_TAIL_CAT] == SPRITE_ACCESSORY_NONE)
 			human_who_gained_species.dna.features[FEATURE_TAIL_CAT] = get_consistent_feature_entry(SSaccessories.feature_list[FEATURE_TAIL_CAT])
 		if(human_who_gained_species.dna.features[FEATURE_EARS] == SPRITE_ACCESSORY_NONE)
 			human_who_gained_species.dna.features[FEATURE_EARS] = get_consistent_feature_entry(SSaccessories.feature_list[FEATURE_EARS])
 
-	// Swapping out feline ears for normal ol' human ears if they have invisible cat ears.
+	// Замена кошачьих ушей на обычные человеческие, если у них невидимые кошачьи уши.
 	if(human_who_gained_species.dna.features[FEATURE_EARS] == SPRITE_ACCESSORY_NONE)
 		mutantears = /obj/item/organ/ears
 	return ..()
@@ -68,48 +69,48 @@
 		var/datum/species/human/felinid/cat_species = soon_to_be_felinid.dna.species
 		cat_species.original_felinid = FALSE
 	else
-		// This removes the spines if they exist
+		// Это удаляет спинные пластины, если они существуют
 		var/obj/item/organ/spines/current_spines = soon_to_be_felinid.get_organ_slot(ORGAN_SLOT_EXTERNAL_SPINES)
 		if(current_spines)
 			current_spines.Remove(soon_to_be_felinid, special = TRUE)
 			qdel(current_spines)
 
-		// Without this line the tails would be invisible. This is because cat tail and ears default to None.
-		// Humans get converted directly to felinids, and the key is handled in on_species_gain.
-		// Now when we get mob.dna.features[feature_key], it returns None, which is why the tail is invisible.
-		// stored_feature_id is only set once (the first time an organ is inserted), so this should be safe.
+		// Без этой строки хвосты были бы невидимы. Это потому, что кошачий хвост и уши по умолчанию установлены в None.
+		// Люди преобразуются напрямую в фелинидов, и ключ обрабатывается в on_species_gain.
+		// Теперь, когда мы получаем mob.dna.features[feature_key], он возвращает None, поэтому хвост невидим.
+		// stored_feature_id устанавливается только один раз (при первой вставке органа), так что это должно быть безопасно.
 		var/obj/item/organ/ears/cat/kitty_ears = new
 		kitty_ears.Insert(soon_to_be_felinid, special = TRUE, movement_flags = DELETE_IF_REPLACED)
-		if(should_visual_organ_apply_to(/obj/item/organ/tail/cat, soon_to_be_felinid)) //only give them a tail if they actually have sprites for it / are a compatible subspecies.
+		if(should_visual_organ_apply_to(/obj/item/organ/tail/cat, soon_to_be_felinid)) // дать хвост только если у них есть спрайты для него / они совместимый подвид.
 			var/obj/item/organ/tail/cat/kitty_tail = new
 			kitty_tail.Insert(soon_to_be_felinid, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 
 	if(!silent)
-		to_chat(soon_to_be_felinid, span_boldnotice("Something is nya~t right."))
+		to_chat(soon_to_be_felinid, span_boldnotice("Что-то не так, мяу~."))
 		playsound(get_turf(soon_to_be_felinid), 'sound/effects/meow1.ogg', 50, TRUE, -1)
 
 /proc/purrbation_remove(mob/living/carbon/human/purrbated_human, silent = FALSE)
 	if(isfelinid(purrbated_human))
 		var/datum/species/human/felinid/cat_species = purrbated_human.dna.species
 		if(cat_species.original_felinid)
-			return // Don't display the to_chat message
+			return // Не показывать сообщение to_chat
 		purrbated_human.set_species(/datum/species/human)
 	else if(ishuman(purrbated_human) && !ishumanbasic(purrbated_human))
 		var/datum/species/target_species = purrbated_human.dna.species
 
-		// From the previous check we know they're not a felinid, therefore removing cat ears and tail is safe
+		// Из предыдущей проверки мы знаем, что они не фелинид, поэтому удаление кошачьих ушей и хвоста безопасно
 		var/obj/item/organ/tail/old_tail = purrbated_human.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
 		if(istype(old_tail, /obj/item/organ/tail/cat))
 			old_tail.Remove(purrbated_human, special = TRUE)
 			qdel(old_tail)
-			// Locate does not work on assoc lists, so we do it by hand
+			// Locate не работает с ассоциативными списками, поэтому делаем вручную
 			for(var/external_organ in target_species.mutant_organs)
 				if(!should_visual_organ_apply_to(external_organ, purrbated_human))
 					continue
 				if(ispath(external_organ, /obj/item/organ/tail))
 					var/obj/item/organ/tail/new_tail = new external_organ()
 					new_tail.Insert(purrbated_human, special = TRUE, movement_flags = DELETE_IF_REPLACED)
-				// Don't forget the spines we removed earlier
+				// Не забываем о спинных пластинах, которые мы удалили ранее
 				else if(ispath(external_organ, /obj/item/organ/spines))
 					var/obj/item/organ/spines/new_spines = new external_organ()
 					new_spines.Insert(purrbated_human, special = TRUE, movement_flags = DELETE_IF_REPLACED)
@@ -119,10 +120,10 @@
 			var/obj/item/organ/new_ears = new target_species.mutantears()
 			new_ears.Insert(purrbated_human, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 	if(!silent)
-		to_chat(purrbated_human, span_boldnotice("You are no longer a cat."))
+		to_chat(purrbated_human, span_boldnotice("Вы больше не кошка."))
 
 /datum/species/human/felinid/prepare_human_for_preview(mob/living/carbon/human/human_for_preview)
-	human_for_preview.set_haircolor("#ffcccc", update = FALSE) // pink
+	human_for_preview.set_haircolor("#ffcccc", update = FALSE) // розовый
 	human_for_preview.set_hairstyle("Hime Cut", update = TRUE)
 
 	var/obj/item/organ/ears/cat/cat_ears = human_for_preview.get_organ_by_type(/obj/item/organ/ears/cat)
@@ -131,30 +132,30 @@
 		human_for_preview.update_body()
 
 /datum/species/human/felinid/get_physical_attributes()
-	return "Felinids are very similar to humans in almost all respects, with their biggest differences being the ability to lick their wounds, \
-		and an increased sensitivity to noise, which is often detrimental. They are also rather fond of eating oranges."
+	return "Фелиниды очень похожи на людей почти во всех отношениях, с их самыми большими отличиями - способность зализывать раны, \
+		и повышенная чувствительность к шуму, что часто является недостатком. Они также довольно любят есть апельсины."
 
 /datum/species/human/felinid/get_species_description()
-	return "Felinids are one of the many types of bespoke genetic \
-		modifications to come of humanity's mastery of genetic science, and are \
-		also one of the most common. Meow?"
+	return "Фелиниды - одно из многих типов индивидуальных генетических \
+		модификаций, появившихся благодаря мастерству человечества в генетической науке, и также \
+		одни из самых распространённых. Мяу?"
 
 /datum/species/human/felinid/get_species_lore()
 	return list(
-		"Bio-engineering at its felinest, Felinids are the peak example of humanity's mastery of genetic code. \
-			One of many \"Animalid\" variants, Felinids are the most popular and common, as well as one of the \
-			biggest points of contention in genetic-modification.",
+		"Биоинженерия в её наиболее кошачьем проявлении, фелиниды - пиковый пример мастерства человечества над генетическим кодом. \
+			Один из многих вариантов \"Анималидов\", фелиниды - самые популярные и распространённые, а также одна из \
+			самых спорных точек в генетической модификации.",
 
-		"Body modders were eager to splice human and feline DNA in search of the holy trifecta: ears, eyes, and tail. \
-			These traits were in high demand, with the corresponding side effects of vocal and neurochemical changes being seen as a minor inconvenience.",
+		"Модификаторы тел стремились соединить человеческую и кошачью ДНК в поисках святой троицы: ушей, глаз и хвоста. \
+			Эти черты были очень востребованы, с соответствующими побочными эффектами в виде вокальных и нейрохимических изменений, которые считались незначительными неудобствами.",
 
-		"Sadly for the Felinids, they were not minor inconveniences. Shunned as subhuman and monstrous by many, Felinids (and other Animalids) \
-			sought their greener pastures out in the colonies, cloistering in communities of their own kind. \
-			As a result, outer Human space has a high Animalid population.",
+		"К сожалению для фелинидов, это были не незначительные неудобства. Изгнанные многими как недочеловеки и монстры, фелиниды и другие анималиды, \
+			искали свои лучшие доли в колониях, собираясь в сообщества себе подобных. \
+			В результате, внешнее человеческое пространство имеет высокую популяцию анималидов.",
 	)
 
-// Felinids are subtypes of humans.
-// This shouldn't call parent or we'll get a buncha human related perks (though it doesn't have a reason to).
+// Фелиниды являются подвидами людей.
+// Это не должно вызывать родительскую процедуру, иначе мы получим кучу особенностей, связанных с людьми (хотя причин для этого нет).
 /datum/species/human/felinid/create_pref_unique_perks()
 	var/list/to_add = list()
 
@@ -162,35 +163,35 @@
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "grin-tongue",
-			SPECIES_PERK_NAME = "Grooming",
-			SPECIES_PERK_DESC = "Felinids can lick wounds to reduce bleeding.",
+			SPECIES_PERK_NAME = "Уход",
+			SPECIES_PERK_DESC = "Фелиниды могут зализывать раны, чтобы уменьшить кровотечение.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = FA_ICON_PERSON_FALLING,
-			SPECIES_PERK_NAME = "Catlike Grace",
-			SPECIES_PERK_DESC = "Felinids have catlike instincts allowing them to land upright on their feet.  \
-				Instead of being knocked down from falling, you only receive a short slowdown. \
-				However, they do not have catlike legs, and the fall will deal additional damage.",
+			SPECIES_PERK_NAME = "Кошачья грация",
+			SPECIES_PERK_DESC = "Фелиниды имеют кошачьи инстинкты, позволяющие им приземляться на лапы.  \
+				Вместо того чтобы быть сбитыми с ног от падения, вы получаете лишь кратковременное замедление. \
+				Однако у них нет кошачьих ног и падение нанесёт дополнительный урон.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "assistive-listening-systems",
-			SPECIES_PERK_NAME = "Sensitive Hearing",
-			SPECIES_PERK_DESC = "Felinids are more sensitive to loud sounds, such as flashbangs.",
+			SPECIES_PERK_NAME = "Чувствительный слух",
+			SPECIES_PERK_DESC = "Фелиниды более чувствительны к громким звукам, таким как светошумовые гранаты.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "shower",
-			SPECIES_PERK_NAME = "Hydrophobia",
-			SPECIES_PERK_DESC = "Felinids don't like getting soaked with water.",
+			SPECIES_PERK_NAME = "Гидрофобия",
+			SPECIES_PERK_DESC = "Фелиниды не любят, когда их заливают водой.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = FA_ICON_ANGRY,
-			SPECIES_PERK_NAME = "'Fight or Flight' Defense Response",
-			SPECIES_PERK_DESC = "Felinids who become mentally unstable (and deprived of food) exhibit an \
-				extreme 'fight or flight' response against aggressors. They sometimes bite people. Violently.",
+			SPECIES_PERK_NAME = "Бей или Беги",
+			SPECIES_PERK_DESC = "Фелиниды, ставшие психически нестабильными, проявляют \
+				крайнюю реакцию 'бей или беги' против агрессоров. Они иногда кусают людей. Жестоко.",
 		),
 	)
 	return to_add

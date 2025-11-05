@@ -1,7 +1,7 @@
 /datum/species/lizard
-	// Reptilian humanoids with scaled skin and tails.
-	name = "\improper Lizardperson"
-	plural_form = "Lizardfolk"
+	// Рептилоидные гуманоиды с чешуйчатой кожей и хвостами.
+	name = "Унтах"
+	plural_form = "Унатхи"
 	id = SPECIES_LIZARD
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -33,7 +33,7 @@
 	species_language_holder = /datum/language_holder/lizard
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 
-	// Lizards are coldblooded and can stand a greater temperature range than humans
+	// Унатхи хладнокровны и выдерживают больший диапазон температур, чем люди
 	bodytemp_heat_damage_limit = BODYTEMP_HEAT_LAVALAND_SAFE
 	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
 
@@ -46,7 +46,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard,
 	)
 
-/// Lizards are cold blooded and do not stabilize body temperature naturally
+/// Унатхи хладнокровны и не стабилизируют температуру тела естественным образом
 /datum/species/lizard/body_temperature_core(mob/living/carbon/human/humi, seconds_per_tick, times_fired)
 	return
 
@@ -122,54 +122,54 @@
 	return 'sound/mobs/humanoids/lizard/lizard_hiss.ogg'
 
 /datum/species/lizard/get_physical_attributes()
-	return "Lizardpeople can withstand slightly higher temperatures than most species, but they are very vulnerable to the cold \
-		and can't regulate their body-temperature internally, making the vacuum of space extremely deadly to them."
+	return "Унатхи выдерживают немного более высокие температуры, чем большинство видов, но они очень уязвимы к холоду \
+		и не могут регулировать температуру тела внутренне, что делает вакуум космоса чрезвычайно смертоносным для них."
 
 /datum/species/lizard/get_species_description()
-	return "The militaristic Lizardpeople hail originally from Tizira, but have grown \
-		throughout their centuries in the stars to possess a large spacefaring \
-		empire: though now they must contend with their younger, more \
-		technologically advanced Human neighbours."
+	return "Милитаристские унатхи родом с Тизеры, но за свои столетия в звёздах \
+		расширились до крупной космической империи: хотя теперь им приходится \
+		соперничать со своими более молодыми и технологически продвинутыми \
+		соседями-людьми."
 
 /datum/species/lizard/get_species_lore()
 	return list(
-		"The face of conspiracy theory was changed forever the day mankind met the lizards.",
+		"Лицо теории заговора изменилось навсегда в тот день, когда человечество встретило унатхов.",
 
-		"Hailing from the arid world of Tizira, lizards were travelling the stars back when mankind was first discovering how neat trains could be. \
-		However, much like the space-fable of the space-tortoise and space-hare, lizards have rejected their kin's motto of \"slow and steady\" \
-		in favor of resting on their laurels and getting completely surpassed by 'bald apes', due in no small part to their lack of access to plasma.",
+		"Родом с засушливого мира Тизеры, унатхи путешествовали по звёздам ещё тогда, когда человечество только позновало, насколько крутыми могут быть шаттлы. \
+		Однако, подобно космической басне о космической черепахе и космическом зайце, унатхи отвергли девиз своих сородичей \"тише едешь - дальше будешь\" \
+		в пользу почивания на лаврах и полного отставания от 'лысых обезьян', во многом из-за отсутствия доступа к плазме.",
 
-		"The history between lizards and humans has resulted in many conflicts that lizards ended on the losing side of, \
-		with the finale being an explosive remodeling of their moon. Today's lizard-human relations are seeing the continuance of a record period of peace.",
+		"История между унатхами и людьми привела ко многим конфликтам, в которых унатхи оказывались на проигравшей стороне, \
+		с финалом в виде взрывной перестройки их луны. Сегодняшние отношения унатхов и людей видят продолжительно рекордного периода мира.",
 
-		"Lizard culture is inherently militaristic, though the influence the military has on lizard culture \
-		begins to lessen the further colonies lie from their homeworld - \
-		with some distanced colonies finding themselves subsumed by the cultural practices of other species nearby.",
+		"Культура унатхов по своей сути милитаристична, хотя влияние военных на культуру унатхов \
+		начинает ослабевать по мере удаления колоний от их родного мира - \
+		некоторые удалённые колонии оказываются поглощёнными культурными практиками других видов.",
 
-		"On their homeworld, lizards celebrate their 16th birthday by enrolling in a mandatory 5 year military tour of duty. \
-		Roles range from combat to civil service and everything in between. As the old slogan goes: \"Your place will be found!\"",
+		"На своём родном мире унатхи празднуют 16-летие, записываясь на обязательную 5-летнюю военную службу. \
+		Роли варьируются от боевых до гражданских и всего между ними. Как гласит старый лозунг: \"Твоё место будет найдено!\"",
 	)
 
-// Override for the default temperature perks, so we can give our specific "cold blooded" perk.
+// Переопределение стандартных перков температуры, чтобы дать наш специфический перк "хладнокровности"
 /datum/species/lizard/create_pref_temperature_perks()
 	var/list/to_add = list()
 
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = "thermometer-empty",
-		SPECIES_PERK_NAME = "Cold-blooded",
-		SPECIES_PERK_DESC = "Lizardpeople have higher tolerance for hot temperatures, but lower \
-			tolerance for cold temperatures. Additionally, they cannot self-regulate their body temperature - \
-			they are as cold or as warm as the environment around them is. Stay warm!",
+		SPECIES_PERK_NAME = "Хладнокровность",
+		SPECIES_PERK_DESC = "Унатхи имеют более высокую устойчивость к высоким температурам, но более низкую \
+			устойчивость к холоду. Кроме того, они не могут саморегулировать температуру тела - \
+			они такие же холодные или тёплые, как и окружающая их среда. Оставайтесь в тепле!",
 	))
 
 	return to_add
 
 /*
-Lizard subspecies: ASHWALKERS
+Подвид унатхов: ПЕПЛОХОДЦЫ
 */
 /datum/species/lizard/ashwalker
-	name = "Ash Walker"
+	name = "Пеплоходцы"
 	id = SPECIES_LIZARD_ASH
 	examine_limb_id = SPECIES_LIZARD
 	mutantlungs = /obj/item/organ/lungs/lavaland
@@ -192,14 +192,14 @@ Lizard subspecies: ASHWALKERS
 	)
 
 /datum/species/lizard/ashwalker/get_physical_attributes()
-	return "Ash Walkers are identical to lizardpeople in almost all aspects. \
-		Unlike them, they're always digitigrade, they can breathe Lavaland's often noxious atmosphere and resist viruses. They are usually illiterate."
+	return "Пеплоходцы идентичны унатхам почти во всех аспектах. \
+		В отличие от них, они всегда ходят на цыпочках, могут дышать часто ядовитой атмосферой Лаваленда и устойчивы к вирусам. Обычно они неграмотны."
 
 /*
-Lizard subspecies: SILVER SCALED
+Подвид унатхов: СЕРЕБРИСТАЯ ЧЕШУЯ
 */
 /datum/species/lizard/silverscale
-	name = "Silver Scale"
+	name = "Среброчешуй"
 	id = SPECIES_LIZARD_SILVER
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	inherent_traits = list(
@@ -212,18 +212,18 @@ Lizard subspecies: SILVER SCALED
 		TRAIT_WINE_TASTER,
 	)
 	mutantlungs = null
-	damage_modifier = 10 //very light silvery scales soften blows
+	damage_modifier = 10 //очень лёгкая серебристая чешуя смягчает удары
 	species_language_holder = /datum/language_holder/lizard/silver
 	mutanttongue = /obj/item/organ/tongue/lizard/silver
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	examine_limb_id = SPECIES_LIZARD
-	///stored mutcolor for when we turn back off of a silverscale.
+	///сохранённый цвет мутации для когда мы превращаемся обратно из серебристой чешуи
 	var/old_mutcolor
 
 /datum/species/lizard/silverscale/get_physical_attributes()
-	return "Silver Scales are to lizardpeople what angels are to humans. \
-		Mostly identical, they are holy, don't breathe, don't get viruses, their hide cannot be pierced, love the taste of wine, \
-		and their tongue allows them to turn into a statue, for some reason."
+	return "Среброчешуи для унатхов - то же, что ангелы для людей. \
+		В основном идентичные, они святы, не дышат, не болеют вирусами, их шкуру нельзя проткнуть, обожают вкус вина, \
+		и их язык позволяет им превращаться в статую, по какой-то причине."
 
 /datum/species/lizard/silverscale/on_species_gain(mob/living/carbon/human/new_silverscale, datum/species/old_species, pref_load, regenerate_icons)
 	old_mutcolor = new_silverscale.dna.features[FEATURE_MUTANT_COLOR]

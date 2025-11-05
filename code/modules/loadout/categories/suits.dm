@@ -1,5 +1,5 @@
 /datum/loadout_category/suits
-	category_name = "Suits"
+	category_name = "Костюмы"
 	category_ui_icon = FA_ICON_USER_SECRET
 	type_to_generate = /datum/loadout_item/suit
 	tab_order = /datum/loadout_category/head::tab_order + 3

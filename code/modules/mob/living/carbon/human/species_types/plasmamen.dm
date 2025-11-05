@@ -1,10 +1,10 @@
 /datum/species/plasmaman
-	name = "\improper Plasmaman"
-	plural_form = "Plasmamen"
+	name = "Плазмалюд"
+	plural_form = "Плазмалюди"
 	id = SPECIES_PLASMAMAN
 	sexes = FALSE
 	meat = /obj/item/stack/sheet/mineral/plasma
-	// plasmemes get hard to wound since they only need a severe bone wound to dismember, but unlike skellies, they can't pop their bones back into place
+	// плазмамены получают устойчивость к ранениям, так как им нужно только серьёзное костное ранение для расчленения, но в отличие от скелетов, они не могут вправить кости обратно
 	inherent_traits = list(
 		TRAIT_GENELESS,
 		TRAIT_HARDLY_WOUNDED,
@@ -42,14 +42,14 @@
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/plasmaman,
 	)
 
-	// Body temperature for Plasmen is much lower human as they can handle colder environments
+	// Температура тела плазмаменов намного ниже человеческой, так как они могут переносить более холодные среды
 	bodytemp_normal = (BODYTEMP_NORMAL - 40)
-	// The minimum amount they stabilize per tick is reduced making hot areas harder to deal with
+	// Минимальное количество стабилизации за тик уменьшено, что затрудняет пребывание в жарких зонах
 	bodytemp_autorecovery_min = 2
-	// They are hurt at hot temps faster as it is harder to hold their form
-	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 20) // about 40C
-	// This effects how fast body temp stabilizes, also if cold resit is lost on the mob
-	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 50) // about -50c
+	// Они получают урон от высоких температур быстрее, так как им труднее сохранять свою форму
+	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 20) // около 40°C
+	// Это влияет на скорость стабилизации температуры тела, а также на потерю устойчивости к холоду у моба
+	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 50) // около -50°C
 
 	outfit_override_registry = list(
 		/datum/outfit/syndicate = /datum/outfit/syndicate/plasmaman,
@@ -66,7 +66,7 @@
 		/datum/outfit/syndicate/full/loneop = /datum/outfit/syndicate/full/plasmaman/loneop,
 	)
 
-	/// If the bones themselves are burning clothes won't help you much
+	/// Если горят сами кости, одежда не сильно поможет
 	var/internal_fire = FALSE
 
 /datum/species/plasmaman/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only = FALSE)
@@ -83,31 +83,31 @@
 	)
 
 /datum/species/plasmaman/get_physical_attributes()
-	return "Plasmamen literally breathe and live plasma. They spontaneously combust on contact with oxygen, and besides all the quirks that go with that, \
-		they're very vulnerable to all kinds of physical damage due to their brittle structure."
+	return "Плазмалюди буквально дышат и живут плазмой. Они самовоспламеняются при контакте с кислородом, и помимо всех особенностей, связанных с этим, \
+		они очень уязвимы ко всем видам физического урона из-за своей хрупкой структуры."
 
 /datum/species/plasmaman/get_species_description()
-	return "Found on the Icemoon of Freyja, plasmamen consist of colonial \
-		fungal organisms which together form a sentient being. In human space, \
-		they're usually attached to skeletons to afford a human touch."
+	return "Обнаруженные на ледяной луне Фрейя, плазмалюди состоят из колониальных \
+		грибковых организмов, которые вместе образуют разумное существо. В человеческом пространстве \
+		их обычно прикрепляют к скелетам для придания человеческого вида."
 
 /datum/species/plasmaman/get_species_lore()
 	return list(
-		"A confusing species, plasmamen are truly \"a fungus among us\". \
-		What appears to be a singular being is actually a colony of millions of organisms \
-		surrounding a found (or provided) skeletal structure.",
+		"Запутанный вид, плазмалюди действительно являются \"грибом среди нас\". \
+		То, что кажется единым существом, на самом деле является колонией миллионов организмов, \
+		окружающих найденную или предоставленную скелетную структуру.",
 
-		"Originally discovered by NT when a researcher \
-		fell into an open tank of liquid plasma, the previously unnoticed fungal colony overtook the body creating \
-		the first \"true\" plasmaman. The process has since been streamlined via generous donations of convict corpses and plasmamen \
-		have been deployed en masse throughout NT to bolster the workforce.",
+		"Изначально обнаружены НТ, когда исследователь \
+		упал в открытый резервуар с жидкой плазмой, ранее незамеченная грибковая колония захватила тело, создав \
+		первого \"настоящего\" плазмалюда. С тех пор процесс был упрощён за счёт щедрых пожертвований трупов заключённых и плазмалюди \
+		были массово развёрнуты по всей НТ для усиления рабочей силы.",
 
-		"New to the galactic stage, plasmamen are a blank slate. \
-		Their appearance, generally regarded as \"ghoulish\", inspires a lot of apprehension in their crewmates. \
-		It might be the whole \"flammable purple skeleton\" thing.",
+		"Новые на галактической сцене, плазмалюди - чистый лист. \
+		Их внешний вид, обычно считающийся \"жутким\", вызывает много опасений у их товарищей по экипажу. \
+		Возможно, дело в целом \"воспламеняющийся фиолетовый скелет\".",
 
-		"The colonids that make up plasmamen require the plasma-rich atmosphere they evolved in. \
-		Their psuedo-nervous system runs with externalized electrical impulses that immediately ignite their plasma-based bodies when oxygen is present.",
+		"Колониды, из которых состоят плазмалюди, требуют богатой плазмой атмосферы, в которой они эволюционировали. \
+		Их псевдо-нервная система работает с экстернализированными электрическими импульсами, которые мгновенно воспламеняют их плазменные тела при наличии кислорода.",
 	)
 
 /datum/species/plasmaman/create_pref_unique_perks()
@@ -117,40 +117,40 @@
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "user-shield",
-			SPECIES_PERK_NAME = "Protected",
-			SPECIES_PERK_DESC = "Plasmamen are immune to radiation, poisons, and most diseases.",
+			SPECIES_PERK_NAME = "Защищённый",
+			SPECIES_PERK_DESC = "Плазмалюди невосприимчивы к радиации, ядам и большинству болезней.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "bone",
-			SPECIES_PERK_NAME = "Wound Resistance",
-			SPECIES_PERK_DESC = "Plasmamen have higher tolerance for damage that would wound others.",
+			SPECIES_PERK_NAME = "Устойчивость к ранениям",
+			SPECIES_PERK_DESC = "Плазмалюди имеют более высокую толерантность к урону, который ранил бы других.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "wind",
-			SPECIES_PERK_NAME = "Plasma Healing",
-			SPECIES_PERK_DESC = "Plasmamen can heal wounds by consuming plasma.",
+			SPECIES_PERK_NAME = "Плазменное исцеление",
+			SPECIES_PERK_DESC = "Плазмалюди могут залечивать раны, потребляя плазму.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "hard-hat",
-			SPECIES_PERK_NAME = "Protective Helmet",
-			SPECIES_PERK_DESC = "Plasmamen's helmets provide them shielding from the flashes of welding, as well as an inbuilt flashlight.",
+			SPECIES_PERK_NAME = "Защитный шлем",
+			SPECIES_PERK_DESC = "Шлемы плазмалюдов обеспечивают им защиту от вспышек сварки, а также встроенный фонарик.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "fire",
-			SPECIES_PERK_NAME = "Living Torch",
-			SPECIES_PERK_DESC = "Plasmamen instantly ignite when their body makes contact with oxygen.",
+			SPECIES_PERK_NAME = "Живой факел",
+			SPECIES_PERK_DESC = "Плазмалюди мгновенно воспламеняются, когда их тело контактирует с кислородом.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "briefcase-medical",
-			SPECIES_PERK_NAME = "Complex Biology",
-			SPECIES_PERK_DESC = "Plasmamen take specialized medical knowledge to be \
-				treated. Do not expect speedy revival, if you are lucky enough to get \
-				one at all.",
+			SPECIES_PERK_NAME = "Сложная биология",
+			SPECIES_PERK_DESC = "Для лечения плазмалюдов требуются специализированные медицинские знания. \
+				Не ожидайте быстрого оживления, если вам вообще повезёт \
+				получить его.",
 		),
 	)
 

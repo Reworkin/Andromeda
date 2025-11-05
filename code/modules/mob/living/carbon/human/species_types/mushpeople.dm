@@ -1,12 +1,12 @@
-/datum/species/mush //mush mush codecuck
-	name = "Mushroomperson"
-	plural_form = "Mushroompeople"
+/datum/species/mush //код гриболюдей
+	name = "Гриболюд"
+	plural_form = "Гриболюди"
 	id = SPECIES_MUSHROOM
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 
 	fixed_mut_color = "#DBBF92"
 
-	mutant_organs = list(/obj/item/organ/mushroom_cap = "Round")
+	mutant_organs = list(/obj/item/organ/mushroom_cap = "Круглый")
 
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -33,7 +33,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mushroom,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/mushroom,
 	)
-	/// Martial art for the mushpeople
+	/// Боевое искусство для гриболюдей
 	var/datum/martial_art/mushpunch/mush
 
 /datum/species/mush/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, regenerate_icons)
@@ -47,12 +47,12 @@
 	QDEL_NULL(mush)
 
 /datum/species/mush/get_fixed_hair_color(mob/living/carbon/human/for_mob)
-	return "#FF4B19" //cap color, spot color uses eye color
+	return "#FF4B19" //цвет шляпки, цвет пятен использует цвет глаз
 
-/// A mushpersons mushroom cap organ
+/// Орган грибной шляпки грибочеловека
 /obj/item/organ/mushroom_cap
 	name = "mushroom cap"
-	desc = "These are yummie, no cap."
+	desc = "Они вкусные, без шуток."
 
 	use_mob_sprite_as_obj_sprite = TRUE
 
@@ -66,7 +66,7 @@
 
 	organ_flags = parent_type::organ_flags | ORGAN_EXTERNAL
 
-/// Bodypart overlay for the mushroom cap organ
+/// Наложение части тела для органа грибной шляпки
 /datum/bodypart_overlay/mutant/mushroom_cap
 	layers = EXTERNAL_ADJACENT
 	feature_key = FEATURE_MUSH_CAP
@@ -76,5 +76,5 @@
 	return !(bodypart_owner.owner?.obscured_slots & HIDEHAIR)
 
 /datum/bodypart_overlay/mutant/mushroom_cap/override_color(obj/item/bodypart/bodypart_owner)
-	//The mushroom cap is red by default (can still be dyed)
+	//Грибная шляпка по умолчанию красная (всё ещё может быть окрашена)
 	return "#FF4B19"

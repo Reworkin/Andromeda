@@ -1,9 +1,9 @@
 import { CheckboxInput, type FeatureToggle } from '../base';
 
 export const rds_limit: FeatureToggle = {
-  name: 'Unlimit Hallucinations',
+  name: 'Безлимитные галлюцинации',
   description:
-    'Checking this box will remove limitations on hallucinations, \
-    causing them to be more frequent, intrusive, and (generally) wacky.',
+    'Отметка этой галочки уберёт ограничения на галлюцинации, \
+    делая их более частыми, навязчивыми и (обычно) более безумными.',
   component: CheckboxInput,
 };
