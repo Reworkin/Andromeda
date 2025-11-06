@@ -505,6 +505,10 @@
 		if(NAMEOF(src, glide_size))
 			set_glide_size(var_value)
 			. = TRUE
+		if(NAMEOF(src, blooper))
+			if(isfile(var_value))
+				blooper = sound(var_value) //bark() ожидает, что vocal_bark уже является датумом звука, по соображениям производительности. Удобство админских дел!
+			. = TRUE
 
 	if(!isnull(.))
 		datum_flags |= DF_VAR_EDITED

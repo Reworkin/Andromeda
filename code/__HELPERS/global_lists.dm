@@ -14,6 +14,7 @@
 /proc/make_datum_reference_lists()
 	// I tried to eliminate this proc but I couldn't untangle their init-order interdependencies -Dominion/Cyberboss
 	init_keybindings()
+	make_andromeda_datum_references()
 	GLOB.emote_list = init_emote_list() // WHY DOES THIS NEED TO GO HERE? IT JUST INITS DATUMS
 	init_crafting_recipes()
 	init_crafting_recipes_atoms()
@@ -222,3 +223,16 @@ GLOBAL_LIST_INIT(allowed_money, typecacheof(list(
 		traits += new trait_path
 	sort_list(traits, GLOBAL_PROC_REF(cmp_typepaths_asc))
 	return traits
+
+/// Rewokin Функция, что вызывает функцию, надо бы сделать иначе
+/proc/make_andromeda_datum_references()
+	make_bloopers()
+
+// Текстовые барки (голоса)
+/proc/make_bloopers()
+	GLOB.blooper_list = list()
+	for(var/sound_blooper_path in subtypesof(/datum/blooper))
+		var/datum/blooper/bloop = new sound_blooper_path()
+		GLOB.blooper_list[bloop.id] = sound_blooper_path
+		if(bloop.allow_random)
+			GLOB.blooper_random_list[bloop.id] = sound_blooper_path
