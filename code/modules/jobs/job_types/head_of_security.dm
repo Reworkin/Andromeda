@@ -51,6 +51,8 @@
 	var/mob/living/carbon/human/piggy = spawned
 	for (var/obj/item/bodypart/ham as anything in piggy.get_bodyparts())
 		// These are string lists
+		if(isnull(ham.butcher_drops))
+			continue
 		ham.butcher_drops = ham.butcher_drops.Copy()
 		for (var/meat_type in ham.butcher_drops)
 			if (!ispath(meat_type, /obj/item/food/meat/slab))
