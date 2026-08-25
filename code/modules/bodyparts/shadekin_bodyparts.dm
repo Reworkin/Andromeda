@@ -8,6 +8,7 @@
 	is_dimorphic = TRUE
 	brute_modifier = 1.2
 	burn_modifier = 1.2
+	eyes_icon = 'icons/shadekin/shadekin_eyes.dmi'
 
 /obj/item/bodypart/chest/mutant/shadekin
 	icon_greyscale = BODYPART_ICON_SHADEKIN

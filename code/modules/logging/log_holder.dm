@@ -342,14 +342,10 @@ ADMIN_VERB(log_viewer_new, R_ADMIN|R_DEBUG, "View Round Logs", "View the rounds 
 				semvers[data.type] = LOG_CATEGORY_SCHEMA_VERSION_NOT_SET
 
 			if(!length(serialization_data)) // serialize_list wasn't implemented, and errored
-				stack_trace("serialization data was empty")
+				stack_trace("serialization data was empty for [data.type]")
 				continue
 
 			data = recursive_jsonify(serialization_data, semvers)
-
-		if(islist(data) && !length(data))
-			stack_trace("recursive_jsonify got an empty list after serialization")
-			continue
 
 		jsonified_list[key] = data
 
