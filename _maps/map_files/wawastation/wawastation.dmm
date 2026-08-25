@@ -1170,6 +1170,7 @@
 /area/station/service/hydroponics/garden)
 "atl" = (
 /obj/effect/mapping_helpers/broken_floor,
+/obj/effect/mine/stun,
 /turf/open/floor/iron/freezer,
 /area/station/maintenance/department/medical/central)
 "atv" = (
@@ -6446,6 +6447,11 @@
 /obj/effect/mapping_helpers/requests_console/ore_update,
 /turf/open/floor/iron/dark,
 /area/station/science/xenobiology)
+"cnB" = (
+/obj/structure/lattice/catwalk,
+/obj/effect/mine/shrapnel,
+/turf/open/space/basic,
+/area/space/nearstation)
 "cnS" = (
 /obj/machinery/atmospherics/pipe/smart/simple/yellow/visible{
 	dir = 8
@@ -7140,6 +7146,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mine/sound/bwoink,
 /turf/open/floor/iron,
 /area/station/security/prison/garden)
 "cCb" = (
@@ -18306,6 +18313,10 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
+"gsz" = (
+/obj/effect/mine/shrapnel,
+/turf/open/misc/asteroid/airless,
+/area/station/asteroid)
 "gsM" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -25608,6 +25619,10 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/iron/dark/corner,
 /area/station/engineering/atmos/project)
+"iST" = (
+/obj/effect/mine/shrapnel,
+/turf/closed/mineral/asteroid,
+/area/space/nearstation)
 "iSU" = (
 /obj/effect/spawner/random/structure/crate,
 /turf/open/misc/asteroid,
@@ -25644,6 +25659,7 @@
 /area/station/science/xenobiology/hallway)
 "iTL" = (
 /obj/structure/falsewall,
+/obj/effect/mine/shrapnel,
 /turf/open/floor/plating,
 /area/station/commons/storage/art)
 "iTU" = (
@@ -89810,7 +89826,7 @@ cLf
 cLf
 cLf
 cLf
-fYe
+gsz
 unk
 unk
 fYe
@@ -90838,7 +90854,7 @@ cLf
 cLf
 cLf
 cLf
-fYe
+gsz
 pnS
 unk
 cLf
@@ -91953,7 +91969,7 @@ rnk
 afV
 rnk
 dUc
-uuN
+cnB
 gJE
 paa
 aPO
@@ -181874,9 +181890,9 @@ sqL
 uoY
 sqL
 fYe
+kxB
 fYe
-fYe
-fYe
+kxB
 fYe
 fYe
 tAo
@@ -182131,9 +182147,9 @@ sqL
 uoY
 sqL
 fYe
+kxB
 fYe
-fYe
-fYe
+kxB
 fYe
 tAo
 uLR
@@ -182388,9 +182404,9 @@ sqL
 uoY
 sqL
 fYe
+kxB
 fYe
-fYe
-fYe
+kxB
 fYe
 fYe
 fYe
@@ -182645,9 +182661,9 @@ sqL
 lQA
 rlw
 uVI
-uVI
-mUQ
-vxX
+kxB
+fYe
+kxB
 vxX
 vxX
 vxX
@@ -182902,9 +182918,9 @@ sqL
 uoY
 sqL
 fYe
-fYe
-vxX
-vxX
+kxB
+cLf
+kxB
 vxX
 vxX
 vxX
@@ -183159,8 +183175,8 @@ sqL
 uoY
 sqL
 hhX
-hhX
 jVV
+cLf
 hhX
 hhX
 vxX
@@ -183417,7 +183433,7 @@ uoY
 sqL
 hhX
 jVV
-jVV
+hhX
 hhX
 hhX
 hhX
@@ -198920,7 +198936,7 @@ cxg
 wSj
 pwU
 wSj
-wSj
+iST
 hhX
 hhX
 hhX
@@ -199167,14 +199183,14 @@ hhX
 hhX
 hhX
 hhX
-hhX
-hhX
-hhX
-hhX
-hhX
-hhX
-cxg
 wSj
+iST
+cxg
+cxg
+cxg
+cxg
+cxg
+iST
 wSj
 wSj
 hhX
@@ -199424,16 +199440,16 @@ hhX
 hhX
 hhX
 hhX
-hhX
-hhX
-hhX
-hhX
-hhX
-hhX
-hhX
-hhX
-hhX
-hhX
+wSj
+wSj
+cxg
+cxg
+cxg
+cxg
+cxg
+wSj
+wSj
+wSj
 hhX
 hhX
 hhX
@@ -199687,11 +199703,11 @@ hhX
 hhX
 hhX
 hhX
-hhX
-hhX
-hhX
-hhX
-hhX
+cxg
+wSj
+cxg
+iST
+wSj
 hhX
 hhX
 hhX
@@ -199945,10 +199961,10 @@ hhX
 hhX
 hhX
 hhX
-hhX
-hhX
-hhX
-hhX
+cxg
+cxg
+wSj
+cxg
 hhX
 hhX
 hhX
@@ -200203,8 +200219,8 @@ hhX
 hhX
 hhX
 hhX
-hhX
-hhX
+cxg
+cxg
 hhX
 hhX
 hhX
