@@ -29,9 +29,9 @@ map icebox
 	votable
 endmap
 
-map catwalkstation
-	votable
-endmap
+#map catwalkstation
+#	votable
+#endmap
 
 map metastation
 	votable
@@ -49,9 +49,9 @@ map wawastation
 	votable
 endmap
 
-map voidraptor
-	votable
-endmap
+#map voidraptor
+#	votable
+#endmap
 
 #map blueshift
 #	votable
