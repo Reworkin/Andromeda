@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/pointed/psionic/rejuvenate
 	name = "Psionic Rejuvenate"
-	desc = "Restores the target's damage and blood, and then resurrects them from the dead. Does not heals wounds."
+	desc = "Restores the target's damage, and then resurrects them from the dead. Does not heals wounds."
 	button_icon_state = "tech_resurrect"
 	cast_range = 3
 	point_cost = 3
@@ -37,10 +37,10 @@
 				ignored_mobs = owner
 			)
 
-		carbon_living.cure_husk()
+//		carbon_living.cure_husk()
 		carbon_living.regenerate_organs(TRUE)
-		carbon_living.regenerate_limbs()
-		carbon_living.adjust_blood_volume(BLOOD_VOLUME_NORMAL, 0, BLOOD_VOLUME_NORMAL)
+//		carbon_living.regenerate_limbs()
+//		carbon_living.adjust_blood_volume(BLOOD_VOLUME_NORMAL, 0, BLOOD_VOLUME_NORMAL)
 		if(!carbon_living.revive())
 			owner.balloon_alert(owner, "revival failed!")
 			return FALSE

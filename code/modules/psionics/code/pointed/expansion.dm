@@ -6,7 +6,7 @@
 	cooldown_time = 40 SECONDS
 	psionic_level = 2
 	point_cost = 1
-	mana_cost = 10
+	mana_cost = 20
 	locked = FALSE
 	cast_range = 5
 
@@ -43,6 +43,6 @@
 
 /datum/status_effect/thermal_vision/on_remove()
 	. = ..()
-	ADD_TRAIT(owner, TRAIT_THERMAL_VISION, PSIONIC_TRAIT)
+	REMOVE_TRAIT(owner, TRAIT_THERMAL_VISION, PSIONIC_TRAIT)
 	owner.update_sight()
 	return TRUE

@@ -2,9 +2,9 @@
 	name = "Psionic Electrocute"
 	desc = "Administer a painful amount of psionic shock to the nervous system of a foe in melee range, causing burn and agony damage."
 	button_icon_state = "tech_shockaura"
-	cooldown_time = 20 SECONDS
+	cooldown_time = 30 SECONDS
 	point_cost = 2
-	mana_cost = 10
+	mana_cost = 25
 	psionic_level = 2
 	hand_path = /obj/item/melee/touch_attack/psionic/chain_lighting
 	locked = FALSE

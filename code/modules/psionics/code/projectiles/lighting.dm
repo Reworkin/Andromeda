@@ -4,7 +4,7 @@
 	button_icon_state = "spellcard"
 	category = "Tier 2"
 	click_cd_override = 1
-	cooldown_time = 40 SECONDS
+	cooldown_time = 50 SECONDS
 	psionic_level = 2
 	mana_cost = 50
 	point_cost = 3

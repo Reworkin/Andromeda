@@ -4,9 +4,9 @@
 	desc = "Concentrates psionic energy to create a sharp blade in your hand."
 	button_icon = 'icons/obj/weapons/transforming_energy.dmi'
 	button_icon_state = "blade"
-	cooldown_time = 1.5 SECONDS
+	cooldown_time = 30 SECONDS // изначально 1.5
 	item_type = /obj/item/melee/psionic_blade
-	mana_cost = 40
+	mana_cost = 50 // изначально 40
 	psionic_level = 2
 	point_cost = 3
 	category = "Tier 2"
@@ -21,14 +21,14 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE
-	force = 25
-	armour_penetration = 30
+	force = 20 // изначально 25
+	armour_penetration = 10 // изначально 30
 	throwforce = 10
 	hitsound = 'sound/items/weapons/blade1.ogg'
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	sharpness = SHARP_EDGED
-	block_chance = 50
+//	block_chance = 30 - УБРАН ШАНС БЛОКА
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	color = COLOR_BRIGHT_BLUE
 

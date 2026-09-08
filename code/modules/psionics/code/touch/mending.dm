@@ -2,9 +2,9 @@
 // Если уровень Эпсилон - удаляет лярвы ксеноморфов.
 /datum/action/cooldown/spell/touch/psionic/mending
 	name = "Psionic Mending"
-	desc = "Mend a creature's wounds. This handles internal wounds as well."
+	desc = "Mend a creature's wounds. Doesn't handle internal wounds."
 	button_icon_state = "tech_biomedaura"
-	cooldown_time = 60 SECONDS
+	cooldown_time = 30 SECONDS
 	mana_cost = 30
 	target_msg = "You body numbs a little."
 	hand_path = /obj/item/melee/touch_attack/psionic/mending
@@ -34,14 +34,14 @@
 		return FALSE
 
 /datum/action/cooldown/spell/touch/psionic/mending/proc/try_heal_all(mob/living/carbon/human/patient)
-	if(patient.all_wounds && cast_power >= 2)
-		var/datum/wound/wound2fix = patient.all_wounds[1]
-		wound2fix.remove_wound()
-		playsound(patient, 'sound/effects/wounds/crack2.ogg', 40, TRUE)
+//	if(patient.all_wounds && cast_power >= 2)
+//		var/datum/wound/wound2fix = patient.all_wounds[1]
+//		wound2fix.remove_wound()
+//		playsound(patient, 'sound/effects/wounds/crack2.ogg', 40, TRUE)
 
-	for(var/obj/item/organ/O in patient.organs)
-		O.apply_organ_damage(-15 * cast_power)
-
+//	for(var/obj/item/organ/O in patient.organs)
+//		O.apply_organ_damage(-15 * cast_power)
+//
 	if(patient.get_oxy_loss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
 		patient.adjust_oxy_loss(-30 * cast_power, forced = TRUE)
 
