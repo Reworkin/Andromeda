@@ -2,9 +2,10 @@
 	name = "Psionic Charge"
 	desc = "Use this spell on an item with a cell to charge it."
 	button_icon_state = "wiz_charge"
+	category = "Tier 2" //изначально тир 1
 	cooldown_time = 60 SECONDS
 	mana_cost = 10
-	psionic_level = 1
+	psionic_level = 2
 	locked = FALSE
 
 /datum/action/cooldown/spell/psionic/charge/is_valid_target(atom/cast_on)

@@ -2,7 +2,7 @@
 	name = "Psionic Mind Muddle"
 	desc = "Use this at range to confuse a target and give them a little bit of pain."
 	button_icon_state = "wiz_tele"
-	cooldown_time = 20 SECONDS
+	cooldown_time = 30 SECONDS
 	psionic_level = 1
 	point_cost = 2
 	mana_cost = 10

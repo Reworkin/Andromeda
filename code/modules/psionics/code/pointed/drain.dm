@@ -2,12 +2,14 @@
 	name = "Psionic Drain"
 	desc = "Drain psi-stamina from a living being, will harm it!"
 	button_icon_state = "gen_project"
-	cooldown_time = 10 SECONDS
-	psionic_level = 1
+	category = "Tier 2" //изначально тир 1
+	cooldown_time = 30 SECONDS
+	psionic_level = 2
 	point_cost = 2
-	mana_cost = 0
+	mana_cost = 30
 	locked = FALSE
 	cast_range = 3
+	var/drain_range = 9 // Максимальный радиус что бы сосать
 
 /datum/action/cooldown/spell/pointed/psionic/drain/is_valid_target(atom/cast_on)
 	if(!ishuman(cast_on))
@@ -23,6 +25,12 @@
 
 /datum/action/cooldown/spell/pointed/psionic/drain/proc/drain_psi_stamina(atom/cast_on)
 	var/mob/living/carbon/human/victim = cast_on
+
+	// Проверка расстояния
+	if(get_dist(owner, victim) > drain_range)
+		to_chat(owner, span_horizonblue("Target is too far away!"))
+		return FALSE
+
 	if(!do_after(owner, 1 SECONDS, victim, IGNORE_TARGET_LOC_CHANGE))
 		return FALSE
 	victim.adjust_stamina_loss(10)

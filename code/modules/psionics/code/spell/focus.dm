@@ -3,8 +3,8 @@
 	desc = "Creates a useful reagents inside of you, removing stun."
 	button_icon_state = "tech_haste"
 	category = "Tier 2"
-	cooldown_time = 50 SECONDS
-	mana_cost = 20
+	cooldown_time = 80 SECONDS
+	mana_cost = 30
 	psionic_level = 2
 	locked = FALSE
 

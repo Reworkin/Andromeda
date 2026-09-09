@@ -1,10 +1,10 @@
 /datum/action/cooldown/spell/pointed/psionic/awakening
 	name = "Psionic Awaken"
-	desc = "Stimulate a living being's Zona Bovinae and bring them to Psionically Harmonious rank."
+	desc = "Stimulate a living being's Zona Bovinae and bring them to Psionically Sensitive rank."
 	button_icon_state = "const_repairaura"
-	mana_cost = 0
-	cooldown_time = 10 SECONDS
-	point_cost = 3
+	mana_cost = 60
+	cooldown_time = 120 SECONDS
+	point_cost = 4
 	locked = FALSE
 	psionic_level = 2
 	category = "Tier 2"
@@ -22,8 +22,9 @@
 	if(HAS_TRAIT(victim, TRAIT_ZONA_BOVINAE_ABSORBED))
 		to_chat(owner, span_horizonblue("Their psi sensivity is shattered!"))
 		return FALSE
-	if(HAS_TRAIT(victim, TRAIT_PSIONIC_INFLUENCED))
-		to_chat(owner, span_horizonblue("Their psi sensivity is already influenced!"))
+	if(istype(victim_psionic, /datum/psionic/sensitive))
+		to_chat(owner, span_horizonblue("You cannot influence them any further!"))
+		return FALSE
 	return TRUE
 
 /datum/action/cooldown/spell/pointed/psionic/awakening/before_cast(atom/cast_on)

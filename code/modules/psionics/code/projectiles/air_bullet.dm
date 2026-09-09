@@ -16,7 +16,7 @@
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/air_bullet/ready_projectile(obj/projectile/to_fire, atom/target, mob/user, iteration)
 	. = ..()
-	to_fire.damage = 10 * cast_power
+	to_fire.damage = 20 // * cast_power
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/air_bullet/fire_projectile(atom/target)
 	. = ..()

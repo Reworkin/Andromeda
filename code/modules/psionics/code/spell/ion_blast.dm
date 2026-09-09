@@ -3,7 +3,7 @@
 	name = "Ion Blast"
 	desc = "Cause a small, but powerful EMP."
 	button_icon_state = "tech_overload"
-	cooldown_time = 30 SECONDS
+	cooldown_time = 50 SECONDS // изначально 30
 	mana_cost = 50
 	psionic_level = 2
 	locked = FALSE
